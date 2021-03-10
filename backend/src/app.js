@@ -1,11 +1,19 @@
-import express from 'express';
+require('dotenv').config();
 
+import express from 'express';
 import './database/index';
 
-const app = express();
+import paradaRoutes from './routes/parada';
 
-app.get('/', (req, res) => {
-  res.send('Olaa');
-});
+class App {
+  constructor() {
+    this.app = express();
+    this.routes();
+  }
 
-export default app;
+  routes() {
+    this.app.use('/parada', paradaRoutes);
+  }
+}
+
+export default App().app;
