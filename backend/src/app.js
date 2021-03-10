@@ -4,6 +4,7 @@ import express from 'express';
 import './database';
 
 import paradaRoutes from './routes/parada';
+import linhaRoutes from './routes/linha';
 
 class App {
   constructor() {
@@ -19,6 +20,7 @@ class App {
 
   routes() {
     this.app.use('/parada', paradaRoutes);
+    this.app.use('/linha', linhaRoutes);
   }
 }
 
