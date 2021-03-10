@@ -6,6 +6,7 @@ import './database';
 import paradaRoutes from './routes/parada';
 import linhaRoutes from './routes/linha';
 import veiculoRoutes from './routes/veiculo';
+import posicaoVeiculoRoutes from './routes/posicaoVeiculo';
 
 class App {
   constructor() {
@@ -23,6 +24,7 @@ class App {
     this.app.use('/parada', paradaRoutes);
     this.app.use('/linha', linhaRoutes);
     this.app.use('/veiculo', veiculoRoutes);
+    this.app.use('/posicaoveiculo', posicaoVeiculoRoutes);
   }
 }
 

@@ -39,7 +39,7 @@ router.get('/show', async (req, res) => {
     });
 
     if (!veiculo)
-      return res.status(400).json({ msg: 'Veículo não encontrada' });
+      return res.status(400).json({ msg: 'Veículo não encontrado' });
 
     return res.status(200).json(veiculo);
   } catch (e) {
