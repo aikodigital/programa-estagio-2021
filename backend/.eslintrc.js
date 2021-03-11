@@ -12,5 +12,6 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'import/first': 0,
+    'class-methods-use-this': 0,
   },
 };
