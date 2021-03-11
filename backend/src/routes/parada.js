@@ -13,4 +13,6 @@ router.put('/update', ParadaController.update);
 
 router.delete('/delete', ParadaController.delete);
 
+router.get('/linhasdaparada', ParadaController.linhasPorParada);
+
 export default router;

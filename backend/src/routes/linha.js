@@ -14,4 +14,6 @@ router.put('/update', LinhaController.update);
 
 router.delete('/delete', LinhaController.delete);
 
+router.get('/veiculosPorLinha', LinhaController.veiculosPorLinha);
+
 export default router;

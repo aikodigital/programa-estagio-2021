@@ -67,6 +67,31 @@ class ParadaController {
       throw new Error(e);
     }
   }
+
+  // Linhas por Parada: Recebe o identificador de uma parada e retorna as linhas associadas a parada informada
+  async linhasPorParada(req, res) {
+    try {
+      const { id } = req.query;
+
+      const linhasDeParada = await Parada.findByPk(id, {
+        attributes: ['id', ['name', 'paradaName'], 'latitude', 'longitude'],
+        include: {
+          association: 'linhas',
+          attributes: ['id', ['name', 'linhaName']],
+          through: { attributes: [] },
+        },
+      });
+
+      if (!linhasDeParada)
+        return res
+          .status(400)
+          .json({ msg: 'A parada com o id informado não existe.' });
+
+      return res.status(200).json(linhasDeParada);
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
 }
 
 export default new ParadaController();

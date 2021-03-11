@@ -68,6 +68,32 @@ class LinhaController {
       throw new Error(e);
     }
   }
+
+  // Veiculos por Linha: Recebe o identificador de uma linha e retorna os veículos associados a linha informada
+  async veiculosPorLinha(req, res) {
+    try {
+      const { id } = req.query;
+
+      const veiculosDaLinha = await Linha.findByPk(id, {
+        attributes: ['id', ['name', 'linhaName']],
+        include: {
+          association: 'veiculos',
+          attributes: ['id', ['name', 'veiculoName'], 'modelo', 'linha_id'],
+        },
+      });
+
+      if (!veiculosDaLinha)
+        return res
+          .status(400)
+          .json({ msg: 'A linha com o id informado não existe.' });
+
+      return res.status(200).json(veiculosDaLinha);
+    } catch (e) {
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
+    }
+  }
 }
 
 export default new LinhaController();
