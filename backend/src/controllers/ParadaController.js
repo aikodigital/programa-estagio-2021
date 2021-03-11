@@ -1,4 +1,4 @@
-import Parada from '../models/Linha';
+import Parada from '../models/Parada';
 
 class ParadaController {
   async store(req, res) {
