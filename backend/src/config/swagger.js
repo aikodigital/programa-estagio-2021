@@ -12,11 +12,9 @@ module.exports = {
   },
   // ['.routes/*.js']
   apis: [
-    'src/app.js',
-    'src/routes/linha.js',
-    'src/controllers/LinhaController.js',
-    'src/controllers/ParadaController.js',
-    'src/controllers/VeiculoController.js',
-    'src/controllers/PosicaoController.js',
+    'swagger/routes/linha.js',
+    'swagger/routes/parada.js',
+    'swagger/routes/veiculo.js',
+    'swagger/routes/posicaoVeiculo.js',
   ],
 };
