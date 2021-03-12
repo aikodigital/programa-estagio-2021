@@ -13,5 +13,6 @@ module.exports = {
     'prettier/prettier': 'error',
     'import/first': 0,
     'class-methods-use-this': 0,
+    'no-param-reassign': 0,
   },
 };
