@@ -7,6 +7,7 @@ import './database';
 
 import swaggerJsDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import swaggerOptions from './config/swagger';
 
 import paradaRoutes from './routes/parada';
 import linhaRoutes from './routes/linha';
@@ -14,26 +15,6 @@ import veiculoRoutes from './routes/veiculo';
 import posicaoVeiculoRoutes from './routes/posicaoVeiculo';
 
 // Extended: https://swagger.io/specification/#infoObject
-const swaggerOptions = {
-  swaggerDefinition: {
-    info: {
-      version: '1.0.0',
-      title: 'API backend Aiko',
-      description: 'API semelhante à olho vivo',
-      contact: {
-        name: 'Paulo Sérgio',
-      },
-      servers: ['http://localhost:3333'],
-    },
-  },
-  // ['.routes/*.js']
-  apis: [
-    'src/app.js',
-    'src/routes/linha.js',
-    'src/controllers/LinhaController.js',
-    'src/controllers/ParadaController.js',
-  ],
-};
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
