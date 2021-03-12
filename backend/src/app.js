@@ -14,8 +14,6 @@ import linhaRoutes from './routes/linha';
 import veiculoRoutes from './routes/veiculo';
 import posicaoVeiculoRoutes from './routes/posicaoVeiculo';
 
-// Extended: https://swagger.io/specification/#infoObject
-
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
