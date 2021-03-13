@@ -14,6 +14,7 @@ import linhaRoutes from './routes/linha';
 import veiculoRoutes from './routes/veiculo';
 import posicaoVeiculoRoutes from './routes/posicaoVeiculo';
 import userRoutes from './routes/user';
+import tokenRoutes from './routes/token';
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
@@ -36,6 +37,7 @@ class App {
     this.app.use('/veiculo', veiculoRoutes);
     this.app.use('/posicaoveiculo', posicaoVeiculoRoutes);
     this.app.use('/user', userRoutes);
+    this.app.use('/token', tokenRoutes);
   }
 }
 
