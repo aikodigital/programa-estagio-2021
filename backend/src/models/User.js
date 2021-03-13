@@ -47,18 +47,6 @@ export default class User extends Model {
     return this;
   }
 
-  static associate(models) {
-    this.belongsTo(models.Linha, {
-      foreignKey: 'linha_id',
-      as: 'linhasveiculo',
-    });
-
-    this.hasOne(models.PosicaoVeiculo, {
-      foreignKey: 'veiculo_id',
-      as: 'posicao',
-    });
-  }
-
   passwordIsValid(password) {
     return bcryptjs.compare(password, this.password_hash);
   }

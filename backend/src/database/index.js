@@ -6,10 +6,11 @@ import Parada from '../models/Parada';
 import Linha from '../models/Linha';
 import Veiculo from '../models/Veiculo';
 import PosicaoVeiculo from '../models/PosicaoVeiculo';
+import User from '../models/User';
 
 const connection = new Sequelize(databaseConfig);
 
-const models = [Veiculo, Parada, Linha, PosicaoVeiculo];
+const models = [Veiculo, Parada, Linha, PosicaoVeiculo, User];
 
 connection
   .authenticate()
