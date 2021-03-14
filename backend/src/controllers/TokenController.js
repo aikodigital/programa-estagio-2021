@@ -10,14 +10,14 @@ class TokenController {
         errors: ['Credenciais inválidas'],
       });
 
-    const user = User.findOne({ where: email });
-    const { id } = user;
+    const user = await User.findOne({ where: { email } });
 
     if (!user) {
       return res.status(401).json({
-        errors: ['O usário não existe'],
+        errors: ['O usuário não existe'],
       });
     }
+    const { id } = user;
 
     if (!(await user.passwordIsValid(password))) {
       return res.status(401).json({

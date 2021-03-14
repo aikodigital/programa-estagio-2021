@@ -4,14 +4,31 @@
  *  post:
  *    description: Use para cadastrar uma nova parada
  *    tags: [Parada]
- *    parameters:
- *      - name: body
- *        in: body
- *        description: Objeto com informações da parada
- *        required: true
- *        schema:
- *          type: object
- *          format: object
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              latitude:
+ *                type: number
+ *              longitude:
+ *                type: number
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              latitude:
+ *                type: number
+ *              longitude:
+ *                type: number
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida
@@ -67,13 +84,31 @@
  *        schema:
  *          type: integer
  *          format: integer
- *      - name: body
- *        in: body
- *        description: Objeto com informações da parada
- *        required: true
- *        schema:
- *          type: object
- *          format: object
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              latitude:
+ *                type: number
+ *              longitude:
+ *                type: number
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              latitude:
+ *                type: number
+ *              longitude:
+ *                type: number
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida

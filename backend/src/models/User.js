@@ -7,6 +7,10 @@ export default class User extends Model {
       {
         name: {
           type: Sequelize.STRING,
+          len: {
+            args: [6, 50],
+            msg: 'O nome precisa ter entre 6 e 50 caracteres',
+          },
         },
         email: {
           type: Sequelize.STRING,
@@ -24,8 +28,8 @@ export default class User extends Model {
           type: Sequelize.VIRTUAL,
           validate: {
             len: {
-              args: [6, 50],
-              msg: 'A senha deve ter entre 6 e 50 caracteres',
+              args: [6, 20],
+              msg: 'A senha deve ter entre 6 e 20 caracteres',
             },
           },
         },

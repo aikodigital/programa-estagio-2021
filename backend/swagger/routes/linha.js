@@ -4,14 +4,24 @@
  *  post:
  *    description: Use para cadastrar uma nova linha
  *    tags: [Linha]
- *    parameters:
- *      - name: name
- *        in: body
- *        description: Nome da linha
- *        required: true
- *        schema:
- *          type: string
- *          format: string
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida
@@ -59,21 +69,31 @@
  *  put:
  *    description: Use para alterar os dados de uma linha existente
  *    tags: [Linha]
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
  *    parameters:
  *      - name: id
  *        in: query
  *        description: Id da linha
- *        required: true
+ *        required: false
  *        schema:
  *          type: integer
  *          format: integer
- *      - name: name
- *        in: body
- *        description: Nome da linha
- *        required: true
- *        schema:
- *          type: string
- *          format: string
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida

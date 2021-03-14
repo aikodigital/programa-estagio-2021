@@ -7,7 +7,9 @@ class ParadaController {
 
       return res.status(200).json(parada);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -22,7 +24,9 @@ class ParadaController {
 
       return res.status(200).json(paradas);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -38,7 +42,9 @@ class ParadaController {
 
       return res.status(200).json(parada);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -51,7 +57,9 @@ class ParadaController {
 
       return res.status(200).json(paradaAtualizada);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -64,7 +72,9 @@ class ParadaController {
 
       return res.status(200).json({ msg: 'Registro deletado com sucesso.' });
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -89,7 +99,9 @@ class ParadaController {
 
       return res.status(200).json(linhasDeParada);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 }

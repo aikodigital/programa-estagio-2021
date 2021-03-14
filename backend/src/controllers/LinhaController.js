@@ -7,7 +7,9 @@ class LinhaController {
 
       return res.status(200).json(linha);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -24,7 +26,9 @@ class LinhaController {
 
       return res.status(200).json(linhas);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -39,7 +43,9 @@ class LinhaController {
 
       return res.status(200).json(linha);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -52,7 +58,9 @@ class LinhaController {
 
       return res.status(200).json(linhaAtualizada);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -65,7 +73,9 @@ class LinhaController {
 
       return res.status(200).json({ msg: 'Registro deletado com sucesso.' });
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 

@@ -1,5 +1,6 @@
 module.exports = {
   swaggerDefinition: {
+    openapi: '3.0.1',
     info: {
       version: '1.0.0',
       title: 'API backend Aiko',
@@ -9,12 +10,21 @@ module.exports = {
       },
       servers: ['http://localhost:3333'],
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ],
   },
   // ['.routes/*.js']
-  apis: [
-    'swagger/routes/linha.js',
-    'swagger/routes/parada.js',
-    'swagger/routes/veiculo.js',
-    'swagger/routes/posicaoVeiculo.js',
-  ],
+  apis: ['swagger/routes/*.js'],
 };

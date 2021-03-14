@@ -7,7 +7,7 @@ class VeiculoController {
 
       return res.status(200).json(veiculo);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({ error: 'Ocorreu um erro ao criar' });
     }
   }
 
@@ -25,7 +25,9 @@ class VeiculoController {
 
       return res.status(200).json(veiculos);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -41,7 +43,9 @@ class VeiculoController {
 
       return res.status(200).json(veiculo);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -54,7 +58,9 @@ class VeiculoController {
 
       return res.status(200).json(veiculoAtualizado);
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 
@@ -67,7 +73,9 @@ class VeiculoController {
 
       return res.status(200).json({ msg: 'Registro deletado com sucesso.' });
     } catch (e) {
-      throw new Error(e);
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
     }
   }
 }

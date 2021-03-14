@@ -1,16 +1,18 @@
 import { Router } from 'express';
 import PosicaoController from '../controllers/PosicaoController';
 
+import loginRequired from '../middlewares/loginRequired';
+
 const router = Router();
 
-router.post('/store', PosicaoController.store);
+router.post('/store', loginRequired, PosicaoController.store);
 
 router.get('/index', PosicaoController.index);
 
 router.get('/show', PosicaoController.show);
 
-router.put('/update', PosicaoController.update);
+router.put('/update', loginRequired, PosicaoController.update);
 
-router.delete('/delete', PosicaoController.delete);
+router.delete('/delete', loginRequired, PosicaoController.delete);
 
 export default router;

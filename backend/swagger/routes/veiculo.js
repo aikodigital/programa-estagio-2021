@@ -4,14 +4,31 @@
  *  post:
  *    description: Use para cadastrar um novo veículo
  *    tags: [Veiculo]
- *    parameters:
- *      - name: body
- *        in: body
- *        description: Objeto com informações do veículo
- *        required: true
- *        schema:
- *          type: object
- *          format: object
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              modelo:
+ *                type: string
+ *              linha_id:
+ *                type: integer
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              modelo:
+ *                type: string
+ *              linha_id:
+ *                type: integer
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida
@@ -67,13 +84,31 @@
  *        schema:
  *          type: integer
  *          format: integer
- *      - name: body
- *        in: body
- *        description: Objeto com informações do veículo
- *        required: true
- *        schema:
- *          type: object
- *          format: object
+ *    requestBody:
+ *      description: Request body
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              modelo:
+ *                type: string
+ *              id_linha:
+ *                type: integer
+ *
+ *        application/x-www-form-urlencoded:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              name:
+ *                type: string
+ *              modelo:
+ *                type: string
+ *              id_linha:
+ *                type: integer
  *    responses:
  *      '200':
  *        description: Requisição bem sucedida

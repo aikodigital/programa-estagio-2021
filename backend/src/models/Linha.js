@@ -7,6 +7,12 @@ export default class Linha extends Model {
         name: {
           type: Sequelize.STRING,
           defaultValue: '',
+          validate: {
+            len: {
+              args: [6, 50],
+              msg: 'O nome precisa ter entre 6 e 50 caracteres',
+            },
+          },
         },
       },
       {
