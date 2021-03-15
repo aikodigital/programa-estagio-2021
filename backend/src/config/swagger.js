@@ -25,6 +25,5 @@ module.exports = {
       },
     ],
   },
-  // ['.routes/*.js']
   apis: ['swagger/routes/*.js'],
 };

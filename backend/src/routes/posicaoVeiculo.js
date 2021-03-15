@@ -7,9 +7,9 @@ const router = Router();
 
 router.post('/store', loginRequired, PosicaoController.store);
 
-router.get('/index', PosicaoController.index);
+router.get('/index', loginRequired, PosicaoController.index);
 
-router.get('/show', PosicaoController.show);
+router.get('/show', loginRequired, PosicaoController.show);
 
 router.put('/update', loginRequired, PosicaoController.update);
 

@@ -157,3 +157,31 @@
  *      '400':
  *        description: Falha na requisição
  */
+
+/**
+ * @swagger
+ * /parada/cadastrarLinhaEmParada:
+ *  post:
+ *    description: Use para associar uma linha em uma parada
+ *    tags: [Parada]
+ *    parameters:
+ *      - name: linha_id
+ *        in: query
+ *        description: Id da linha
+ *        required: true
+ *        schema:
+ *          type: integer
+ *          format: integer
+ *      - name: parada_id
+ *        in: query
+ *        description: Id da parada
+ *        required: true
+ *        schema:
+ *          type: integer
+ *          format: integer
+ *    responses:
+ *      '200':
+ *        description: Requisição bem sucedida
+ *      '400':
+ *        description: Falha na requisição
+ */

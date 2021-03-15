@@ -10,7 +10,12 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'import/first': 0,
     'class-methods-use-this': 0,
     'no-param-reassign': 0,

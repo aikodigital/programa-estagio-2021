@@ -6,9 +6,9 @@ const router = Router();
 
 router.post('/store', loginRequired, VeiculoController.store);
 
-router.get('/index', VeiculoController.index);
+router.get('/index', loginRequired, VeiculoController.index);
 
-router.get('/show', VeiculoController.show);
+router.get('/show', loginRequired, VeiculoController.show);
 
 router.put('/update', loginRequired, VeiculoController.update);
 

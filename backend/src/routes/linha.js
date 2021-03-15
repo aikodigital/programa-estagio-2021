@@ -7,14 +7,18 @@ const router = Router();
 
 router.post('/store', loginRequired, LinhaController.store);
 
-router.get('/index', LinhaController.index);
+router.get('/index', loginRequired, LinhaController.index);
 
-router.get('/show', LinhaController.show);
+router.get('/show', loginRequired, LinhaController.show);
 
 router.put('/update', loginRequired, LinhaController.update);
 
 router.delete('/delete', loginRequired, LinhaController.delete);
 
-router.get('/veiculosPorLinha', LinhaController.veiculosPorLinha);
+router.get(
+  '/veiculosPorLinha',
+  loginRequired,
+  LinhaController.veiculosPorLinha
+);
 
 export default router;

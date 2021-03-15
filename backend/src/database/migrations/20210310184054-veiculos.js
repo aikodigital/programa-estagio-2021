@@ -17,7 +17,7 @@ module.exports = {
       },
       linha_id: {
         type: Sequelize.BIGINT,
-        allowNull: false,
+        allowNull: true,
         references: { model: 'linhas', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',

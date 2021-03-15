@@ -1,11 +1,10 @@
 {
-  "name": "backend",
+  "name": "backend-aiko",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "swagger-autogen": "node swagger.js"
+    "dev": "nodemon src/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -9,8 +9,8 @@ export default class Linha extends Model {
           defaultValue: '',
           validate: {
             len: {
-              args: [6, 50],
-              msg: 'O nome precisa ter entre 6 e 50 caracteres',
+              args: [3, 50],
+              msg: 'O nome precisa ter entre 3 e 50 caracteres',
             },
           },
         },
