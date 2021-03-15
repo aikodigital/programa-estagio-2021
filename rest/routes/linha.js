@@ -18,8 +18,7 @@ router.post('/', (req,res,next) => {
                     })
                 }
                 res.status(201).send({
-                    response: 'Linha inserida com sucesso.',
-                    idLinha: resultado.insertId
+                    response: 'Linha inserida com sucesso.'
                 });
             }
         );
