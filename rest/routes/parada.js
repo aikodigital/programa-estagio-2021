@@ -64,7 +64,7 @@ router.put('/', (req,res,next) => {
                 SET nome = ?,
                     latitude = ?,
                     longitude = ?
-             WHERE idLParada = ?`,
+             WHERE idParada = ?`,
             [req.body.nome, req.body.latitude, req.body.longitude, req.body.idParada],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}

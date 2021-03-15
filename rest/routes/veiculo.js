@@ -44,7 +44,7 @@ router.get('/:idVeiculo', (req,res,next) => {
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
-            'SELECT * FROM linha WHERE idVeiculo= ?;',
+            'SELECT * FROM veiculo WHERE idVeiculo= ?;',
             [req.params.idVeiculo],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}

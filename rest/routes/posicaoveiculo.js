@@ -7,8 +7,8 @@ router.post('/', (req,res,next) => {
     mysql.getConnection(function (error, conn) {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
-            'INSERT INTO posicaoveiculo (latitude, longitude) VALUES (?,?)',
-            [req.body.latitude, req.body.longitude],
+            'INSERT INTO posicaoveiculo (latitude, longitude, idVeiculo) VALUES (?,?,?)',
+            [req.body.latitude, req.body.longitude, req.body.idVeiculo],
             (error, resultado, field) => {
                 conn.release();
                 if(error){
@@ -57,6 +57,7 @@ router.get('/:idVeiculo', (req,res,next) => {
 
 //ATUALIZA UMA POSIÇÃO VEÍCULO
 router.put('/', (req,res,next) => {
+    console.log(req.body)
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
