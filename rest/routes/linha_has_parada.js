@@ -8,7 +8,7 @@ router.get('/:idParada', (req,res,next) => {
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
-            'SELECT * FROM linha_has_parada WHERE idParada= ?;',
+            'SELECT idLinha FROM linha_has_parada WHERE idParada= ?;',
             [req.params.idParada],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}
