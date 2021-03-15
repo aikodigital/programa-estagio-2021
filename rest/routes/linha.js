@@ -19,7 +19,7 @@ router.post('/', (req,res,next) => {
                 }
                 res.status(201).send({
                     response: 'Linha inserida com sucesso.',
-                    id_linha: resultado.insertId
+                    idLinha: resultado.insertId
                 });
             }
         );
@@ -41,12 +41,12 @@ router.get('/', (req,res,next) => {
 });
 
 //RETORNA UMA LINHA
-router.get('/:id_linha', (req,res,next) => {
+router.get('/:idLinha', (req,res,next) => {
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
             'SELECT * FROM linha WHERE idLinha= ?;',
-            [req.params.id_linha],
+            [req.params.idLinha],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}
                 return res.status(200).send({response: resultado});
@@ -58,14 +58,13 @@ router.get('/:id_linha', (req,res,next) => {
 
 //ATUALIZA UMA LINHA
 router.put('/', (req,res,next) => {
-    console.log(req.body);
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
             `UPDATE linha 
                 SET nome = ?
              WHERE idLinha = ?`,
-            [req.body.nome, req.body.id_linha],
+            [req.body.nome, req.body.idLinha],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}
                 return res.status(202).send({response: 'Linha atualizada com sucesso'});
@@ -76,12 +75,11 @@ router.put('/', (req,res,next) => {
 
 //DELETA UMA LINHA
 router.delete('/', (req,res,next) => {
-    console.log(req.body);
     mysql.getConnection((error,conn) => {
         if(error){ return res.status(500).send({error:error})}
         conn.query(
             `DELETE FROM linha WHERE idLinha = ?`,
-            [req.body.id_linha],
+            [req.body.idLinha],
             (error, resultado, fields) => {
                 if(error){ return res.status(500).send({error:error})}
                 return res.status(202).send({response: 'Linha removida com sucesso'});
