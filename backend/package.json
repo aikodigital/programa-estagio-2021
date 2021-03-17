@@ -7,13 +7,13 @@
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "eslint": "^7.2.0",
     "pg": "^8.5.1",
     "sequelize": "^6.5.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0", 
+    "jsonwebtoken": "^8.5.1",
     "swagger-autogen": "^2.7.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
@@ -24,8 +24,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "nodemon": "^2.0.7",
+    "sucrase": "^3.17.1",
     "prettier": "^2.2.1",
-    "sequelize-cli": "^6.2.0",
-    "sucrase": "^3.17.1"
+    "sequelize-cli": "^6.2.0"
   }
 }

@@ -10,15 +10,6 @@ import User from '../models/User';
 
 const connection = new Sequelize(databaseConfig);
 
-connection
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
-
 const models = [Veiculo, Parada, Linha, PosicaoVeiculo, User];
 
 models.forEach((model) => model.init(connection));

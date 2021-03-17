@@ -15,40 +15,6 @@ class UserController {
     }
   }
 
-  async index(req, res) {
-    try {
-      const users = await User.findAll();
-
-      if (!users)
-        return res
-          .status(400)
-          .json({ msg: 'Não existem registros de usuários.' });
-
-      return res.status(200).json(users);
-    } catch (e) {
-      return res.status(400).json({
-        error: e.errors,
-      });
-    }
-  }
-
-  async show(req, res) {
-    try {
-      const { id } = req.query;
-
-      const user = await User.findByPk(id);
-
-      if (!user)
-        return res.status(401).json({ errors: ['Usuário não existe'] });
-
-      return res.status(200).json(user);
-    } catch (e) {
-      return res.status(400).json({
-        error: e.errors,
-      });
-    }
-  }
-
   async update(req, res) {
     try {
       const user = await User.findByPk(req.userId);
