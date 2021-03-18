@@ -1,0 +1,8 @@
+{
+  "name":"teste/backend",
+  "autoload":{
+    "psr-4":{
+      "Principal\\": "principal/"
+    }
+  }
+}
