@@ -11,7 +11,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
-          <th class="col-md-4">Ações</th>
+          <th>Modelo</th>        
 				</tr>
 			</thead>
 

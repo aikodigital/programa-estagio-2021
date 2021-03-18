@@ -12,7 +12,7 @@
 					<th>ID</th>
 					<th>Nome</th>
           <th>Modelo</th>
-          <th class="col-md-2">Ações</th>
+          <th class="col-md-4">Ações</th>
 				</tr>
 			</thead>
 

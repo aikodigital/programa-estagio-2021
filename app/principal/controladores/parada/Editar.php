@@ -10,11 +10,12 @@ if(!$obParada instanceof Parada){
 	exit;
 }
 
-if(isset($_POST['nome'],$_POST['latitude'],$_POST['longitude'])){
+if(isset($_POST['nome'],$_POST['latitude'],$_POST['longitude'],$_POST['linhaId'])){
 
 	$obParada->nome = $_POST['nome'];
   $obParada->latitude = $_POST['latitude'];
   $obParada->longitude = $_POST['longitude'];
+	$obParada->linhaId = $_POST['linhaId'];
   $obParada->atualizar();
 
 	header('location: Listar.php?status=success');

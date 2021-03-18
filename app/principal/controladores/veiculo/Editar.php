@@ -12,10 +12,11 @@ if(!$obVeiculo instanceof Veiculo){
 }
 
 
-if(isset($_POST['nome'],$_POST['modelo'],$_POST['latitude'],$_POST['longitude'])){
+if(isset($_POST['nome'],$_POST['modelo'],$_POST['linhaId'],$_POST['latitude'],$_POST['longitude'])){
 
 	$obVeiculo->nome = $_POST['nome'];
 	$obVeiculo->modelo = $_POST['modelo'];
+	$obVeiculo->linhaId = $_POST['linhaId'];
 	$obVeiculo->atualizar();
   $obPosicaoVeiculo->latitude = $_POST['latitude'];
   $obPosicaoVeiculo->longitude = $_POST['longitude'];

@@ -8,10 +8,11 @@ $obVeiculo = new Veiculo;
 
 $obPosicaoVeiculo = new PosicaoVeiculo;
 
-if(isset($_POST['nome'],$_POST['modelo'])){
+if(isset($_POST['nome'],$_POST['modelo'],$_POST['linhaId'])){
 
 	$obVeiculo->nome = $_POST['nome'];
 	$obVeiculo->modelo = $_POST['modelo'];
+	$obVeiculo->idLinha = $_POST['linhaId'];
 	$obPosicaoVeiculo->latitude = $_POST['latitude'];
 	$obPosicaoVeiculo->longitude = $_POST['longitude'];
 	$obVeiculo->cadastrar();

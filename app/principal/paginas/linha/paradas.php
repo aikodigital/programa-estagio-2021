@@ -10,8 +10,7 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Nome</th>
-          <th class="col-md-4">Ações</th>
+					<th>Nome</th>        
 				</tr>
 			</thead>
 

@@ -10,16 +10,19 @@ class Parada{
 
 	public $nome;
 
+	public $latitude;
+
 	public $longitude;
 
-	public $latitude;
+	public $linhaId;
 
 	public function cadastrar(){
 		$obBanco = new Banco('parada');
 		$this->id = $obBanco->insert([
 			'nome' => $this->nome,
 			'longitude' => $this->longitude,
-			'latitude' => $this->latitude
+			'latitude' => $this->latitude,
+			'idLinha' => $this->linhaId
 		]);
 		return true;
 	}
@@ -27,9 +30,10 @@ class Parada{
 
 	public function atualizar(){
 		return(new Banco('parada'))->update('id = '.$this->id,[
-			'titulo' => $this->nome,
+			'nome' => $this->nome,
 			'longitude' => $this->longitude,
-			'latitude' => $this->latitude
+			'latitude' => $this->latitude,
+			'idLinha' => $this->linhaId
 		]);
 	}
 

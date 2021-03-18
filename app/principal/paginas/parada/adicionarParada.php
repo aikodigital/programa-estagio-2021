@@ -19,6 +19,11 @@
   			<input type="text" class="form-control" name="longitude" required value="<?=$obParada->nome?>">
   		</div>
 
+      <div class="form-group">
+  			<label>Linha ID</label><br>
+  			<input type="text" class="form-control" name="linhaId" required value="<?=$obParada->linhaId?>">
+  		</div>
+
   		<div class="form-group mt-2">
   			<button type="submit" name="adicionar" class="btn btn-success">Adicionar</button>
   		</div>

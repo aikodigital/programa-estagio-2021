@@ -26,6 +26,11 @@
       <input type="text" class="form-control" name="longitude" required value="<?=$obPosicaoVeiculo->longitude?>">
 		</div>
 
+    <div class="form-group ">
+			<label>Linha ID</label>
+      <input type="text" class="form-control" name="linhaId" required value="<?=$obVeiculo->linhaId?>">
+		</div>
+
 		<div class="form-group mt-2">
 			<button type="submit" name="adicionar" class="btn btn-success">Adicionar</button>
 		</div>

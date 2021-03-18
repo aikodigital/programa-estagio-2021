@@ -15,6 +15,10 @@ $resultados = '';
 								</a>
 								<a name="excluir" href="Excluir.php?id='.$l->id.'"><button type="button" class="btn btn-primary">Excluir</button>
 								</a>
+								<a name="veiculos" href="Veiculos.php?id='.$l->id.'"><button type="button" class="btn btn-primary">Veiculos</button>
+								</a>
+								<a name="paradas" href="Paradas.php?id='.$l->id.'"><button type="button" class="btn btn-primary">Paradas</button>
+								</a>
 							</td>
 						</tr>';
 

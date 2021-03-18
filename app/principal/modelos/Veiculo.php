@@ -12,14 +12,15 @@ class Veiculo{
 
 	public $modelo;
 
-	public $idLinha;
+	public $linhaId;
 
 
 	public function cadastrar(){
 		$obBanco = new Banco('veiculo');
 		$this->id = $obBanco->insert([
 			'nome' => $this->nome,
-			'modelo' => $this->modelo
+			'modelo' => $this->modelo,
+			'linhaId' => $this->linhaId
 		]);
 		return true;
 	}
@@ -29,6 +30,7 @@ class Veiculo{
 		return(new Banco('veiculo'))->update('id = '.$this->id,[
 			'nome' => $this->nome,
 			'modelo' => $this->modelo,
+			'linhaId' => $this->linhaId
 		]);
 	}
 

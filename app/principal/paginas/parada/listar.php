@@ -13,7 +13,8 @@
 					<th>Nome</th>
           <th>Latitude</th>
           <th>Longitude</th>
-          <th class="col-md-2">Ações</th>
+          <th>Linha ID</th>
+          <th class="col-md-4">Ações</th>
 				</tr>
 			</thead>
 
