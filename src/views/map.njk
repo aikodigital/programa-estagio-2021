@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Programa-se em tempo real.</title>
+    <link rel="icon" href="/assets/logo-icon.ico"/>
+    <link rel="stylesheet" href="styles/animations.css"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/modal.css"/>
+    <link rel="stylesheet" href="styles/map-page.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  </head>
+
+  <body>
+    <div id="page-map">
+      <aside class="animate-right">
+        <header>
+          <img src="assets/logo.svg" alt="Logotype"/>
+          <h2>BemNaHora</h2>
+          <div class="container">
+            <div class="input-block">
+              <input placeholder=" Ex: Ramos" id="lines" name="lines" type="string" required="required"/>
+              <button onclick="getLines()">Buscar linhas</button>
+            </div>
+
+            <div class="input-block">
+              <input placeholder=" Ex: Afonso Braz" id="stops" name="stops" type="text" required="required"/>
+              <button onclick="getStops()">Buscar paradas</button>
+            </div>
+
+            <div class="input-block">
+              <input placeholder=" Cód: Parada" id="arrivals-stop" name="arrivals-stop" type="text" required="required"/>
+              <input placeholder=" Cód: Linha" id="arrivals-line" name="arrivals-line" type="text" required="required"/>
+              <button onclick="arrivalForecast()">Tempo Chegada</button>
+
+              <div class="input-block">
+                <button class="last" onclick="getVehicles()">Buscar Veículos</button>
+              </div>
+            </div>
+
+          </header>
+          <footer>
+            <a href="/" title="voltar para o início" class="animate-up">
+              <img src="/assets/arrow-back.svg" alt="Ir para o mapa"/>
+            </a>
+          </footer>
+        </aside>
+
+        <div id="mapid" class="hidden-map"></div>
+
+        <div class="modal-container">
+          <div class="modal">
+            <a onclick="closeModal()" class="close-modal"><img src="/assets/x.svg" alt="Ir para o mapa"/></a>
+            <h1>Resultado de sua busca:</h1>
+            <ul>
+              {# aqui vem as <li> #}
+            </ul>
+          </div>
+        </div>
+
+        <div class="load-gif">
+          <img src="/assets/loading.gif">
+        </div>
+
+        <script src="/script/map.js"></script>
+        <script src="/script/lines.js"></script>
+        <script src="/script/stops.js"></script>
+        <script src="/script/vehicles.js"></script>
+        <script src="/script/arrivals.js"></script>
+      </div>
+    </body>
+
+  </html>

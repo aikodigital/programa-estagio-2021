@@ -1,0 +1,116 @@
+#page-map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+aside {
+  width: clamp(24rem, 25vw, 44rem);
+  background: linear-gradient(329.54deg, #45668e 0%, #5f9ea0 100%) no-repeat;
+  padding: clamp(3rem, 5vw, 8rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+aside h2 {
+  text-align: center;
+  margin-top: 6rem;
+  font: 800 clamp(2rem, 5vw, 3.6rem) / 1.1 "Nunito", sans-serif;
+  margin-bottom: 2rem;
+}
+
+aside footer a {
+  text-decoration: none;
+  width: 4rem;
+  height: 4rem;
+  background: #809aeb;
+  border: 0;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  transition: background 200ms;
+  animation-delay: 250ms;
+  margin-top: 6rem;
+}
+
+aside footer a:hover {
+  background: #be961e;
+}
+
+aside .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-block button,
+.input-block input {
+  width: 100%;
+  min-height: 2.5rem;
+  border: 0;
+  margin: 0 0 2rem 0;
+  background: #809aeb;
+  border-radius: 0 0 5px 5px;
+  color: white;
+}
+
+.input-block input {
+  margin: 0 1rem 0 0;
+  background: white;
+  border-radius: 5px 5px 0 0;
+  color: black;
+}
+
+#arrivals-line {
+  border-radius: 0;
+  border-top: solid 1px black;
+}
+
+.input-block > .last {
+  border-radius: 5px;
+}
+
+.input-block button:hover {
+  background: #be961e;
+}
+
+.input-block input:focus {
+  background-color: rgba(226, 233, 255, 1);
+}
+
+#mapid {
+  width: 100%;
+  height: 100vh;
+}
+
+.load-gif {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-gif img {
+  margin: 0 auto;
+  max-width: 20vw;
+  max-height: 20vh;
+  transform: translateX(+100%);
+}
+
+.load-gif.active {
+  visibility: visible;
+  opacity: 1;
+}

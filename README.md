@@ -1,34 +1,130 @@
-# Programa de estágio - 2021
+<h1 align="center">
+    <img alt="logo" title="Happy" src="./public/assets/logo.svg" width="25%" />
+</h1>
 
-![Aiko](imagens/aiko.png)
+<h1 align="center">
+    Bem na hora
+</h1>
 
-O objetivo desta etapa é que você desenvolvedor implemente um dos testes listados a seguir, para que possamos avaliar seu conhecimento técnico em determinada área e a metodologia aplicada no desenvolvimento do teste.
+<p align="center">
+  <a href="#-Project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Layout">Layoult</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Technology">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Environment">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-License">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Participants">Participantes</a>
+</p>
+<br>
 
-Os testes não são restritos a uma tecnologia específica, o objetivo é que você consiga mostrar todo seu conhecimento e potencial como desenvolvedor utilizando as tecnologias que já sabe.
+<p align="center">
+  <img  src="https://img.shields.io/static/v1?label=licença&message=MIT&color=9cf&labelColor=white" alt="License">
+</p>
+<br>
 
-## Testes
+<p align="center">
+ <img alt="mockup" src="./public/assets/mockup.png" width="65%">
+</p>
 
-Os testes foram separados por "frentes" de desenvolvimento que se encaixam com a divisão do trabalho aplicada na empresa, escolha a que se sentir mais confortável em desenvolver.
+## 💻 Projeto
 
-* [Front-end](front-end.md)
-* [Back-end](back-end.md)
-* [Android](android.md)
+<strong>Bem na hora</strong> é uma aplicação web que tem como principal objetivo ajudar
+pessoas a obterem melhores informações sobre o transporte publico na cidade de são paulo. 🚌
 
-## Entregas
+Através da [API Olho Vivo](http://olhovivo.sptrans.com.br/) podemos coletar informações sobre
+linhas de ônibus, paradas de ônibus e onde encontram-se veículos em suas ultimas atualizações. 📌
 
-Para realizar a entrega do teste você deve:
+<strong>Bem na hora</strong> foi criado no programa de estágio 2021 da empresa [AIKO](https://aiko.digital/)
+na modalidade front-end. 📘
 
-* Relizar o fork e clonar esse repositório para sua máquina
-  
-* Criar uma branch com o nome de `teste/[TIPO DO TESTE]/[NOME]`
-  * `[TIPO DO TESTE]`: O teste que foi escolhido: `front-end`, `back-end` ou `android`
-  * `[SEU NOME]`: Seu nome
-  * Exemplos: `teste/front-end/fulano`; `teste/android/beltrano`
-  
-* Faça um commit da sua branch com a implementação de algum dos testes
-  
-* Realize o pull request da sua branch nesse repositório
+Algumas funcionalidades ainda estão sendo desenvolvidas, sinta-se avontade em contribuir.
+Aguardo sua PR. 😏
 
-Ficou em dúvida de como fazer um pull request? Talvez este [artigo](https://terminalroot.com.br/2017/12/como-criar-um-pull-request-no-github.html) possa ajudar.
+<br>
 
-Além do pull request você deve gravar um vídeo de no máximo 30 minutos mostrando o que foi desenvolvido, falando sobre as decisões que foram tomadas, as tecnologias utilizadas, arquitetura e tudo que você achar relevante. A facecam é opcional, mas é sempre um extra. Esse vídeo deve ser postado no youtube (pode ser não listado) e seu link deve estar no `README.md` do projeto.
+## 🎨 Layout
+
+<p align="center">
+<img src="./public/assets/layoutGIF2.gif" width="50%" height="50%" /><img src="./public/assets/layoutGIF1.gif" width="50%" height="50%" /></p>
+
+<br>
+
+## 🔨 Tecnologias
+
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com)
+- [Nunjucks](https://mozilla.github.io/nunjucks/)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+
+<br>
+
+## 📝 Environment
+
+1. Clone o repositório:
+
+```bash
+git@github.com:CaioLemec/Bem-na-hora.git
+```
+
+2. Instale o node.js:
+
+```bash
+ https://nodejs.org/en/
+```
+
+3. Abra o pasta do projeto no VSCode:
+
+```bash
+ cd ../Bem-na-hora
+```
+
+4. Instale as dependências usando o comando:
+
+```bash
+ npm install
+```
+
+5. Essas são as dependências necessárias:
+
+```bash
+ Express (web server)
+ Nunjucks (template engine)
+ Nodemoon (reload automatically when necessary)
+```
+
+6. No seu terminal use o comando:
+
+```bash
+npm start
+```
+
+7. acesse o endereço em um browser compatível:
+
+```bash
+http://localhost:5000/
+```
+
+<br>
+
+## ⚖️ License
+
+<br>
+
+Projeto licenciado por MIT [LICENSE](LICENSE.md).
+
+<br>
+
+## 😃 Participants
+
+<br>
+<img style="border-radius: 30%;" src="https://avatars3.githubusercontent.com/u/59886891?s=460&v=4" width="75px;"/>
+<br>
+<sub>&nbsp;&nbsp;&nbsp;Caio Lemec</sub>
+
+<br>
+<br>
+
+[![Badge](https://img.shields.io/static/v1?label=&message=caiolemec@gmail.com&color=9cf&style=flat-square&logo=Microsoft-Outlook&logoColor=white&link=mailto:caiolemec@gmail.com)](caiolemec@gmail.com) [![Badge](https://img.shields.io/static/v1?label=&message=CaioLemec&color=9cf&style=flat-square&logo=Linkedin&logoColor=white&link=https://br.linkedin.com/in/caio-lemec)](https://br.linkedin.com/in/caio-lemec/)
+
+<hr>
+
+<p align="center">⭐&nbsp;&nbsp;&nbsp;   Developed by Caio Lemec  &nbsp;&nbsp;&nbsp;⭐</p>
