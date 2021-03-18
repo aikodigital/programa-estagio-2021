@@ -22,7 +22,7 @@ class Parada{
 			'nome' => $this->nome,
 			'longitude' => $this->longitude,
 			'latitude' => $this->latitude,
-			'idLinha' => $this->linhaId
+			'linhaId' => $this->linhaId
 		]);
 		return true;
 	}
