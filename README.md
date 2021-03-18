@@ -46,6 +46,10 @@ Aguardo sua PR. 😏
 <p align="center">
 <img src="./public/assets/layoutGIF2.gif" width="50%" height="50%" /><img src="./public/assets/layoutGIF1.gif" width="50%" height="50%" /></p>
 
+## 🎨 Video sobre o projeto:
+
+- [Video](https://www.youtube.com/watch?v=VlXTsv0_r3I)
+
 <br>
 
 ## 🔨 Tecnologias
