@@ -9,7 +9,7 @@ class Banco{
 
 	const HOST = 'localhost';
 
-	const NAME = 'cinelist';
+	const NAME = 'teste back-end';
 
 	const USER = 'root';
 

@@ -1,50 +1,49 @@
 <?php
 
-namespace App\modelos;
-use \App\banco\Banco;
+namespace Principal\modelos;
+use \Principal\banco\Banco;
 use \PDO;
 
-class Filme{
+class Veiculo{
 
 	public $id;
 
-	public $titulo;
+	public $nome;
 
-	public $descricao;
+	public $modelo;
 
-	public $data;
+	public $idLinha;
+
 
 	public function cadastrar(){
-		$obBanco = new Banco('filme');
+		$obBanco = new Banco('veiculo');
 		$this->id = $obBanco->insert([
-			'titulo' => $this->titulo,
-			'descricao' => $this->descricao,
-			'data' => $this->data
+			'nome' => $this->nome,
+			'modelo' => $this->modelo
 		]);
 		return true;
 	}
 
 
 	public function atualizar(){
-		return(new Banco('filme'))->update('id = '.$this->id,[
-			'titulo' => $this->titulo,
-			'descricao' => $this->descricao,
-			'data' => $this->data
+		return(new Banco('veiculo'))->update('id = '.$this->id,[
+			'nome' => $this->nome,
+			'modelo' => $this->modelo,
 		]);
 	}
 
 	public function excluir(){
-		return (new Banco('filme'))->delete('id = '.$this->id);
+		return (new Banco('veiculo'))->delete('id = '.$this->id);
 	}
 
-	public static function getFilmes($where = null, $order = null, $limit = null){
-		return (new Banco('filme'))->select($where,$order,$limit)
+	public static function getVeiculos($where = null, $order = null, $limit = null){
+		return (new Banco('veiculo'))->select($where,$order,$limit)
 								   ->fetchAll(PDO::FETCH_CLASS,self::class);
 
 	}
 
-	public static function getFilme($id){
-		return (new Banco('filme'))->select('id = '.$id)->fetchObject(self::class);
+	public static function getVeiculo($id){
+		return (new Banco('veiculo'))->select('id = '.$id)->fetchObject(self::class);
 	}
 
 
