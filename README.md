@@ -7,12 +7,13 @@
 </h1>
 
 <p align="center">
-  <a href="#-Project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Layout">Layoult</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Technology">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Environment">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-License">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Participants">Participantes</a>
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layoult</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-video-sobre-o-projeto">Apresentação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#%EF%B8%8F-license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-participantes">Participantes</a>
 </p>
 <br>
 
@@ -39,8 +40,6 @@ na modalidade front-end. 📘
 Algumas funcionalidades ainda estão sendo desenvolvidas, sinta-se avontade em contribuir.
 Aguardo sua PR. 😏
 
-<br>
-
 ## 🎨 Layout
 
 <p align="center">
@@ -50,8 +49,6 @@ Aguardo sua PR. 😏
 
 - [Video](https://www.youtube.com/watch?v=VlXTsv0_r3I)
 
-<br>
-
 ## 🔨 Tecnologias
 
 - [Node.js](https://nodejs.org/en/)
@@ -59,9 +56,7 @@ Aguardo sua PR. 😏
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 
-<br>
-
-## 📝 Environment
+## 📝 Ambiente
 
 1. Clone o repositório:
 
@@ -107,25 +102,15 @@ npm start
 http://localhost:5000/
 ```
 
-<br>
+## ⚖️ Licença
 
-## ⚖️ License
+Projeto licenciado por MIT [LICENSE](./LICENSE).
 
-<br>
-
-Projeto licenciado por MIT [LICENSE](LICENSE.md).
-
-<br>
-
-## 😃 Participants
+## 😃 Participantes
 
 <br>
 <img style="border-radius: 30%;" src="https://avatars3.githubusercontent.com/u/59886891?s=460&v=4" width="75px;"/>
-<br>
 <sub>&nbsp;&nbsp;&nbsp;Caio Lemec</sub>
-
-<br>
-<br>
 
 [![Badge](https://img.shields.io/static/v1?label=&message=caiolemec@gmail.com&color=9cf&style=flat-square&logo=Microsoft-Outlook&logoColor=white&link=mailto:caiolemec@gmail.com)](caiolemec@gmail.com) [![Badge](https://img.shields.io/static/v1?label=&message=CaioLemec&color=9cf&style=flat-square&logo=Linkedin&logoColor=white&link=https://br.linkedin.com/in/caio-lemec)](https://br.linkedin.com/in/caio-lemec/)
 
