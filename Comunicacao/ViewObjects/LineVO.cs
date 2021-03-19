@@ -6,7 +6,7 @@ namespace Comunicacao.ViewObjects
 {
     public class LineVO
     {
-
+        public LineVO() { }
         public int Id { get; set; }
         public string Name { get; set; }
     }

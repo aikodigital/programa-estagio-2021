@@ -16,9 +16,6 @@ namespace API.Controllers
     {
         public LineController() : base() { }
 
-
-
-        
         [Route("LineList")]
         [HttpGet]
         public IActionResult LineList()
@@ -36,7 +33,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Line.ErrorLineList, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -65,7 +61,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             }
@@ -90,7 +85,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Line.ErrorLineSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -114,7 +108,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Line.ErrorLineChangeState, ex);
+
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -139,7 +133,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Line.ErrorLineRemove, ex);
+
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -168,7 +162,7 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Line.ErrorLineList, ex);
+
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         } 

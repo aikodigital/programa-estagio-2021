@@ -6,6 +6,7 @@ namespace Comunicacao.ViewObjects
 {
     public class LineByParadeVO
     {
+        public LineByParadeVO () { }
         public int Id { get; set; }
         public int LineId { get; set; }
 

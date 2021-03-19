@@ -35,7 +35,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerList, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -64,7 +63,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             }
@@ -88,7 +86,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -111,7 +108,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
@@ -136,7 +132,6 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                //LogBBL.Write(1, Constantes_Mensagens_Banner.ErrorBannerSave, ex);
                 return StatusCode(StatusCodes.Status500InternalServerError);
 
             }

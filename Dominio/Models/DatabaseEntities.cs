@@ -80,9 +80,9 @@ namespace Dominio.Models
 
                 entity.Property(e => e.DisabledAt).HasColumnType("datetime");
 
-                entity.Property(e => e.Latitude).HasColumnType("decimal(18, 6)");
+                entity.Property(e => e.Latitude).HasColumnType("decimal(18, 10)");
 
-                entity.Property(e => e.Longitude).HasColumnType("decimal(18, 6)");
+                entity.Property(e => e.Longitude).HasColumnType("decimal(18, 10)");
 
                 entity.Property(e => e.Name).HasMaxLength(255);
             });
@@ -116,9 +116,9 @@ namespace Dominio.Models
 
                 entity.Property(e => e.DisabledAt).HasColumnType("datetime");
 
-                entity.Property(e => e.Latitude).HasColumnType("decimal(18, 6)");
+                entity.Property(e => e.Latitude).HasColumnType("decimal(18, 10)");
 
-                entity.Property(e => e.Longitude).HasColumnType("decimal(18, 6)");
+                entity.Property(e => e.Longitude).HasColumnType("decimal(18, 10)");
 
                 entity.HasOne(d => d.Vehicle)
                     .WithMany(p => p.VehicleLocations)
