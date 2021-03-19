@@ -1,0 +1,19 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/API/obj/Debug/netcoreapp3.1
+/Comunicacao/obj/Debug/netcoreapp3.1
+/Dominio/obj/Debug/netcoreapp3.1
+/Negocio/obj/Debug/netcoreapp3.1
+/.vs/Core/v16
+/API/bin/Debug/netcoreapp3.1
+/API/obj
+/Comunicacao/bin/Debug/netcoreapp3.1
+/Comunicacao/obj
+/Dominio/bin/Debug/netcoreapp3.1
+/Dominio/obj
+/Negocio/bin/Debug/netcoreapp3.1
+/Negocio/obj
+/.vs/DefaultCore/v16
+/.vs
