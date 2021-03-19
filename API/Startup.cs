@@ -52,7 +52,7 @@ namespace API
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Negócios Pela Terra");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Aiko API");
             });
 
 
