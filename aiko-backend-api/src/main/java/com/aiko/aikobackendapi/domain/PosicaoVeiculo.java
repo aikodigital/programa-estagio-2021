@@ -25,11 +25,11 @@ public class PosicaoVeiculo implements Serializable {
     private double longitude;
     private long veiculoId;
 
-    public PosicaoVeiculo(double latitude, double longitude, long veiculoId) {
+    public PosicaoVeiculo(double latitude, double longitude, Veiculo veiculo) {
         super();
         this.latitude = latitude;
         this.longitude = longitude;
-        this.veiculoId = veiculoId;
+        this.veiculoId = veiculo.getId();
     }
 
     public PosicaoVeiculo() {
