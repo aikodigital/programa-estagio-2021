@@ -1,14 +1,15 @@
 package com.aiko.aikobackendapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,6 +25,10 @@ public class Parada implements Serializable {
     private String name;
     private double latitude;
     private double longitude;
+
+    //@JsonManagedReference
+    @ManyToMany(mappedBy = "paradas")
+    private List<Linha> linhas = new ArrayList();
 
     public Parada(String name, double latitude, double longitude) {
         super();
