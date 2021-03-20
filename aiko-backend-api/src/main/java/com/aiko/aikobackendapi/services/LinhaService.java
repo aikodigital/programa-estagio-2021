@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 public class LinhaService {
 
     @Autowired
-    LinhaRepository linhaRepository;
+    private LinhaRepository linhaRepository;
 }

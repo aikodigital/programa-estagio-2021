@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 public class PosicaoVeiculoService {
 
     @Autowired
-    PosicaoVeiculoRepository posicaoVeiculoRepository;
+    private PosicaoVeiculoRepository posicaoVeiculoRepository;
 }

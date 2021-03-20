@@ -8,5 +8,5 @@ import org.springframework.stereotype.Service;
 public class ParadaService {
 
     @Autowired
-    ParadaRepository paradaRepository;
+    private ParadaRepository paradaRepository;
 }
