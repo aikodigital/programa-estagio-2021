@@ -1,0 +1,5 @@
+﻿Utilizar o seguinte comando no CLI:
+
+Scaffold-DbContext "Data Source=THIAGO;Initial Catalog=Aiko;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -Project Dominio -o Models -Context DatabaseEntities -Force
+
+(https://docs.microsoft.com/pt-br/ef/core/cli/powershell)
