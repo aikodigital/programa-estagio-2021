@@ -1,10 +1,10 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('paradas',function(table){
-        table.integer('idParada').primary();
+        table.string('idParada').primary();       // Utilizei do mesmo tipo de estratégia da tabela veículos, para que não haja repetições
         table.string('name').notNullable();
-        table.double('latitude').notNullable();
-        table.double('longitude').notNullable();
+        table.specificType('latitude').notNullable();
+        table.specificType('longitude').notNullable();
         })
 };
 
