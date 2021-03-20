@@ -4,11 +4,10 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,12 +22,13 @@ public class Linha implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private List<Parada> paradas;
 
-    public Linha(String name, List<Parada> paradas) {
+    @OneToMany(mappedBy = "id")
+    private List<Parada> paradas  = new ArrayList();
+
+    public Linha(String name) {
         super();
         this.name = name;
-        this.paradas = paradas;
     }
 
     public Linha() {
