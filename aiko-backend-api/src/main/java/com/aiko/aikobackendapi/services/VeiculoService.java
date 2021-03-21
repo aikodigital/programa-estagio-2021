@@ -1,11 +1,13 @@
 package com.aiko.aikobackendapi.services;
 
+import com.aiko.aikobackendapi.domain.Linha;
 import com.aiko.aikobackendapi.domain.Veiculo;
 import com.aiko.aikobackendapi.repositories.VeiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -48,5 +50,17 @@ public class VeiculoService {
 
         veiculoRepository.deleteById(id);
 
+    }
+
+    public List<Veiculo> veiculosPorLinha(long id) {
+        List<Long> veiculosIds = veiculoRepository.findByLinhaId(id);
+
+        List<Veiculo> veiculos = new ArrayList();
+
+        for (long ids : veiculosIds) {
+            veiculos.add(buscar(ids));
+        }
+
+        return (veiculos.isEmpty()) ? null : veiculos;
     }
 }

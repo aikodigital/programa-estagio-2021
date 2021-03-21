@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@EnableJpaRepositories
 public interface LinhaRepository extends JpaRepository<Linha, Long> {
 
     @Query(value = "SELECT linha_id FROM linha_parada WHERE parada_id = :id", nativeQuery = true)
