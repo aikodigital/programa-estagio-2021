@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.increments();
         table.double('latitude').notNullable();
         table.double('longitude').notNullable();
-        table.integer('veiculoID').notNullable();
+        table.specificType('veiculoID').notNullable();
 
         table.foreign('veiculoID').references('id').inTable('veiculos');
         })

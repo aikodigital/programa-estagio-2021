@@ -10,7 +10,7 @@ module.exports = {
     migrations: {
       directory: './src/database/migrations'
     },
-    useNullAsDefault: true
+    useNullAsDefault: true,
   },
 
   staging: {
