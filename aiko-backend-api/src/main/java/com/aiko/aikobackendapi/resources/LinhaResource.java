@@ -58,4 +58,12 @@ public class LinhaResource {
         return ResponseEntity.ok().build();
     }
 
+    //Recebe o identificador de uma parada e retorna as linhas associadas a parada informada
+    @RequestMapping(value = "/parada/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> getLinhasPorParada(@PathVariable long id) {
+        List<Linha> linhas = linhaService.linhasPorParada(id);
+
+        return (linhas == null) ? ResponseEntity.notFound().build() : ResponseEntity.ok().body(linhas);
+    }
+
 }

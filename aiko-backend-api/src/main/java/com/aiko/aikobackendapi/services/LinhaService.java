@@ -5,6 +5,7 @@ import com.aiko.aikobackendapi.repositories.LinhaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -47,5 +48,17 @@ public class LinhaService {
 
         linhaRepository.deleteById(id);
 
+    }
+
+    public List<Linha> linhasPorParada(long id) {
+        List<Long> linhasIds = linhaRepository.findByParadaId(id);
+
+        List<Linha> linhas = new ArrayList();
+
+        for (long ids : linhasIds) {
+            linhas.add(buscar(ids));
+        }
+
+        return (linhas.isEmpty()) ? null : linhas;
     }
 }
