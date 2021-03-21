@@ -1,6 +1,8 @@
 package com.aiko.aikobackendapi.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,10 +26,11 @@ public class Linha implements Serializable {
     private long id;
     private String name;
 
-    //@JsonBackReference
+    @JsonIgnore
+    @JsonManagedReference
     @ManyToMany
     @JoinTable(
-            name = "LINHA_PARADA",
+            name = "linha_parada",
             joinColumns = @JoinColumn(name = "linha_id"),
             inverseJoinColumns = @JoinColumn(name = "parada_id")
     )

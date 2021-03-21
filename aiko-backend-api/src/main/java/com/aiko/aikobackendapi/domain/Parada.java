@@ -1,5 +1,6 @@
 package com.aiko.aikobackendapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,7 +27,7 @@ public class Parada implements Serializable {
     private double latitude;
     private double longitude;
 
-    //@JsonManagedReference
+    @JsonBackReference
     @ManyToMany(mappedBy = "paradas")
     private List<Linha> linhas = new ArrayList();
 
@@ -40,4 +41,5 @@ public class Parada implements Serializable {
     public Parada() {
         super();
     }
+
 }
