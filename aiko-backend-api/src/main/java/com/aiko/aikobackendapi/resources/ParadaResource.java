@@ -57,6 +57,14 @@ public class ParadaResource {
         return ResponseEntity.ok().build();
     }
 
+    //Recebe uma posição (lat, long) como parâmetro e retorna a parada mais proxima a posição informada
+    @RequestMapping(value = "/posicao/{latitude}/{longitude}", method = RequestMethod.GET)
+    public ResponseEntity<?> paradaPorPosicao(@PathVariable double latitude, @PathVariable double longitude) {
+        Parada parada =  paradaService.paradasPorPosicao(latitude, longitude);
+
+        return (parada == null ? ResponseEntity.notFound().build() : ResponseEntity.ok().body(parada));
+    }
+
 
 
 }

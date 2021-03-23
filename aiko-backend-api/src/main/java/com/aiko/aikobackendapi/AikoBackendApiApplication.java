@@ -44,6 +44,7 @@ public class AikoBackendApiApplication  implements CommandLineRunner {
 		paradaService.adicionar(parada2);*/
 
 		//OBJETOS
+/*
 		Parada parada1 = new Parada("Esquina 1", 2, 3);
 		Parada parada2 = new Parada("Esquina 2", 2, 3);
 
@@ -67,6 +68,7 @@ public class AikoBackendApiApplication  implements CommandLineRunner {
 		//ALTERANDO LINHA 1
 		linha1.getParadas().add(parada2);
 		linhaService.atualizar(linha1);
+*/
 
 
 
