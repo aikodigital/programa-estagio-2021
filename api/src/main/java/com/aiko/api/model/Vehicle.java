@@ -1,12 +1,12 @@
 package com.aiko.api.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -23,8 +23,8 @@ public class Vehicle {
 
   private String modelo;
 
-  @OneToOne(cascade = CascadeType.DETACH)
-  @JoinColumn(name = "line_id", referencedColumnName = "id")
+  @ManyToOne
+  @JoinColumn(name = "line_id", nullable=false)
   private Line lineId;
 
   @OneToOne(mappedBy = "vehicle_id")

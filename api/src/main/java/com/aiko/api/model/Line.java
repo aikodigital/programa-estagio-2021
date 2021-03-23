@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -25,7 +25,7 @@ public class Line {
   @ManyToMany(mappedBy = "lines")
   private List<Stop> stops;
 
-  @OneToOne(mappedBy = "line_id")
-  private Vehicle vehicle;
+  @OneToMany(mappedBy = "lines")
+  private List<Vehicle> vehicles;
   
 }

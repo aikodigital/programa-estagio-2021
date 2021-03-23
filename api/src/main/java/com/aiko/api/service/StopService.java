@@ -19,6 +19,10 @@ public class StopService {
     return stopRepository.save(stop);
   }
 
+  public Stop update(Stop stop){
+    return stopRepository.save(stop);
+  }
+
   public List<Stop> findAll(){
     return stopRepository.findAll();
   }
