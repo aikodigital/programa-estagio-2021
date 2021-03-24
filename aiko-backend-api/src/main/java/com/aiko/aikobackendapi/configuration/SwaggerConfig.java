@@ -28,7 +28,8 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
                 .title("Aiko - Programa de Estágio 2021")
-                .description("\"Teste Back-end - Sadraque Nunes\"")
+                .description("Teste Back-end - Sadraque Nunes")
+                .contact("sadraquenunesmartiniano@gmail.com")
                 .version("1.0.0")
                 .license("")
                 .licenseUrl("")
