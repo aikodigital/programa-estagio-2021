@@ -2,6 +2,9 @@ package com.aiko.aikobackendapi.resources;
 
 import com.aiko.aikobackendapi.domain.Linha;
 import com.aiko.aikobackendapi.services.LinhaService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +14,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/linhas")
+@Api(value = "linhas")
 public class LinhaResource {
 
     @Autowired
     private LinhaService linhaService;
 
+    @ApiOperation(value = "retorna Linha por ID")
+    @ApiParam(value = "id")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> get(@PathVariable long id) {
         Linha linha = linhaService.buscar(id);

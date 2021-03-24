@@ -19,7 +19,7 @@ public class AikoBackendApiApplication  implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-/*		//OBJETOS
+		//OBJETOS
 		Parada parada1 = new Parada("Esquina 1", 2, 3);
 		Parada parada2 = new Parada("Esquina 2", 2, 3);
 
@@ -32,8 +32,8 @@ public class AikoBackendApiApplication  implements CommandLineRunner {
 		linhaService.adicionar(linha2);
 
 		//ADICIONANDO NAS LISTAS
-*//*		linha1.getParadas().add(parada1);
-		linha2.getParadas().add(parada2);*//*
+		linha1.getParadas().add(parada1);
+		linha2.getParadas().add(parada2);
 
 		parada1.getLinhas().add(linha1);
 		parada1.getLinhas().add(linha2);
@@ -41,7 +41,7 @@ public class AikoBackendApiApplication  implements CommandLineRunner {
 
 		//SALVANDO BANCO DE DADOS
 		paradaService.adicionar(parada1);
-		paradaService.adicionar(parada2);*/
+		paradaService.adicionar(parada2);
 
 		//OBJETOS
 /*
