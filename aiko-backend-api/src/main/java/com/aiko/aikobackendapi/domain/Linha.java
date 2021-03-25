@@ -1,7 +1,6 @@
 package com.aiko.aikobackendapi.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,8 +24,7 @@ public class Linha implements Serializable {
     private long id;
     private String name;
 
-    @JsonIgnore
-    @JsonManagedReference
+    @JsonBackReference
     @ManyToMany
     @JoinTable(
             name = "linha_parada",
