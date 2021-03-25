@@ -25,7 +25,7 @@ module.exports={
         };
 
         const veiculoEscolhido = await connections('veiculos') 
-        .where('id', id);
+        .where('id', id).select('name');
         
         return response.json(veiculoEscolhido);
     },
@@ -35,7 +35,7 @@ module.exports={
         const{name, modelo} = request.body;
         
         //Cria uma chave hexadecimal aleatória no tamanho de 2 bytes para diferenciar os ids das linhas e prover uma segurança na manipulação da tabela 'veiculos' que usa tal coluna como parâmetro
-        const id = crypto.randomBytes(2).toString('HEX');  
+        const id = crypto.randomBytes(1).toString('HEX');  
         
         //Aloca na variável 'linhasID' a 'id' proveniente da coluna 'idLinha' da tabela 'linhas', logo será alocada na coluna 'linhasID'
         const linhasID = request.headers.authorization;   
@@ -63,7 +63,7 @@ module.exports={
 
         //Condional que verifica se o valor da coluna 'linhasID' é o mesmo que o da requisição no head, caso não seja retorna um erro.
         if (veiculo.linhasID != linhasID) {    
-        return response.status(401).json({ error: 'Operation not permitted.' })
+        return response.status(401).json({ error: 'Operação não permitida, verifique a autorização.' })
         };
         
         //Caso não retorne o erro a função segue os seu fluxo e deleta a tabela solicitada
@@ -71,6 +71,28 @@ module.exports={
 
         return response.status(204).send(); 
     },
+    //Função que altera os dados não gerados automáticamente na tabela do tipo 'veiculos'
+    async update(request,response){
+        const {id}=request.params;
+        const linhasID = request.headers.authorization;
+        
+        const veiculo = await connections('veiculos') 
+        .where('id', id)          
+        .select('linhasID')         
+        .first();
+        
+        if (veiculo.linhasID != linhasID) {    
+            return response.status(401).json({ error: 'Operação não permitida, verifique a autorização.' })
+            };
+        
+        const {name,modelo}=request.body;
+        const update = await connections('veiculos').where('id',id).update({
+            'name':name,
+            'modelo': modelo,
+        });
 
+        return response.json(update);
+
+    }
 
 };

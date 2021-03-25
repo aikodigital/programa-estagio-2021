@@ -1,5 +1,6 @@
 const connections= require('../database/connections')
 const crypto = require('crypto');  
+const { update } = require('./veiculosController');
 
 module.exports={
     //Função que retorna todos as tabelas do tipo 'paradas'
@@ -35,7 +36,7 @@ module.exports={
         const{ name, latitude, longitude} = request.body;
 
         //Cria uma chave hexadecimal aleatória no tamanho de 2 bytes para diferenciar os ids das paradas e prover uma segurança na manipulação da tabela 'linhas' que usa tal coluna como parâmetro
-        const idParada = crypto.randomBytes(2).toString('HEX'); 
+        const idParada = crypto.randomBytes(2).toString('hex'); 
 
         await connections('paradas').insert({
             idParada,
@@ -60,7 +61,7 @@ module.exports={
 
         //Condional que verifica se o valor da coluna 'idParada' é o mesmo que o da requisição no head, caso não seja retorna um erro.
         if (parada.idParada != paradaID) {     
-        return response.status(401).json({ error: 'Operação não permitida.' })
+        return response.status(401).json({ error: 'Operação não permitida, verifique a autorização.' })
         };
         
         //Caso não retorne o erro a função segue os seu fluxo e deleta a tabela solicitada
@@ -68,5 +69,30 @@ module.exports={
 
         return response.status(204).send(); 
     },
+    //Função que altera os dados não gerados automáticamente na tabela do tipo 'paradas'
+    async update(request,response){
+        const { idParada } = request.params; 
+        const paradaID = request.headers.authorization;    
 
+        const parada = await connections('paradas') 
+        .where('idParada', idParada)          
+        .select('idParada')         
+        .first();                  
+
+        //Condional que verifica se o valor da coluna 'idParada' é o mesmo que o da requisição no head, caso não seja retorna um erro.
+        if (parada.idParada != paradaID) {     
+        return response.status(401).json({ error: 'Operação não permitida, verifique a autorização.' })
+        };
+
+        const {name,latitude,longitude}=request.body;
+        const update = await connections('paradas').where('idParada',idParada).update({
+            'name':name,
+            'latitude': latitude,
+            'longitude': longitude,
+        });
+
+        return response.json(update);
+
+
+    }
 }

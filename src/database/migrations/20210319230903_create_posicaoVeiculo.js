@@ -2,8 +2,8 @@
 exports.up = function(knex) {
     return knex.schema.createTable('posicaoVeiculos',function(table){
         table.increments();
-        table.double('latitude').notNullable();
-        table.double('longitude').notNullable();
+        table.float('latitude').notNullable();
+        table.float('longitude').notNullable();
         table.specificType('veiculoID').notNullable();
 
         table.foreign('veiculoID').references('id').inTable('veiculos');
