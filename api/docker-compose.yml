@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  mysql:
+    container_name: mobility-db
+    image: mysql:5.7
+    command: --max_allowed_packet=32505856
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_DATABASE=mobility
+      - MYSQL_USER=myuser
+      - MYSQL_PASSWORD=pass
+      - TZ=America/Sao_Paulo
+    expose:
+      - 3306
+    ports: 
+      - 3306:3306
+  api:
+    container_name: mobility-api
+    build: .
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mobility?useLegacyDatetimeCode=false&serverTimezone=America/Sao_Paulo&createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: myuser
+      SPRING_DATASOURCE_PASSWORD: pass
+    ports:
+      - 80:8080
