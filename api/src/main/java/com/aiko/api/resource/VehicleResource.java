@@ -24,21 +24,17 @@ public class VehicleResource {
   @Autowired
   private VehicleService vehicleService;
 
-
   @PostMapping(path = "/vehicles")
   public ResponseEntity<VehicleResponseDTO> createVehicle(
     @RequestBody VehicleRequestDTO vehicleRequestDTO){
-
     return ResponseEntity
       .status(HttpStatus.CREATED)
       .body(vehicleService.save(vehicleRequestDTO));
-
   }
 
   @PutMapping(path = "/vehicles/{id}")
   public ResponseEntity<VehicleResponseDTO> updateVehicle(
     @RequestBody VehicleRequestDTO vehicleRequestDTO, @PathVariable Long id){
-
     return ResponseEntity
       .status(HttpStatus.ACCEPTED)
       .body(vehicleService.save(vehicleRequestDTO));
@@ -46,7 +42,6 @@ public class VehicleResource {
 
   @DeleteMapping(path = "/vehicles/{id}")
   public ResponseEntity<VehicleResponseDTO> updateVehicle(@PathVariable Long id) throws Exception{
-    
     return ResponseEntity
       .status(HttpStatus.ACCEPTED)
       .body(vehicleService.delete(id));
@@ -54,16 +49,11 @@ public class VehicleResource {
 
   @GetMapping(path = "/vehicles")
   public ResponseEntity<List<VehicleResponseDTO>> getVehicles(){
-    
     return ResponseEntity.status(HttpStatus.OK).body(vehicleService.findAll());
   }
 
   @GetMapping(path = "/vehicles/{id}")
   public ResponseEntity<VehicleResponseDTO> getVehicle(@PathVariable Long id) throws Exception{
-    
-      
     return ResponseEntity.status(HttpStatus.OK).body(vehicleService.findById(id));
-
- 
   }
 }

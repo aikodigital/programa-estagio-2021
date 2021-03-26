@@ -23,21 +23,16 @@ public class VehicleService {
   private VehicleRepository vehicleRepository;
 
   public VehicleResponseDTO save(VehicleRequestDTO vehicleRequestDTO){
-
     JMapper<Vehicle, VehicleRequestDTO> vehicleRequestMapper;
     JMapper<VehicleResponseDTO, Vehicle> vehicleResponseMapper;
     Vehicle vehicle;
     Vehicle savedVehicle;
     VehicleResponseDTO vehicleResponseDTO;
-
     vehicleRequestMapper = new JMapper<>(Vehicle.class, VehicleRequestDTO.class);
-    vehicle = vehicleRequestMapper.getDestination(vehicleRequestDTO);
-    
+    vehicle = vehicleRequestMapper.getDestination(vehicleRequestDTO);    
     savedVehicle = vehicleRepository.save(vehicle);
-
     vehicleResponseMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
     vehicleResponseDTO = vehicleResponseMapper.getDestination(savedVehicle);
-
     return vehicleResponseDTO;
   }
 
@@ -45,10 +40,8 @@ public class VehicleService {
     JMapper<VehicleResponseDTO, Vehicle> vehicleResponseMapper;
     Vehicle savedVehicle;
     VehicleResponseDTO vehicleResponseDTO;
-
     Vehicle vehicle = vehicleRepository.findById(id)
         .orElseThrow(() -> new DataNotFoundException("Vehicle not found."));
-
     if(vehicleRequestDTO.getName() != null){
       vehicle.setName(vehicleRequestDTO.getName());
     }
@@ -58,71 +51,50 @@ public class VehicleService {
     if(vehicleRequestDTO.getModelo() != null){
       vehicle.setModelo(vehicleRequestDTO.getModelo());
     }
-
     savedVehicle = vehicleRepository.save(vehicle);
-
     vehicleResponseMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
     vehicleResponseDTO = vehicleResponseMapper.getDestination(savedVehicle);
-
     return vehicleResponseDTO;
   }
 
   public VehicleResponseDTO delete(Long id) throws Exception{
     JMapper<VehicleResponseDTO, Vehicle> vehicleResponseMapper;
-    VehicleResponseDTO vehicleResponseDTO;  
-    
+    VehicleResponseDTO vehicleResponseDTO;      
     Vehicle vehicle = vehicleRepository.findById(id)
       .orElseThrow(() -> new DataNotFoundException("Vehicle not found."));
-
     vehicleRepository.delete(vehicle);
-
     vehicleResponseMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
     vehicleResponseDTO = vehicleResponseMapper.getDestination(vehicle);
-
-    return vehicleResponseDTO;
-    
+    return vehicleResponseDTO;  
   }
 
   public List<VehicleResponseDTO> findAll(){
-    
+   
     JMapper<VehicleResponseDTO, Vehicle> vehicleMapper;
     List<VehicleResponseDTO> vehicleResponseDTOs;
-
-    List<Vehicle> vehicles = vehicleRepository.findAll();
-    
+    List<Vehicle> vehicles = vehicleRepository.findAll();    
     vehicleMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
-
     vehicleResponseDTOs = vehicles
       .stream()
       .map(vehicle -> vehicleMapper.getDestination(vehicle))
       .collect(Collectors.toList());
-
     return vehicleResponseDTOs;
   }
 
   public VehicleResponseDTO findById(Long id) throws Exception{
     JMapper<VehicleResponseDTO, Vehicle> vehicleMapper;
     VehicleResponseDTO vehicleResponseDTO;
-
     try {
       Vehicle vehicle = vehicleRepository.findById(id)
-        .orElseThrow(() -> new DataNotFoundException("Vehicle not found."));
-      
+        .orElseThrow(() -> new DataNotFoundException("Vehicle not found."));   
       vehicleMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
-      
       vehicleResponseDTO = vehicleMapper.getDestination(vehicle);
-      
       return vehicleResponseDTO;
-
     } catch (Exception e) {
       throw e;
     }
-
   }
 
-  public void delete(Vehicle vehicle){
-    vehicleRepository.delete(vehicle);
-  }
 
 
   // Vehichle Positions
