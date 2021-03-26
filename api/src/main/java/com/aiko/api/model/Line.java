@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 
 import lombok.Data;
 
@@ -22,10 +24,14 @@ public class Line {
 
   private String name;
 
-  @ManyToMany(mappedBy = "lines")
+  @ManyToMany
+  @JoinTable(
+  name = "line_stop", 
+  joinColumns = @JoinColumn(name = "line_id"), 
+  inverseJoinColumns = @JoinColumn(name = "stop_id"))
   private List<Stop> stops;
 
-  @OneToMany(mappedBy = "lines")
+  @OneToMany(mappedBy = "lineId")
   private List<Vehicle> vehicles;
   
 }

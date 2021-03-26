@@ -1,10 +1,10 @@
 package com.aiko.api.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -27,6 +27,6 @@ public class Vehicle {
   @JoinColumn(name = "line_id", nullable=false)
   private Line lineId;
 
-  @OneToOne(mappedBy = "vehicle_id")
+  @Embedded
   private VehiclePosition vehiclePosition;
 }

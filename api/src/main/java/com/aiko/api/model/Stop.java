@@ -6,10 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.sound.sampled.Line;
-import javax.persistence.JoinColumn;
+
 
 import lombok.Data;
 
@@ -26,10 +24,6 @@ public class Stop {
   private Double latitude;
   private Double longitude;
 
-  @ManyToMany
-  @JoinTable(
-  name = "stop_line", 
-  joinColumns = @JoinColumn(name = "stop_id"), 
-  inverseJoinColumns = @JoinColumn(name = "line_id"))
+  @ManyToMany(mappedBy = "stops")
   private List<Line> lines;
 }
