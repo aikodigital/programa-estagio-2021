@@ -30,13 +30,29 @@ public class LineService {
   private VehicleRepository vehicleRepository;
 
   public LineResponseDTO save(LineRequestDTO lineRequestDTO){
-    JMapper<Line, LineRequestDTO> lineRequestMapper;
     JMapper<LineResponseDTO, Line> lineResponseMapper;
-    Line line;
+    Line line = new Line();
     Line savedLine;
     LineResponseDTO lineResponseDTO;
-    lineRequestMapper = new JMapper<>(Line.class, LineRequestDTO.class);
-    line = lineRequestMapper.getDestination(lineRequestDTO);    
+    if(lineRequestDTO.getName() != null){
+      line.setName(lineRequestDTO.getName());
+    }
+    if(lineRequestDTO.getStopsIds() != null){
+      List<Stop> stops = lineRequestDTO.getStopsIds()
+        .stream()
+        .map(stopId -> stopRepository.findById(stopId)
+          .orElseThrow(() -> new DataNotFoundException("Stop not found.")))
+        .collect(Collectors.toList());
+      line.setStops(stops);
+    }
+    if(lineRequestDTO.getVehiclesId() != null){
+      List<Vehicle> vehicles = lineRequestDTO.getVehiclesId()
+        .stream()
+        .map(vehicleId -> vehicleRepository.findById(vehicleId)
+          .orElseThrow(() -> new DataNotFoundException("Stop not found.")))
+        .collect(Collectors.toList());
+      line.setVehicles(vehicles);
+    }   
     savedLine = lineRepository.save(line);
     lineResponseMapper = new JMapper<>(LineResponseDTO.class, Line.class);
     lineResponseDTO = lineResponseMapper.getDestination(savedLine);
@@ -88,25 +104,25 @@ public class LineService {
   public List<LineResponseDTO> findAll(){
    
     JMapper<LineResponseDTO, Line> vehicleMapper;
-    List<LineResponseDTO> LineResponseDTOs;
-    List<Line> vehicles = lineRepository.findAll();    
-    vehicleMapper = new JMapper<>(LineResponseDTO.class, Line.class);
-    LineResponseDTOs = vehicles
+    List<LineResponseDTO> lineResponseDTOs;
+    List<Line> vehicles = lineRepository.findAll(); 
+    vehicleMapper = new JMapper<>(LineResponseDTO.class, Line.class);   
+    lineResponseDTOs = vehicles
       .stream()
       .map(line -> vehicleMapper.getDestination(line))
       .collect(Collectors.toList());
-    return LineResponseDTOs;
+    return lineResponseDTOs;
   }
 
   public LineResponseDTO findById(Long id) throws Exception{
     JMapper<LineResponseDTO, Line> vehicleMapper;
-    LineResponseDTO LineResponseDTO;
+    LineResponseDTO lineResponseDTO;
     try {
       Line line = lineRepository.findById(id)
         .orElseThrow(() -> new DataNotFoundException("Line not found."));   
       vehicleMapper = new JMapper<>(LineResponseDTO.class, Line.class);
-      LineResponseDTO = vehicleMapper.getDestination(line);
-      return LineResponseDTO;
+      lineResponseDTO = vehicleMapper.getDestination(line);
+      return lineResponseDTO;
     } catch (Exception e) {
       throw e;
     }

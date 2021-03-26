@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.googlecode.jmapper.annotations.JMap;
 
 import lombok.Data;
 
@@ -17,11 +18,14 @@ public class Stop {
   
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private long Id;
+  private long id;
 
+  @JMap
   private String name;
 
+  @JMap
   private Double latitude;
+  @JMap
   private Double longitude;
 
   @ManyToMany(mappedBy = "stops")

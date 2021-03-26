@@ -16,16 +16,16 @@ public class Vehicle {
   
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private long Id;
+  private long id;
 
 
   private String name;
 
-  private String modelo;
+  private String model;
 
   @ManyToOne
-  @JoinColumn(name = "line_id", nullable=false)
-  private Line lineId;
+  @JoinColumn(name = "line_id")
+  private Line line;
 
   @Embedded
   private VehiclePosition vehiclePosition;

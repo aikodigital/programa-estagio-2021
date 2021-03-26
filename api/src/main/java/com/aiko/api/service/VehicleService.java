@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.aiko.api.exception.DataNotFoundException;
+import com.aiko.api.model.Line;
 import com.aiko.api.model.Vehicle;
 import com.aiko.api.model.VehiclePosition;
 import com.aiko.api.model.dto.VehiclePositionRequestDTO;
 import com.aiko.api.model.dto.VehiclePositionResponseDTO;
 import com.aiko.api.model.dto.VehicleRequestDTO;
 import com.aiko.api.model.dto.VehicleResponseDTO;
+import com.aiko.api.repository.LineRepository;
 import com.aiko.api.repository.VehicleRepository;
 import com.googlecode.jmapper.JMapper;
 
@@ -22,14 +24,24 @@ public class VehicleService {
   @Autowired
   private VehicleRepository vehicleRepository;
 
+  @Autowired LineRepository lineRepository;
+
   public VehicleResponseDTO save(VehicleRequestDTO vehicleRequestDTO){
-    JMapper<Vehicle, VehicleRequestDTO> vehicleRequestMapper;
     JMapper<VehicleResponseDTO, Vehicle> vehicleResponseMapper;
-    Vehicle vehicle;
+    Vehicle vehicle = new Vehicle();
     Vehicle savedVehicle;
     VehicleResponseDTO vehicleResponseDTO;
-    vehicleRequestMapper = new JMapper<>(Vehicle.class, VehicleRequestDTO.class);
-    vehicle = vehicleRequestMapper.getDestination(vehicleRequestDTO);    
+    if(vehicleRequestDTO.getName() != null){
+      vehicle.setName(vehicleRequestDTO.getName());
+    }
+    if(vehicleRequestDTO.getLineId() != null){
+      Line line = lineRepository.findById(vehicleRequestDTO.getLineId())
+        .orElseThrow(() -> new DataNotFoundException("Line not found."));
+      vehicle.setLine(line);
+    }
+    if(vehicleRequestDTO.getModel() != null){
+      vehicle.setModel(vehicleRequestDTO.getModel());
+    }    
     savedVehicle = vehicleRepository.save(vehicle);
     vehicleResponseMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
     vehicleResponseDTO = vehicleResponseMapper.getDestination(savedVehicle);
@@ -46,10 +58,12 @@ public class VehicleService {
       vehicle.setName(vehicleRequestDTO.getName());
     }
     if(vehicleRequestDTO.getLineId() != null){
-      vehicle.setLineId(vehicleRequestDTO.getLineId());
+      Line line = lineRepository.findById(vehicleRequestDTO.getLineId())
+        .orElseThrow(() -> new DataNotFoundException("Line not found."));
+      vehicle.setLine(line);
     }
-    if(vehicleRequestDTO.getModelo() != null){
-      vehicle.setModelo(vehicleRequestDTO.getModelo());
+    if(vehicleRequestDTO.getModel() != null){
+      vehicle.setModel(vehicleRequestDTO.getModel());
     }
     savedVehicle = vehicleRepository.save(vehicle);
     vehicleResponseMapper = new JMapper<>(VehicleResponseDTO.class, Vehicle.class);
@@ -140,24 +154,24 @@ public class VehicleService {
   public VehiclePositionResponseDTO updateVehiclePositionByVehicleId(
     Long id, VehiclePositionRequestDTO vehiclePositionRequestDTO) throws Exception{
   
-    JMapper<Vehicle, VehiclePositionRequestDTO> vehicleRequestMapper;
     JMapper<VehiclePositionResponseDTO, Vehicle> vehicleResponseMapper;
     VehiclePositionResponseDTO vehiclePositionResponseDTO;
-
+    Vehicle savedVehicle;
     try {
       Vehicle vehicle = vehicleRepository.findById(id)
       .orElseThrow(() -> new DataNotFoundException("Vehicle not found."));
-      VehiclePosition vehiclePosition;
-      vehicleRequestMapper = new JMapper<>(Vehicle.class, VehiclePositionRequestDTO.class);
-      vehiclePosition = vehicleRequestMapper.getDestination(vehiclePositionRequestDTO).getVehiclePosition();
-      
-      vehicle.setVehiclePosition(vehiclePosition);
-      
+      VehiclePosition vehiclePosition = new VehiclePosition();
+      if(vehiclePositionRequestDTO.getVehiclePosition().getLatitude() != null){
+        vehiclePosition.setLatitude(vehiclePositionRequestDTO.getVehiclePosition().getLatitude());
+      }
+      if(vehiclePositionRequestDTO.getVehiclePosition().getLongitude() != null){
+        vehiclePosition.setLongitude(vehiclePositionRequestDTO.getVehiclePosition().getLongitude());
+      }
+      vehicle.setVehiclePosition(vehiclePosition);  
+      savedVehicle = vehicleRepository.save(vehicle);
       vehicleResponseMapper = new JMapper<>(VehiclePositionResponseDTO.class, Vehicle.class); 
-      vehiclePositionResponseDTO = vehicleResponseMapper.getDestination(vehicle);
-      
+      vehiclePositionResponseDTO = vehicleResponseMapper.getDestination(savedVehicle);
       return vehiclePositionResponseDTO;
-
     } catch (Exception e) {
       throw e;
     }

@@ -9,7 +9,7 @@ import lombok.Data;
 public class VehiclePositionResponseDTO {
   
   @JMap
-  private long Id;
+  private long id;
 
   @JMap
   private VehiclePosition vehiclePosition;

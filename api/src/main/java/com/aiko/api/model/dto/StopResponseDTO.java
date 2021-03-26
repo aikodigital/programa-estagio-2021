@@ -13,7 +13,7 @@ import lombok.Data;
 public class StopResponseDTO {
 
   @JMap
-  private long Id;
+  private long id;
 
   @JMap
   private String name;
@@ -27,8 +27,8 @@ public class StopResponseDTO {
   private List<Long> linesIds;
 
   @JMapConversion(from={"lines"}, to={"linesIds"})
-  public List<Long> stopsConversion(List<Line> stops){
-    List<Long> linesIds = stops.stream().map(Line::getId).collect(Collectors.toList());
+  public List<Long> stopsConversion(List<Line> lines){
+    List<Long> linesIds = lines.stream().map(Line::getId).collect(Collectors.toList());
     return linesIds;
   }
   

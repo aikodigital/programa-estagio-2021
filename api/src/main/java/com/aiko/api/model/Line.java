@@ -19,19 +19,19 @@ public class Line {
   
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private long Id;
+  private long id;
 
 
   private String name;
 
   @ManyToMany
   @JoinTable(
-  name = "line_stop", 
+  name = "stop_line", 
   joinColumns = @JoinColumn(name = "line_id"), 
   inverseJoinColumns = @JoinColumn(name = "stop_id"))
   private List<Stop> stops;
 
-  @OneToMany(mappedBy = "lineId")
+  @OneToMany(mappedBy = "line")
   private List<Vehicle> vehicles;
   
 }

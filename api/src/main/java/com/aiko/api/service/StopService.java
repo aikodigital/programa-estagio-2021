@@ -25,13 +25,28 @@ public class StopService {
   LineRepository lineRepository;
 
   public StopResponseDTO save(StopRequestDTO stopRequestDTO){
-    JMapper<Stop, StopRequestDTO> stopRequestMapper;
+    
     JMapper<StopResponseDTO, Stop> stopResponseMapper;
-    Stop stop;
+    Stop stop = new Stop();
     Stop savedStop;
     StopResponseDTO stopResponseDTO;
-    stopRequestMapper = new JMapper<>(Stop.class, StopRequestDTO.class);
-    stop = stopRequestMapper.getDestination(stopRequestDTO);    
+    if(stopRequestDTO.getName() != null){
+      stop.setName(stopRequestDTO.getName());
+    }
+    if(stopRequestDTO.getLatitude() != null){
+      stop.setLatitude(stopRequestDTO.getLatitude());
+    }
+    if(stopRequestDTO.getLongitude() != null){
+      stop.setLongitude(stopRequestDTO.getLongitude());
+    }
+    if(stopRequestDTO.getLinesIds() != null){
+      List<Line> lines = stopRequestDTO.getLinesIds()
+        .stream()
+        .map(lineId -> lineRepository.findById(lineId)
+          .orElseThrow(() -> new DataNotFoundException("Line not found.")))
+        .collect(Collectors.toList());
+      stop.setLines(lines);
+    }
     savedStop = stopRepository.save(stop);
     stopResponseMapper = new JMapper<>(StopResponseDTO.class, Stop.class);
     stopResponseDTO = stopResponseMapper.getDestination(savedStop);
@@ -81,14 +96,14 @@ public class StopService {
   public List<StopResponseDTO> findAll(){
    
     JMapper<StopResponseDTO, Stop> stopMapper;
-    List<StopResponseDTO> vehicleResponseDTOs;
-    List<Stop> vehicles = stopRepository.findAll();    
+    List<StopResponseDTO> stopResponseDTOs;
+    List<Stop> stops = stopRepository.findAll();    
     stopMapper = new JMapper<>(StopResponseDTO.class, Stop.class);
-    vehicleResponseDTOs = vehicles
+    stopResponseDTOs = stops
       .stream()
       .map(stop -> stopMapper.getDestination(stop))
       .collect(Collectors.toList());
-    return vehicleResponseDTOs;
+    return stopResponseDTOs;
   }
 
   public StopResponseDTO findById(Long id) throws Exception{

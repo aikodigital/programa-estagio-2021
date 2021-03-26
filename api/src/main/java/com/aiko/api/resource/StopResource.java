@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class StopResource {
@@ -27,6 +27,7 @@ public class StopResource {
   @PostMapping(path = "/stops")
   public ResponseEntity<StopResponseDTO> createStop(
     @RequestBody StopRequestDTO stopRequestDTO){
+    System.out.println(stopRequestDTO);
     return ResponseEntity
       .status(HttpStatus.CREATED)
       .body(stopService.save(stopRequestDTO));
