@@ -1,13 +1,11 @@
 FROM node
 
-RUN mkdir -p /usr/src/app
-
-WORKDIR /usr/src/app
-
 COPY . .
 
 RUN npm install
 
-EXPOSE 3000
+RUN npx knex migrate:latest
+
+EXPOSE 3333
 
 CMD ["npm", "start"]

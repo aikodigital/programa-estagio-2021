@@ -1,7 +1,7 @@
 const connections= require('../database/connections');
 
 module.exports={
-     
+    //Método que recebe o 'idParada' por meio do header e a partir dele retorna todas as linhas associdas a tal parada.
     async linhasPorParada(request,response){
         const idParada = request.headers.authorization; 
         
@@ -10,14 +10,15 @@ module.exports={
         return response.json(linhas);
         
     },
-
+    //Método que recebe o 'idLinha' por meio do header e a partir dele retorna todas os veículos associados a tal linha.
     async veiculosPorLinha(request,response){
-        const { idLinha } = request.params; 
+        const idLinha  = request.headers.authorization; 
 
         const veiculosEscolhidos = await connections('veiculos').where('linhasID', idLinha);
         return response.json(veiculosEscolhidos);
     },
 
+    //Método que recebe retorna a distância entre uma determinada parada e um determinado veículo, sendo os veículos e paradas determinados pelos 'id' e 'idParada' enviados no body.
     async distanciaParadaPosicao(request ,response){
         const { id,idParada } = request.body; 
 
@@ -46,6 +47,7 @@ module.exports={
         return response.json(distancia.toFixed(3));
     },
 
+    //Método que recebe sua latitude e logitude atual e retorna as paradas mais pŕoximas em ordem crescente.
     async paradaMaisProxima(request, response){
         const {latAtual , lonAtual}= request.body;
         
@@ -108,9 +110,10 @@ module.exports={
         return response.json(linhas);
     },
 
+    //Método que retorna um tempo médio de espera baseado na distância do veículo do ponto de parada e da velocidade média do mesmo. Recebe o valor de 'id', 'idParada' e vMedia pelo body.
     async tempoMedioDeEspera(request,response){
         const { id,idParada } = request.body;
-        var vMedia = request.body; 
+        var vMedia = request.body; //Pensei em setar como 16 km/h(velocidade média dos ônibus na cidade de São Paulo segundo a Folha/UOL) porém deixarei a entrada variável para testes dos avaliadores.
 
         var lat1 = await connections('posicaoVeiculos').where('id', id).select('latitude');
         var lon1 = await connections('posicaoVeiculos').where('id',id).select('longitude');
@@ -141,6 +144,7 @@ module.exports={
         return response.json(tempo.toFixed(2));
     },
 
+    //Método que recebe as 'idParada' de duas paradas diferentes e retorna a distância em quilômetros entre elas.
     async distanciaEntreParadas(request,response){
         const {idParada1,idParada2} = request.body;
 

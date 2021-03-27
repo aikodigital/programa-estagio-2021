@@ -35,12 +35,12 @@ routes.delete('/linhas/:idLinha', linhasController.delete);     //Método delete
 routes.put('/linhas/:idLinha', linhasController.update);
 
 //Métodos requisitados
-routes.get('/linhasPorParada', metodosController.linhasPorParada);
-routes.get('/veiculos/linhas/:idLinha', metodosController.veiculosPorLinha);
-routes.post('/distanciaParadaPosicao', metodosController.distanciaParadaPosicao);
-routes.post('/paradaMaisProxima', metodosController.paradaMaisProxima);
-routes.post('/tempoMedioDeEspera', metodosController.tempoMedioDeEspera);
-routes.post('/distanciaEntreParadas', metodosController.distanciaEntreParadas);
+routes.get('/linhasPorParada', metodosController.linhasPorParada);                       //Método get, cuja finalidade é retornar as linhas associadas a uma parada.
+routes.get('/veiculosPorLinha', metodosController.veiculosPorLinha);                    //Método get, cuja finalidade é retornar os veículos pertencens a uma linha.
+routes.post('/distanciaParadaPosicao', metodosController.distanciaParadaPosicao);      //Método post, cuja finalidade é retornar a distância entre um determinado veículo a partir de sua posição e de uma parada.
+routes.post('/paradaMaisProxima', metodosController.paradaMaisProxima);               //Método post, cuja finalidaed é retornar as paradas mais próximas a partir de uma latitude e longitude.
+routes.post('/tempoMedioDeEspera', metodosController.tempoMedioDeEspera);            //Método post, cuja finalidade é retornar um tempo médio em minutos da chegada de um determinado veículo a uma determinada parada.
+routes.post('/distanciaEntreParadas', metodosController.distanciaEntreParadas);     //Método post, que tem como finalidade retornar a distância entre duas paradas a partir dos 'idParada' enviados.
 
 
 
