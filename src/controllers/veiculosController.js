@@ -25,7 +25,7 @@ module.exports={
         };
 
         const veiculoEscolhido = await connections('veiculos') 
-        .where('id', id).select('name');
+        .where('id', id).select('*');
         
         return response.json(veiculoEscolhido);
     },

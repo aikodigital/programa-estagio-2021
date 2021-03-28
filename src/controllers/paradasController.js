@@ -66,6 +66,7 @@ module.exports={
         
         //Caso não retorne o erro a função segue os seu fluxo e deleta a tabela solicitada
         await connections('paradas').where('idParada', idParada).delete(); 
+        await connections('linhasPorParada').where('idParada',idParada).delete();
 
         return response.status(204).send(); 
     },
