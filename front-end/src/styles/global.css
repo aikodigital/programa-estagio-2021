@@ -30,7 +30,120 @@ body, input, button, textarea {
     align-items: center;
 }
 
-#single-page aside img {
-    width: 150px;
+#single-page aside header img {
+    width: 130px;
     margin-top: -50px;
 }
+
+#single-page aside .menu-options {
+    margin-top: 40px;
+}
+
+#single-page aside .menu-options .accordion {
+    width: 440px;
+}
+
+#single-page aside .menu-options .accordion .card {
+    color: #ffffff;
+    background-color: rgba(7, 160, 195, 0.88);
+    border-top-color: #d3d3d3;
+    border-bottom-color: #d3d3d3;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    outline-style: none;
+    cursor: pointer;
+    border-width: 1px;
+    font: 500 20px Roboto, sans-serif;
+    text-align: center;
+}
+
+#single-page aside .menu-options .accordion .card:hover {
+    background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .accordion .card .card-body {
+    background-color: #F0C808;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: -35px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body h6 {
+    margin-bottom: 20px;
+    color: #003F88;
+    opacity: 0.85;
+}
+
+#single-page aside .menu-options .accordion .card .card-body img {
+    width: 22px;
+    margin-right: 12px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 {
+    width: 80%;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default {
+    width: 50px;
+    background-color: #08B2D9;
+}
+
+/*#single-page aside .menu-options .accordion .card .card-body input {
+    width: 70%;
+    height: 35px;
+    border-color: transparent;
+    border-radius: 6px;
+    outline-style: none;
+    color: #003F88;
+    font: 400 15px Roboto, sans-serif;
+}
+
+#single-page aside .menu-options .accordion .card .card-body input::placeholder {
+    color: #003F88;
+    opacity: 0.8;
+    font: 400 15px Roboto, sans-serif;
+    text-align: center;
+}*/
+
+/*#single-page aside .menu-options {
+    width: 440px;
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#single-page aside .menu-options button {
+    width: 100%;
+    height: 80px;
+    color: #ffffff;
+    background-color: rgba(7, 160, 195, 0.88);
+    border-top-color: #d3d3d3;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    outline-style: none;
+    cursor: pointer;
+    border-width: 1px;
+}
+
+#single-page aside .menu-options button:hover {
+    background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .previsao-de-chegada {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#single-page aside .menu-options .localizacao-dos-onibus .dropdown-localizacao {
+    display: none;
+    background-color: #F0C808;
+    height: 80px;
+}
+
+#single-page aside .menu-options .localizacao-dos-onibus:active .dropdown-localizacao {
+    display: block;
+}*/

@@ -10,13 +10,18 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.1.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-select": "^4.3.0",
     "typescript": "^4.1.2",
+    "unop-react-dropdown": "^0.1.8",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
@@ -46,6 +51,7 @@
   },
   "devDependencies": {
     "@types/react-leaflet": "^2.8.1",
+    "@types/react-router-dom": "^5.1.7",
     "@types/react-select": "^4.0.14"
   }
 }
