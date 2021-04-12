@@ -13,7 +13,7 @@ body, input, button, textarea {
 }
 
 #single-page {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
     position: relative;
@@ -21,7 +21,8 @@ body, input, button, textarea {
 }
 
 #single-page aside {
-    width: 440px;
+    width: 400px;
+    height: 100vh;
     background-color: rgba(7, 160, 195, 0.88);
     padding: 80px;
 
@@ -31,8 +32,8 @@ body, input, button, textarea {
 }
 
 #single-page aside header img {
-    width: 130px;
-    margin-top: -50px;
+    width: 120px;
+    margin-top: -40px;
 }
 
 #single-page aside .menu-options {
@@ -40,20 +41,19 @@ body, input, button, textarea {
 }
 
 #single-page aside .menu-options .accordion {
-    width: 440px;
+    width: 400px;
 }
 
 #single-page aside .menu-options .accordion .card {
     color: #ffffff;
     background-color: rgba(7, 160, 195, 0.88);
     border-top-color: #d3d3d3;
-    border-bottom-color: #d3d3d3;
     border-right-color: transparent;
     border-left-color: transparent;
     outline-style: none;
     cursor: pointer;
     border-width: 1px;
-    font: 500 20px Roboto, sans-serif;
+    font: 700 20px Roboto, sans-serif;
     text-align: center;
 }
 
@@ -67,10 +67,11 @@ body, input, button, textarea {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: -35px;
+    margin-bottom: -15px;
 }
 
 #single-page aside .menu-options .accordion .card .card-body h6 {
+    margin-top: -5px;
     margin-bottom: 20px;
     color: #003F88;
     opacity: 0.85;
@@ -83,11 +84,68 @@ body, input, button, textarea {
 
 #single-page aside .menu-options .accordion .card .card-body .mb-3 {
     width: 80%;
+    height: 10px;
 }
 
 #single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default {
     width: 50px;
     background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .accordion .sentidos {
+    display: none;
+}
+
+#single-page aside .menu-options .accordion .sentidos .sentido {
+    height: 40px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: rgba(33, 118, 255, 0.6);
+    display: flex;
+    justify-content: center;
+}
+
+#single-page aside .menu-options .accordion .sentidos .sentido h6 {
+    color: #F0C808;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+#single-page aside .menu-options .accordion .sentidos p {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 10px 0px 10px 30px;
+    font-size: 18px;
+}
+
+#single-page aside .menu-options .accordion .previsao-de-chegada {
+    display: none;
+}
+
+#single-page aside .menu-options .accordion .previsao-de-chegada .content {
+    font-weight: 500;
+    background-color: rgba(33, 118, 255, 0.6);
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#single-page aside .menu-options .accordion .previsao-de-chegada .content .first-child {
+    color: #ffffff;
+    margin-top: 16px;
+}
+
+#single-page aside .menu-options .accordion .previsao-de-chegada .content .last-child {
+    color: #F0C808;
+    margin-left: 5px;
+    margin-top: 16px;
 }
 
 /*#single-page aside .menu-options .accordion .card .card-body input {
