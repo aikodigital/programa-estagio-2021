@@ -87,9 +87,24 @@ body, input, button, textarea {
     height: 10px;
 }
 
+#single-page aside .menu-options .accordion .card .card-body .mb-3 .form-control {
+    color: #003F88;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 .form-control::placeholder {
+    color: #003F88;
+    opacity: 0.8;
+    font-size: 11.8px;
+}
+
 #single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default {
     width: 50px;
     background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default:hover {
+    background-color: #08B2D9;
+    opacity: 0.7;
 }
 
 #single-page aside .menu-options .accordion .sentidos {
