@@ -5,9 +5,16 @@ import mapmarkerImg from './images/location.png';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Accordion, Card, InputGroup, FormControl, Button } from 'react-bootstrap';
 import Leaflet from 'leaflet';
+import api from './services/api.js';
+import { useState } from 'react';
 
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+interface IPos {
+  px: number,
+  py: number
+}
 
 const mapIcon = Leaflet.icon({
   iconUrl: mapmarkerImg,
@@ -17,6 +24,33 @@ const mapIcon = Leaflet.icon({
 })
 
 function App() {
+  const [codigoLinha1, setCodigoLinha1] = useState("")
+  const [posicaoVeiculos, setPosicaoVeiculos] = useState<IPos[]>([])
+  
+  async function searchLine(e:any) {
+    e.preventDefault()
+    const response = await api.get(`/Linha/Buscar?termosBusca=${codigoLinha1}`)
+    console.log(response.data)
+  }
+
+  async function clickOnibus(e:any) {
+    e.preventDefault()
+    const response = await api.get(`/Posicao`)
+    console.log(response.data)
+    const array = response.data.l
+    const temp:IPos[] = []
+    array.forEach((value:any) => {
+      value.vs.forEach((pos:any) => {
+        temp.push({
+          px: pos.px,
+          py: pos.py
+        })
+      })
+    })
+    console.log(temp)
+    setPosicaoVeiculos(temp)
+  }
+
   return (
     <div id="single-page">
       <aside>
@@ -26,7 +60,7 @@ function App() {
         <div className="menu-options">
           <Accordion defaultActiveKey="" className="accordion">
             <Card className="card">
-              <Accordion.Toggle as={Card.Header} eventKey="0">
+              <Accordion.Toggle as={Card.Header} eventKey="0" onClick = {clickOnibus}>
                 Localização dos Ônibus
             </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
@@ -34,9 +68,11 @@ function App() {
                   <InputGroup className="mb-3">
                     <FormControl className = "form-control"
                       placeholder="Digite o código da linha para os veículos"
+                      value = {codigoLinha1}
+                      onChange = {(e) => setCodigoLinha1(e.target.value)}
                     />
                     <InputGroup.Append>
-                      <Button variant="outline-secondary" id="inputGroup-sizing-default" ><img src={lupaImg} alt="Buscar" /></Button>
+                      <Button variant="outline-secondary" id="inputGroup-sizing-default" onClick = {searchLine}><img src={lupaImg} alt="Buscar" /></Button>
                     </InputGroup.Append>
                   </InputGroup>
                   <br />
