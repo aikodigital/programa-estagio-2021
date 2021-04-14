@@ -1,7 +1,7 @@
 import './styles/global.css';
-import busmarkerImg from './images/Logo.png';
+import logoImg from './images/Logo.png';
 import lupaImg from './images/loupe 1.png';
-import mapmarkerImg from './images/location.png';
+import busmarkerImg from './images/bus-stop 1.png'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Accordion, Card, InputGroup, FormControl, Button } from 'react-bootstrap';
 import Leaflet from 'leaflet';
@@ -17,7 +17,7 @@ interface IPos {
 }
 
 const mapIcon = Leaflet.icon({
-  iconUrl: mapmarkerImg,
+  iconUrl: busmarkerImg,
   iconSize: [38, 48],
   iconAnchor: [29, 68],
   popupAnchor: [-10, -70],
@@ -26,21 +26,21 @@ const mapIcon = Leaflet.icon({
 function App() {
   const [codigoLinha1, setCodigoLinha1] = useState("")
   const [posicaoVeiculos, setPosicaoVeiculos] = useState<IPos[]>([])
-  
-  async function searchLine(e:any) {
+
+  async function searchLine(e: any) {
     e.preventDefault()
     const response = await api.get(`/Linha/Buscar?termosBusca=${codigoLinha1}`)
     console.log(response.data)
   }
 
-  async function clickOnibus(e:any) {
+  async function clickOnibus(e: any) {
     e.preventDefault()
     const response = await api.get(`/Posicao`)
     console.log(response.data)
     const array = response.data.l
-    const temp:IPos[] = []
-    array.forEach((value:any) => {
-      value.vs.forEach((pos:any) => {
+    const temp: IPos[] = []
+    array.forEach((value: any) => {
+      value.vs.forEach((pos: any) => {
         temp.push({
           px: pos.px,
           py: pos.py
@@ -55,24 +55,24 @@ function App() {
     <div id="single-page">
       <aside>
         <header>
-          <img src={busmarkerImg} alt="Olho Vivo" />
+          <img src={logoImg} alt="Olho Vivo" />
         </header>
         <div className="menu-options">
           <Accordion defaultActiveKey="" className="accordion">
             <Card className="card">
-              <Accordion.Toggle as={Card.Header} eventKey="0" onClick = {clickOnibus}>
+              <Accordion.Toggle as={Card.Header} eventKey="0" onClick={clickOnibus}>
                 Localização dos Ônibus
             </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body className="card-body">
                   <InputGroup className="mb-3">
-                    <FormControl className = "form-control"
+                    <FormControl className="form-control"
                       placeholder="Digite o código da linha para os veículos"
-                      value = {codigoLinha1}
-                      onChange = {(e) => setCodigoLinha1(e.target.value)}
+                      value={codigoLinha1}
+                      onChange={(e) => setCodigoLinha1(e.target.value)}
                     />
                     <InputGroup.Append>
-                      <Button variant="outline-secondary" id="inputGroup-sizing-default" onClick = {searchLine}><img src={lupaImg} alt="Buscar" /></Button>
+                      <Button variant="outline-secondary" id="inputGroup-sizing-default" onClick={searchLine}><img src={lupaImg} alt="Buscar" /></Button>
                     </InputGroup.Append>
                   </InputGroup>
                   <br />
@@ -86,7 +86,7 @@ function App() {
               <Accordion.Collapse eventKey="1">
                 <Card.Body className="card-body">
                   <InputGroup className="mb-3">
-                    <FormControl className = "form-control"
+                    <FormControl className="form-control"
                       placeholder="Digite o código da linha para as paradas"
                     />
                     <InputGroup.Append>
@@ -104,7 +104,7 @@ function App() {
               <Accordion.Collapse eventKey="2">
                 <Card.Body className="card-body">
                   <InputGroup className="mb-3">
-                    <FormControl className = "form-control"
+                    <FormControl className="form-control"
                       placeholder="Digite o código da linha"
                     />
                     <InputGroup.Append>
@@ -140,7 +140,7 @@ function App() {
               <Accordion.Collapse eventKey="3">
                 <Card.Body className="card-body">
                   <InputGroup className="mb-3">
-                    <FormControl className = "form-control"
+                    <FormControl className="form-control"
                       placeholder="Digite o código da linha"
                     />
                     <InputGroup.Append>
@@ -153,7 +153,7 @@ function App() {
               <Accordion.Collapse eventKey="3">
                 <Card.Body className="card-body">
                   <InputGroup className="mb-3">
-                    <FormControl className = "form-control"
+                    <FormControl className="form-control"
                       placeholder="Digite o nome de sua parada atual"
                     />
                     <InputGroup.Append>
@@ -179,11 +179,13 @@ function App() {
       </aside>
       <MapContainer center={[-23.6815315, -46.8754901]} zoom={15} style={{ width: '100%', height: '100%' }}>
         <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
-        <Marker icon={mapIcon} position={[-23.6815315, -46.8754901]}>
-          <Popup closeButton={false}>
-            Localização Atual
-          </Popup>
-        </Marker>
+        {posicaoVeiculos?.map((pos) =>
+          <Marker icon={mapIcon} position={[pos.px, pos.py]}>
+            <Popup closeButton={false}>
+              Localização Atual
+              </Popup>
+          </Marker>
+        )}
       </MapContainer>
     </div>
   );
