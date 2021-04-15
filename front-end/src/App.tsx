@@ -6,7 +6,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Accordion, Card, InputGroup, FormControl, Button } from 'react-bootstrap';
 import Leaflet from 'leaflet';
 import api from './services/api.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import 'leaflet/dist/leaflet.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,12 +30,23 @@ function App() {
   async function searchLine(e: any) {
     e.preventDefault()
     const response = await api.get(`/Linha/Buscar?termosBusca=${codigoLinha1}`)
-    console.log(response.data)
+    let temp: IPos[] = []
+    response.data.forEach(async(line: any) => {
+      const cl = await api.get(`/Posicao/Linha?codigoLinha=${line.cl}`)
+      cl.data.vs.forEach((pos: any) => {
+        temp.push({
+          px: pos.px,
+          py: pos.py
+        })
+      })
+    })
+    temp = temp.slice(1)
+    setPosicaoVeiculos(temp)
   }
 
   async function clickOnibus(e: any) {
     e.preventDefault()
-    const response = await api.get(`/Posicao`)
+    /*const response = await api.get(`/Posicao`)
     console.log(response.data)
     const array = response.data.l
     const temp: IPos[] = []
@@ -46,10 +57,21 @@ function App() {
           py: pos.py
         })
       })
-    })
-    console.log(temp)
-    setPosicaoVeiculos(temp)
+    })*/
   }
+
+  console.log(posicaoVeiculos)
+
+  useEffect ( () => {
+    api.post(`/Login/Autenticar?token=${process.env.REACT_APP_API}`).then((response) => {
+      console.log(response)
+    })
+  },[])
+
+  useEffect ( () => {
+      console.log("Atualizou!")
+      setCodigoLinha1("")
+  },[posicaoVeiculos])
 
   return (
     <div id="single-page">
@@ -177,13 +199,13 @@ function App() {
           </Accordion>
         </div>
       </aside>
-      <MapContainer center={[-23.6815315, -46.8754901]} zoom={15} style={{ width: '100%', height: '100%' }}>
+      <MapContainer center={[-23.6821604,-46.8754915]} zoom={15} style={{ width: '100%', height: '100%' }}>
         <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
-        {posicaoVeiculos?.map((pos) =>
-          <Marker icon={mapIcon} position={[pos.px, pos.py]}>
+        {posicaoVeiculos?.map((pos, i) =>
+          <Marker icon={mapIcon} position={[pos.py, pos.px]} key = {i}>
             <Popup closeButton={false}>
               Localização Atual
-              </Popup>
+            </Popup>
           </Marker>
         )}
       </MapContainer>
