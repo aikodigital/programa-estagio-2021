@@ -60,7 +60,7 @@ function App() {
 
   const markers = posicaoVeiculos?.map((pos, i) =>
     <Marker icon={mapIcon} position={[pos.py, pos.px]} key={i}>
-      <Popup closeButton={false}>
+      <Popup closeButton={false} minWidth = {240} maxWidth = {240} className = "map-popup">
         Localização Atual do ônibus
       </Popup>
     </Marker>
@@ -88,9 +88,9 @@ function App() {
         })
       })
       setPosicaoVeiculos(temp)
+      console.log(temp)
     })
   }
-  
 
   async function searchStops(e: any) {
     e.preventDefault()

@@ -208,6 +208,7 @@ body, input, button, textarea {
     align-items: center;
     font: 500 13px Roboto, sans-serif;
     text-align: center;
+    color: #003F88;
 }
 
 .map-popup .leaflet-popup-content button {
