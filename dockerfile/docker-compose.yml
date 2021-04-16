@@ -20,6 +20,8 @@ services:
             - "3000-3002:3000-3002"
         networks:
             - postgres
+        links:
+            - postgres
         restart: unless-stopped
     pgadmin:
         container_name: pgadmin_container
