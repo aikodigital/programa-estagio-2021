@@ -1,0 +1,2 @@
+export const REACT_APP_GOOGLE_KEY = `AIzaSyDdSVhA79gXMNV2nqXLRGxEKtPcH5h2oXI`;
+export const API_KEY = `5cafe37d9939ce36b02510e0ea74d59e3cece0d8a574640f302d44adddd73761`;
