@@ -11,10 +11,6 @@ const create = async () => {
 		}
 	});
 	// create the db and ignore any errors, for example if it already exists.
-	return await client.query('CREATE DATABASE ' + dbName, function () {
-		//db should exist now, initialize Sequelize
-		console.log(`create database "${ dbName }" if not exists`);
-		client.end(); // close the connection
-	});
+	return await client.query('CREATE DATABASE ' + dbName).then(() => { console.log(`created database '${dbName}'`); }).catch(() => { console.log(`database '${dbName}' already exists`); });
 };
 module.exports = create;
