@@ -9,7 +9,12 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.5.1",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "swagger-jsdoc": "6.0.0",
+    "swagger-ui-express": "^4.1.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "sequelize-cli": "^6.2.0"
+  }
 }

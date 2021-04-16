@@ -1,12 +1,12 @@
-const Linha_relation_Parada = require("./models/linhaparada")
-const Linha = require("./models/linha")
-const Parada = require("./models/parada")
-const Veiculo = require("./models/veiculo")
-const Posicao = require("./models/posicao")
+const Linha = require('./models/linha');
+const Parada = require('./models/parada');
+const Veiculo = require('./models/veiculo');
+const Posicao = require('./models/posicao');
 
-Linha.belongsToMany(Parada, { through: Linha_relation_Parada });
-Parada.belongsToMany(Linha, { through: Linha_relation_Parada });
-Linha.hasMany(Veiculo)
-Veiculo.belongsTo(Linha)
-Veiculo.hasMany(Posicao)
-Posicao.belongsTo(Veiculo)
+Linha.belongsToMany(Parada, { as: 'paradas', through: 'LinhaParadas' });
+Parada.belongsToMany(Linha, { as: 'linhas', through: 'LinhaParadas' });
+Linha.hasMany(Veiculo, { as: 'veiculos' });
+Veiculo.belongsTo(Linha);
+Veiculo.hasMany(Posicao, { as: 'posicoes', onDelete: 'RESTRICT', onUpdate: 'CASCADE' });
+Posicao.belongsTo(Veiculo);
+module.exports = { Linha, Parada, Veiculo, Posicao };
