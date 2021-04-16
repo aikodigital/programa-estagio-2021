@@ -57,21 +57,27 @@ body, input, button, textarea {
     text-align: center;
 }
 
+#single-page aside .menu-options .accordion .card1 {
+    background-color: transparent;
+}
+
 #single-page aside .menu-options .accordion .card:hover {
     background-color: #08B2D9;
 }
 
-#single-page aside .menu-options .accordion .card .card-body {
+#single-page aside .menu-options .accordion .card .card-body, .card-body1 {
     background-color: #F0C808;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: -15px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body1 {
+    background-color: #08B2D9;
 }
 
 #single-page aside .menu-options .accordion .card .card-body h6 {
-    margin-top: -5px;
     margin-bottom: 20px;
     color: #003F88;
     opacity: 0.85;
@@ -85,6 +91,7 @@ body, input, button, textarea {
 #single-page aside .menu-options .accordion .card .card-body .mb-3 {
     width: 80%;
     height: 10px;
+    margin-top: -10px;
 }
 
 #single-page aside .menu-options .accordion .card .card-body .mb-3 .form-control {
@@ -102,49 +109,75 @@ body, input, button, textarea {
     background-color: #08B2D9;
 }
 
-#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default:hover {
+#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default:hover, #inputGroup-sizing-default1:hover {
     background-color: #08B2D9;
     opacity: 0.7;
 }
 
-#single-page aside .menu-options .accordion .sentidos {
-    display: none;
+#single-page aside .menu-options .accordion .card-body #sentidos {
+    display: block;
+    margin-top: 20px;
 }
 
-#single-page aside .menu-options .accordion .sentidos .sentido {
-    height: 40px;
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido1, .sentido2 {
+    background-color: #08B2D9;
+    height: 150px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido2 {
+    margin-bottom: -22px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido {
+    height: 30px;
+    width: 440px;
     border-top: 1px solid #d3d3d3;
     border-bottom: 1px solid #D3D3D3;
-    background-color: rgba(33, 118, 255, 0.6);
+    background-color: rgba(33, 118, 255, 0.9);
     display: flex;
     justify-content: center;
 }
 
-#single-page aside .menu-options .accordion .sentidos .sentido h6 {
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido h6 {
     color: #F0C808;
     font-weight: 500;
     font-size: 18px;
-    margin-top: 8px;
+    margin-top: 3px;
 }
 
-#single-page aside .menu-options .accordion .sentidos p {
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro, .terminal-origem, .terminal-destino {
+    display: flex;
+    flex-direction: row;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro .primeira-parte p, .terminal-origem .primeira-parte p, .terminal-destino .primeira-parte p {
     color: #ffffff;
     font-weight: 400;
     margin: 10px 0px 10px 30px;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: start;
 }
 
-#single-page aside .menu-options .accordion .previsao-de-chegada {
-    display: none;
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro .segunda-parte p, .terminal-origem .segunda-parte p, .terminal-destino .segunda-parte p {
+    color: #F0C808;
+    font-weight: 400;
+    margin: 10px 0px 0px 3px;
+    font-size: 16px;
 }
 
-#single-page aside .menu-options .accordion .previsao-de-chegada .content {
+#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada {
+    display: block;
+    width: 440px;
+}
+
+#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content {
     font-weight: 500;
     background-color: rgba(33, 118, 255, 0.6);
     border-top: 1px solid #d3d3d3;
     border-bottom: 1px solid #d3d3d3;
     width: 100%;
     height: 40px;
+    margin: -19px 0px -19px 0px;
 
     display: flex;
     flex-direction: row;
@@ -152,12 +185,12 @@ body, input, button, textarea {
     align-items: center;
 }
 
-#single-page aside .menu-options .accordion .previsao-de-chegada .content .first-child {
+#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content .first-child {
     color: #ffffff;
     margin-top: 16px;
 }
 
-#single-page aside .menu-options .accordion .previsao-de-chegada .content .last-child {
+#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content .last-child {
     color: #F0C808;
     margin-left: 5px;
     margin-top: 16px;
