@@ -68,9 +68,9 @@ function App() {
 
   const markers2 = paradas?.map((pos, i) =>
     <Marker icon={mapIcon2} position={[pos.py, pos.px]} key={i}>
-      <Popup closeButton={false} className="popup">
+      <Popup closeButton={false} minWidth = {240} maxWidth = {240} className = "map-popup">
         {pos.ed}
-        <button onClick={(e) => previsaoChegada(e, pos.cp)}>Botão</button>
+        <button onClick={(e) => previsaoChegada(e, pos.cp)}>Prever Chegada</button>
       </Popup>
     </Marker>
   )
@@ -87,9 +87,10 @@ function App() {
           py: pos.py
         })
       })
+      setPosicaoVeiculos(temp)
     })
-    setPosicaoVeiculos(temp)
   }
+  
 
   async function searchStops(e: any) {
     e.preventDefault()
@@ -110,9 +111,8 @@ function App() {
           })
         }
       })
+      setParadas(temp)
     })
-    setParadas(temp)
-    console.log(temp)
   }
 
   async function searchLineInformations(e: any) {
@@ -167,7 +167,7 @@ function App() {
                       onChange={(e: any) => setCodigoLinha1(e.target.value)}
                     />
                     <InputGroup.Append>
-                      <Button variant="outline-secondary" id="inputGroup-sizing-default" onClick={searchLine}><img src={lupaImg} alt="Buscar" /></Button>
+                      <Button variant="outline-secondary" id="inputGroup-sizing-default" onChange={(e: any) => setCodigoLinha1(e.target.value)} onClick={searchLine}><img src={lupaImg} alt="Buscar"/></Button>
                     </InputGroup.Append>
                   </InputGroup>
                 </Card.Body>
@@ -198,7 +198,7 @@ function App() {
             </Accordion.Toggle>
               <Accordion.Collapse eventKey="2">
                 <Card.Body className="card-body">
-                  <InputGroup className="mb-3" onSubmit={searchLineInformations}>
+                  <InputGroup className="mb-3">
                     <FormControl className="form-control"
                       placeholder="Digite o código da linha"
                       value={codigoLinha2}
@@ -258,7 +258,7 @@ function App() {
                             <p>Terminal de origem:</p>
                           </div>
                           <div className="segunda-parte">
-                            <p>{informacoesLinha?.tp}</p>
+                            <p>{informacoesLinha?.ts}</p>
                           </div>
                         </div>
                         <div className="terminal-destino">
@@ -266,7 +266,7 @@ function App() {
                             <p>Terminal de destino:</p>
                           </div>
                           <div className="segunda-parte">
-                            <p>{informacoesLinha?.ts}</p>
+                            <p>{informacoesLinha?.tp}</p>
                           </div>
                         </div>
                       </div>

@@ -196,6 +196,37 @@ body, input, button, textarea {
     margin-top: 16px;
 }
 
+.map-popup .leaflet-popup-content-wrapper {
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.map-popup .leaflet-popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font: 500 13px Roboto, sans-serif;
+    text-align: center;
+}
+
+.map-popup .leaflet-popup-content button {
+    width: 130px;
+    height: 30px;
+    outline-style: none;
+    border-radius: 5px;
+    background-color: #08B2D9;
+    border-color:#d3d3d34d;
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.map-popup .leaflet-popup-content button:hover {
+    background-color: #08B2D9;
+    opacity: 0.7;
+}
+
 /*#single-page aside .menu-options .accordion .card .card-body input {
     width: 70%;
     height: 35px;
