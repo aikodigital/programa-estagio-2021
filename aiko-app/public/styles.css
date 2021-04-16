@@ -50,3 +50,8 @@ header {
     padding: 30px 10px 0px;
     margin-right: 10px;
 }
+
+.titleDesc{
+    font-size: 17px;
+    color: #4989af;
+}
