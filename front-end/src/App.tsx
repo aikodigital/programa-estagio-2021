@@ -278,7 +278,7 @@ function App() {
             </Card>
             <Card className="card">
               <Accordion.Toggle as={Card.Header} eventKey="3">
-                Previsão de Chegada
+                Previsão de Chegada (clique na parada e depois clique aqui para ver a previsão)
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="3">
                 <Card.Body className="card-body1">
