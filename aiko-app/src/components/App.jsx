@@ -1,14 +1,16 @@
 import React from 'react';
 import { withScriptjs, withGoogleMap} from "react-google-maps"
 import Header from "./Header";
-//import stopPosition from './paradaPos';
 import Map from './Map';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormData from "./FormData";
+import Table from "./Table";
 
 require('dotenv').config()
 
 //const posData = createJson();
+
+//stopJson();
 
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
@@ -27,6 +29,9 @@ function App() {
         <div className="filter-div">
           <FormData />
         </div>
+      </div>
+      <div>
+        <Table />
       </div>
     </div>
   ); 
