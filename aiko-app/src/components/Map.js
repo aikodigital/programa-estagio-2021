@@ -5,7 +5,7 @@ import paradaJson from "./paradaJson";
 
 const { MarkerClusterer } = require("react-google-maps/lib/components/addons/MarkerClusterer");
 let busPos = null;
-let op = "Estações";
+let op = "Ônibus";
 
 const searchData = {
   icon: null,
@@ -83,7 +83,7 @@ export default function Map() {
         }}
       > 
         <div>
-          <h4>{searchData.info1} {selectedBus.cod}</h4>
+          <h4 className="titleDesc">{searchData.info1} {selectedBus.cod}</h4>
           <p>{searchData.info2} {selectedBus.origem}</p>
           <p>{searchData.info3} {selectedBus.destino}</p>
         </div>
