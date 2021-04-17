@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+}
+
+body, input, button, textarea {
+    font: 400 20px Roboto, sans-serif;
+}
+
+#single-page {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    display: flex;
+}
+
+#single-page aside {
+    width: 400px;
+    height: 100vh;
+    background-color: rgba(7, 160, 195, 0.88);
+    padding: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#single-page aside header img {
+    width: 120px;
+    margin-top: -40px;
+}
+
+#single-page aside .menu-options {
+    margin-top: 40px;
+}
+
+#single-page aside .menu-options .accordion {
+    width: 400px;
+}
+
+#single-page aside .menu-options .accordion .card {
+    color: #ffffff;
+    background-color: rgba(7, 160, 195, 0.88);
+    border-top-color: #d3d3d3;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    outline-style: none;
+    cursor: pointer;
+    border-width: 1px;
+    font: 700 20px Roboto, sans-serif;
+    text-align: center;
+}
+
+#single-page aside .menu-options .accordion .card1 {
+    background-color: transparent;
+}
+
+#single-page aside .menu-options .accordion .card:hover {
+    background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .accordion .card .card-body, .card-body1 {
+    background-color: #F0C808;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#single-page aside .menu-options .accordion .card .card-body1 {
+    background-color: rgba(7, 160, 195, 0.88);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#single-page aside .menu-options .accordion .card .card-body h6 {
+    margin-bottom: 20px;
+    color: #003F88;
+    opacity: 0.85;
+}
+
+#single-page aside .menu-options .accordion .card .card-body img {
+    width: 22px;
+    margin-right: 12px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 {
+    width: 80%;
+    height: 10px;
+    margin-top: -10px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 .form-control {
+    color: #003F88;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 .form-control::placeholder {
+    color: #003F88;
+    opacity: 0.8;
+    font-size: 11.8px;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default {
+    width: 50px;
+    background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .accordion .card .card-body .mb-3 #inputGroup-sizing-default:hover, #inputGroup-sizing-default1:hover {
+    background-color: #08B2D9;
+    opacity: 0.7;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos {
+    display: block;
+    margin-top: 20px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido1, .sentido2 {
+    background-color: #08B2D9;
+    height: 150px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido2 {
+    margin-bottom: -22px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido {
+    height: 30px;
+    width: 440px;
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #D3D3D3;
+    background-color: rgba(33, 118, 255, 0.9);
+    display: flex;
+    justify-content: center;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .sentido h6 {
+    color: #F0C808;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro, .terminal-origem, .terminal-destino {
+    display: flex;
+    flex-direction: row;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro .primeira-parte p, .terminal-origem .primeira-parte p, .terminal-destino .primeira-parte p {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 10px 0px 10px 30px;
+    font-size: 16px;
+    text-align: start;
+}
+
+#single-page aside .menu-options .accordion .card-body #sentidos .informacoes-linha .letreiro .segunda-parte p, .terminal-origem .segunda-parte p, .terminal-destino .segunda-parte p {
+    color: #F0C808;
+    font-weight: 400;
+    margin: 10px 0px 0px 3px;
+    font-size: 16px;
+}
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada {
+    display: block;
+    width: 440px;
+    margin-top: 20px;
+}
+
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content {
+    font-weight: 500;
+    background-color: rgba(33, 118, 255, 0.6);
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
+    width: 100%;
+    height: 40px;
+    margin: -19px 0px -19px 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content .first-child {
+    color: #ffffff;
+    margin-top: 16px;
+}
+
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content .last-child {
+    color: #F0C808;
+    margin-left: 5px;
+    margin-top: 16px;
+}
+
+.map-popup .leaflet-popup-content-wrapper {
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.map-popup .leaflet-popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font: 500 13px Roboto, sans-serif;
+    text-align: center;
+    color: #003F88;
+}
+
+.map-popup .leaflet-popup-content button {
+    width: 130px;
+    height: 30px;
+    outline-style: none;
+    border-radius: 5px;
+    background-color: #08B2D9;
+    border-color:#d3d3d34d;
+    color: #ffffff;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.map-popup .leaflet-popup-content button:hover {
+    background-color: #08B2D9;
+    opacity: 0.7;
+}
+
+/*#single-page aside .menu-options .accordion .card .card-body input {
+    width: 70%;
+    height: 35px;
+    border-color: transparent;
+    border-radius: 6px;
+    outline-style: none;
+    color: #003F88;
+    font: 400 15px Roboto, sans-serif;
+}
+
+#single-page aside .menu-options .accordion .card .card-body input::placeholder {
+    color: #003F88;
+    opacity: 0.8;
+    font: 400 15px Roboto, sans-serif;
+    text-align: center;
+}*/
+
+/*#single-page aside .menu-options {
+    width: 440px;
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#single-page aside .menu-options button {
+    width: 100%;
+    height: 80px;
+    color: #ffffff;
+    background-color: rgba(7, 160, 195, 0.88);
+    border-top-color: #d3d3d3;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    outline-style: none;
+    cursor: pointer;
+    border-width: 1px;
+}
+
+#single-page aside .menu-options button:hover {
+    background-color: #08B2D9;
+}
+
+#single-page aside .menu-options .previsao-de-chegada {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#single-page aside .menu-options .localizacao-dos-onibus .dropdown-localizacao {
+    display: none;
+    background-color: #F0C808;
+    height: 80px;
+}
+
+#single-page aside .menu-options .localizacao-dos-onibus:active .dropdown-localizacao {
+    display: block;
+}*/
