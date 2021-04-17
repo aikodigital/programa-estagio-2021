@@ -6,6 +6,8 @@ O objetivo desta etapa é que você desenvolvedor implemente um dos testes lista
 
 Os testes não são restritos a uma tecnologia específica, o objetivo é que você consiga mostrar todo seu conhecimento e potencial como desenvolvedor utilizando as tecnologias que já sabe.
 
+Link do Projeto: https://www.youtube.com/watch?v=aQ-lP8STAd0
+
 ## Testes
 
 Os testes foram separados por "frentes" de desenvolvimento que se encaixam com a divisão do trabalho aplicada na empresa, escolha a que se sentir mais confortável em desenvolver.
