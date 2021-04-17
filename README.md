@@ -2,6 +2,10 @@
 
 ![Aiko](imagens/aiko.png)
 
+LINK DO VÍDEO:https://youtu.be/MBWOhEZMZxE
+
+Os arquivos implementados se encontram no diretório "implementacao-front-end"
+
 O objetivo desta etapa é que você desenvolvedor implemente um dos testes listados a seguir, para que possamos avaliar seu conhecimento técnico em determinada área e a metodologia aplicada no desenvolvimento do teste.
 
 Os testes não são restritos a uma tecnologia específica, o objetivo é que você consiga mostrar todo seu conhecimento e potencial como desenvolvedor utilizando as tecnologias que já sabe.
