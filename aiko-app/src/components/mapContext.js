@@ -3,11 +3,11 @@ import posJson from "./posJson";
 
 const MapContext = createContext();
 
-export default function MapProvider({ children }) {
-    
+export default function MapProvider({ children }) { 
+
     const [mapData, setMapData] = useState({
         info : "",
-        busPos : posJson(),
+        busPos : "",
         searchData : {
             icon :  'https://image.freepik.com/free-icon/bus_318-2038.jpg',
             info1 : 'Ônibus:',
