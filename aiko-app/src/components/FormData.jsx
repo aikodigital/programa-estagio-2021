@@ -5,6 +5,7 @@ import paradaJson from "./paradaJson";
 import posJson from "./posJson";
 
 function FormData(){
+    
     const { setMapData } = UseMap();
     const [search, setSearch] = useState({
         numLinha: null,
@@ -57,6 +58,7 @@ function FormData(){
     }, [search]);
 
     return(<Form onSubmit={(e) => (
+        // eslint-disable-next-line no-sequences
         e.preventDefault(),
         setSearch(
             {termo: e.target.elements.controlSelect2.value,
@@ -65,7 +67,7 @@ function FormData(){
         ))}>
             <Form.Group controlId="controlSelect1">
                 <Form.Label>Selecione opção de busca:</Form.Label>
-                    <Form.Control as="select">
+                    <Form.Control as="select" >
                         <option>Ônibus</option>
                         <option>Paradas</option>
                     </Form.Control>
