@@ -29,11 +29,11 @@ class Api{
 
   }
 
-  async getLinhas(){
+  async getLinhas(info){
     try {
       const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io/Linha/Buscar`, 
       {params: {
-        termosBusca: "Lapa"
+        termosBusca: info
       }}
       )
       console.log(res.data);
@@ -63,11 +63,11 @@ class Api{
 
   }
 
-  async getPrevisao(){
+  async getPrevisao(info){
     try {
       const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io/Previsao/Parada`, 
       {params: {
-        codigoParada: "340015333"
+        codigoParada: info
       }}
       )
       console.log(res.data);
