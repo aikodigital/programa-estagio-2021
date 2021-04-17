@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 class Api{
 
   async postApi() {
@@ -47,9 +46,26 @@ class Api{
 
   }
 
-  async getParadas(){
+  async getParadas(info){
     try {
-      const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io//Previsao/Parada`, 
+      const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io/Parada/Buscar`, 
+      {params: {
+        termosBusca: info
+      }}
+      )
+      console.log(res.data);
+      return res.data;
+
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+
+  }
+
+  async getPrevisao(){
+    try {
+      const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io/Previsao/Parada`, 
       {params: {
         codigoParada: "340015333"
       }}
