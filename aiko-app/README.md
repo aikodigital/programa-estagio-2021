@@ -12,4 +12,4 @@ Rodar utilizando NPM:
 ### `npm start`
 
 ## LINK para o vídeo explicativo:
-https://youtu.be/hJcDWWhg2SI
+https://youtu.be/ScbbZ0gQCCw
