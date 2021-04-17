@@ -78,9 +78,11 @@ function App() {
   async function searchLine(e: any) {
     e.preventDefault()
     const response = await api.get(`/Linha/Buscar?termosBusca=${codigoLinha1}`)
+    console.log(response.data)
     let temp: IPos[] = []
     await response.data.forEach(async (line: any) => {
       const cl = await api.get(`/Posicao/Linha?codigoLinha=${line.cl}`)
+      console.log(cl.data)
       await cl.data.vs.forEach((pos: any) => {
         temp.push({
           px: pos.px,
@@ -88,7 +90,6 @@ function App() {
         })
       })
       setPosicaoVeiculos(temp)
-      console.log(temp)
     })
   }
 
@@ -298,7 +299,7 @@ function App() {
           </Accordion>
         </div>
       </aside>
-      <MapContainer center={[-23.550278, -46.633889]} zoom={13} style={{ width: '100%', height: '100%' }}>
+      <MapContainer center={[-23.550278, -46.633889]} zoom={12} style={{ width: '100%', height: '100%' }}>
         <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
         {markers}
         {markers2}
