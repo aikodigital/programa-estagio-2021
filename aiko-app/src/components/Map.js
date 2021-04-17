@@ -5,11 +5,8 @@ import { UseMap } from "./mapContext";
 
 export default function Map() {
 
-  console.log("map function");
   const { mapData } = UseMap();
   const [selectedBus, setSelectedBus] = useState(false);
-
-  console.log(mapData);
 
   return (<GoogleMap 
     defaultZoom = {10} 

@@ -2,7 +2,6 @@ import Api from "../api/api";
 
 export default async function stopPrevJson(info){
     const busPos = await Api.getPrevisao(info);
-    console.log({busPos});
 
     let posData = {};
     let arrData = [];
@@ -30,9 +29,6 @@ export default async function stopPrevJson(info){
 
         arrData.push(posData) 
     ));
-    
-    console.log("aqui")
-    console.log(arrData);
 
     return arrData;
 }

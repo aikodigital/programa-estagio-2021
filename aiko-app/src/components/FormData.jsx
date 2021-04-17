@@ -18,8 +18,6 @@ function FormData(){
 
         if(option === "Paradas"){
 
-            console.log("Clicou em estações");
-
             const fetchedData = async () => {
                 const fetchData = await paradaJson(termo);
                 setMapData({
@@ -37,7 +35,6 @@ function FormData(){
             fetchedData();
 
         }else{
-            console.log("Clicou em onibus");
 
             const fetchedBus = async () => {
                 const fetchBus = await posJson();

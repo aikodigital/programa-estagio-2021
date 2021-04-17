@@ -4,7 +4,6 @@ import BootstrapTable from 'react-bootstrap-table-next';
 
 export default function TableLinha(props){
 
-  console.log(props);
   
   const columns = [{
     dataField: 'cl',

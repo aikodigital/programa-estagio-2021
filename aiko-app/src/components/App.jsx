@@ -30,7 +30,6 @@ function App() {
 
   const handleSubmit = async (event) => {
     const info = event.target[0].value;
-    console.log(info);
 
     if(info !== null){
 
@@ -41,7 +40,6 @@ function App() {
 
   const handleSubmitStop = async (event) => {
     const info = event.target[0].value;
-    console.log(info);
 
     if(info !== null){
 

@@ -2,9 +2,7 @@ import Api from "../api/api";
 
 export default async function paradaJson(data){
 
-    console.log("entrou " + data);
     const stopJson = await Api.getParadas(data);
-    console.log(stopJson);
 
     let posData = {};
     let arrData = {
@@ -26,9 +24,6 @@ export default async function paradaJson(data){
       
       arrData.data.push(posData) 
     ));
-      
-      console.log("aqui 2");
-      console.log(arrData);
   
       return arrData;
 }

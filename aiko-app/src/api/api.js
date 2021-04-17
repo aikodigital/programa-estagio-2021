@@ -19,7 +19,7 @@ class Api{
   async getPos(){
     try {
       const res = await axios.get(`https://aiko-olhovivo-proxy.aikodigital.io/Posicao`)
-      console.log(res.data);
+
       return res.data;
 
     } catch (error) {
@@ -36,7 +36,7 @@ class Api{
         termosBusca: info
       }}
       )
-      console.log(res.data);
+
       return res.data;
 
     } catch (error) {
@@ -53,7 +53,7 @@ class Api{
         termosBusca: info
       }}
       )
-      console.log(res.data);
+
       return res.data;
 
     } catch (error) {
@@ -70,7 +70,7 @@ class Api{
         codigoParada: info
       }}
       )
-      console.log(res.data);
+
       return res.data;
 
     } catch (error) {

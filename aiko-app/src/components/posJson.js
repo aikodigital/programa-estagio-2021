@@ -2,7 +2,6 @@ import Api from "../api/api";
 
 export default async function posJson(){
     const busPos = await Api.getPos();
-    console.log({busPos});
 
     let posData = {};
     let arrData = {
@@ -28,9 +27,6 @@ export default async function posJson(){
 
         arrData.data.push(posData) 
     ));
-    
-    console.log("aqui")
-    console.log(arrData);
 
     return arrData;
 }
