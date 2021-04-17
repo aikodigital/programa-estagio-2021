@@ -40,6 +40,33 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 
 - Na aplicação, o usuário tem acesso à *localização em tempo real dos ônibus*, às *paradas* e às *informações* de uma determinada linha. Além da *previsão de chegada do veículo mais próximo a uma parada*.
 
+### Imagens
+
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-54-51.png">
+</div>
+
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-05.png">
+</div>
+
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-18.png">
+</div>
+
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-30.png">
+</div>
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-40.png">
+</div>
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-46.png">
+</div>
+<div align = "center">
+  <img src = "imagens-readme/Captura de tela de 2021-04-17 13-55-50.png">
+</div>
+
 ### Vídeo de explicação
 
 [Funcionamento da aplicação]()
@@ -53,3 +80,7 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 - Com o repositório clonado, o usuário deve entrar na pasta do projeto pelo terminal, utilizando o comando: `cd front-end` e adicionar o react para que não haja erros na hora de rodar a aplicação, com o comando: `yarn add react`
 
 - E, por fim, para rodar a aplicação, ainda no terminal, o usuário escreve o comando: `yarn start` e a aplicação começa a funcionar no navegador padrão
+
+### Final
+
+Espero que tenham uma ótima experiência com a aplicação! :smile:
