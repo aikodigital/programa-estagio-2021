@@ -1,15 +1,18 @@
-import * as busPos from "../data/posVeiculo.json";
- 
-export default function posJson(){
+import Api from "../api/api"; 
+
+export default async function posJson(){
+    const busPos = await Api.getPos();
+    console.log({busPos});
+
     let posData = {};
     let arrData = {
         data: []
     };
 
-    busPos.l.map(line => (
+     busPos && busPos.l.map(line => (
 
         line.vs.map(bus => ( 
-
+            
             posData = {
                 id : line.cl,
                 number : line.c,
@@ -20,6 +23,7 @@ export default function posJson(){
                 cod: bus.p
             }
 
+        // eslint-disable-next-line no-sequences
         )),
 
         arrData.data.push(posData) 
