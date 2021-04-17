@@ -34,7 +34,7 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
   <img src = "front-end/src/images/Logo.png">
 </div>
 
-- Foi construída com as tecnologias **React** (por meio do **Typescript**), **HTML**, **CSS** e **JavaScript**;
+- Foi construída com as tecnologias **React** (por meio do **Typescript**), **HTML**, **CSS**, **JavaScript**, **React-Bootstrap**, **Leaflet** e **Mapbox**;
 
 - Para seu funcionamento, foram feitas requisições da [API **Olho Vivo**](api.md);
 
@@ -69,7 +69,7 @@ Esses requisitos são obrigatórios e devem ser desenvolvidos para a entrega do 
 
 ### Vídeo de explicação
 
-[Funcionamento da aplicação]()
+[Funcionamento da aplicação](https://youtu.be/_iT2_clofHc)
 
 ### Rodando o código
 
