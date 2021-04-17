@@ -279,11 +279,14 @@ function App() {
             </Card>
             <Card className="card">
               <Accordion.Toggle as={Card.Header} eventKey="3">
-                Previsão de Chegada (clique na parada e depois clique aqui para ver a previsão)
+                Previsão de Chegada
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="3">
                 <Card.Body className="card-body1">
-                  {previsao && <div className="previsao-de-chegada">
+                  <div id = "titulo">
+                    <p>Clique na parada na qual se encontra e veja a previsão de chegada do veículo mais próximo</p>
+                  </div>
+                  {previsao && <div id="previsao-de-chegada">
                     <div className="content">
                       <div className="first-child">
                         <p>O próximo ônibus chegará às</p>

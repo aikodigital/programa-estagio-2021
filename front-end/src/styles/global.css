@@ -164,13 +164,13 @@ body, input, button, textarea {
     margin: 10px 0px 0px 3px;
     font-size: 16px;
 }
-
-#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada {
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada {
     display: block;
     width: 440px;
+    margin-top: 20px;
 }
 
-#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content {
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content {
     font-weight: 500;
     background-color: rgba(33, 118, 255, 0.6);
     border-top: 1px solid #d3d3d3;
@@ -185,12 +185,12 @@ body, input, button, textarea {
     align-items: center;
 }
 
-#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content .first-child {
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content .first-child {
     color: #ffffff;
     margin-top: 16px;
 }
 
-#single-page aside .menu-options .accordion .card-body1 .previsao-de-chegada .content .last-child {
+#single-page aside .menu-options .accordion .card-body1 #previsao-de-chegada .content .last-child {
     color: #F0C808;
     margin-left: 5px;
     margin-top: 16px;
