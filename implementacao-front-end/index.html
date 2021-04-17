@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dashboard - Olho Vivo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	   crossorigin=""/>
+	   	<script src="https://kit.fontawesome.com/329b0b582b.js" crossorigin="anonymous"></script>
+	    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	   crossorigin=""></script>
+	   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	   	<!-- Faz o refresh automático da página após 5 minutos -->
+	    <meta http-equiv="refresh" content="300">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<header><h1>Dashboard - Olho Vivo</h1></header>
+		
+		<div id="wrapper">
+			<div id="wrapper_linha">
+				<h2>Pesquisar Linha</h2>
+				<!-- Campo de busca -->
+				<input type="text" id="linha" name="linha" placeholder="Ex.: 8000-10">
+				<!-- div onde serão mostradas as informações da linha -->
+				<div id="linha_info"></div>
+			</div>
+			<div id="wrapper_parada">
+				<h2>Previsão de Chegada</h2>
+				<!-- Campo de busca -->
+				<input type="text" id="parada" name="parada" placeholder="Ex.:Eduardo Prado">
+				<!-- div onde serão mostradas as informações sobre uma parada -->
+				<div id="parada_info"></div>
+			</div>
+		</div>
+		<!-- div onde será plotado o mapa -->
+		<div id="mapa"></div>
+
+		<footer>
+			<div id="copyright">Copyright © Giovanne Discacciati 2021</div>
+		</footer>
+		
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
