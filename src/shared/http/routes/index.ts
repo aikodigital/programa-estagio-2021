@@ -1,9 +1,8 @@
 import { Router } from 'express';
+import veiculosRouter from '@modules/veiculos/routes/veiculos.routes';
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ msg: 'hello' });
-});
+routes.use('/veiculos', veiculosRouter);
 
 export default routes;
