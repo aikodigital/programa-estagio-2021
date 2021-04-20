@@ -15,6 +15,7 @@ pool.connect().then((res) => {
   console.log('Successfully connected with database');
 }).catch((err) => {
   console.error(err);
+  process.exit();
 });
 
 export default pool;
