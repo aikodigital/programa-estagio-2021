@@ -3,8 +3,5 @@ node_modules/
 build/
 temp/
 .env
-ormconfig.json
-tsconfig.json
 package-lock.json
-.eslintrc
-.gitignore
+
