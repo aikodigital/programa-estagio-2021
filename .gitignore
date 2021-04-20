@@ -1,11 +1,11 @@
-.idea/
 .vscode/
 node_modules/
 build/
 temp/
 .env
-coverage
 ormconfig.json
 package.json
+tsconfig.json
 package-lock.json
-dist
+.eslintrc
+.gitignore
