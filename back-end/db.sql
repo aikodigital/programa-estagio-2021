@@ -1,0 +1,34 @@
+CREATE DATABASE olho_vivo;
+
+--\c olho_vivo;
+
+CREATE TABLE Parada(
+  Id SERIAL PRIMARY KEY,
+  Name VARCHAR(255),
+  Latitude DOUBLE PRECISION,
+  Longitude DOUBLE PRECISION
+);
+
+CREATE TABLE Linha(
+  Id SERIAL PRIMARY KEY,
+  Name VARCHAR(255)
+);
+
+CREATE TABLE Veiculo(
+  Id SERIAL PRIMARY KEY,
+  Name VARCHAR(255),
+  Modelo VARCHAR(255),
+  LinhaId INTEGER REFERENCES Linha (Id)
+);
+
+CREATE TABLE PosicaoVeiculo(
+  Latitude DOUBLE PRECISION,
+  Longitude DOUBLE PRECISION,
+  VeiculoId INTEGER REFERENCES Veiculo (Id)
+);
+
+CREATE TABLE RelacaoLinhaParada(
+  ParadaId INTEGER REFERENCES Parada (Id),
+  LinhaId INTEGER REFERENCES Linha (Id)
+);
+
