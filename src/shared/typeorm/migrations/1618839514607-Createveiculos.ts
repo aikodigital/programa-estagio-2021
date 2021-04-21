@@ -32,6 +32,15 @@ export class Createveiculos1618839514607 implements MigrationInterface {
             default: 'now()',
           },
         ],
+        foreignKeys: [
+          {
+            name: 'linhaId',
+            referencedTableName: 'linhas',
+            referencedColumnNames: ['id'],
+            columnNames: ['id'],
+            onUpdate: 'CASCADE',
+          },
+        ],
       }),
     );
   }
