@@ -30,13 +30,21 @@ const getById = (request: Request, response: Response) => {
 const deleteById = (request: Request, response: Response) => {
   const {id} = request.body;
 
-  const query = `DELETE FROM Veiculo WHERE Id = ${id} RETURNING *`;
+  const query = `DELETE FROM PosicaoVeiculo 
+    WHERE VeiculoId = ${id};`;
 
   pool.query(query, (err, res) => {
     if (err) {
       response.status(400).send(err.stack);
     } else {
-      response.send(res.rows[0]);
+      const secondQuery = `DELETE FROM Veiculo WHERE Id = ${id} RETURNING *`;
+      pool.query(secondQuery, (err, res) => {
+        if (err) {
+          response.status(400).send(err.stack);
+        } else {
+          response.send(res.rows[0]);
+        }
+      });
     }
   });
 };

@@ -131,12 +131,15 @@ const deleteById = (request: Request, response: Response) => {
 
   const query = `
     DELETE FROM RelacaoLinhaParada WHERE LinhaId = ${id};
+    DELETE FROM PosicaoVeiculo WHERE
+      VeiculoId IN (SELECT Id FROM Veiculo WHERE LinhaId = ${id});
+    DELETE FROM Veiculo WHERE LinhaId = ${id};
   `;
 
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
-        error: err,
+        error: err.stack,
       });
     } else {
       const secondQuery = `
