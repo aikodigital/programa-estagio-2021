@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="padding: 1%; text-align:center"> Detalhes da Linha</h1>
+<ul class="list-group list-group-flush" style = "width:80%;margin:auto">
+  <li class="list-group-item"><strong>Nome:</strong> {{ linha.name }}</li>
+  <li class="list-group-item"><strong>Paradas:</strong> </li>
+  {% for parada in linha.paradas.all %}
+    <li class="list-group-item"><a href="{{ parada.get_absolute_url}} " >{{ parada.name}}</a></li>
+  {% endfor %}
+  <li class="list-group-item"><strong></strong> <button type="button" class="btn btn-secondary" ><a href="{% url 'linhas:list'%}" style="color:white">Voltar</a></button></li>
+</ul>
+
+{% endblock %}

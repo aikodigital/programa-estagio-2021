@@ -11,7 +11,7 @@ from .views import (ParadaListView,
 app_name = 'parada'
 
 urlpatterns = [
-    path('', ParadaListView.as_view(),name='paradas'),
+    path('', ParadaListView.as_view(),name='list'),
     path('<int:pk>/', ParadaDetailView.as_view(),name='detail'),
     path('update/<int:pk>/', ParadaUpdateView.as_view(),name='update'),
     path('delete/<int:pk>/', ParadaDeleteView.as_view(),name='delete'),

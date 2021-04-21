@@ -6,17 +6,19 @@ from .models import Parada
 from .forms import ParadaForm
 class ParadaListView(ListView):
     model = Parada
-    template_name = 'parada/index.html'
+    template_name = 'parada/list.html'
     context_object_name = 'paradas'
+    paginate_by = 10
     queryset = Parada.objects.all()
 
 class ParadaSearchListView(ParadaListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         search_id = self.request.GET.get("search-id")
-        queryset = queryset.filter(
-            Q(id__iexact=search_id)
-        )
+        if search_id:
+            queryset = queryset.filter(
+                Q(id__iexact=search_id)
+            )
         return queryset
 
 class ParadaDetailView(DetailView):

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'parada',
+    'linhas',
 ]
 
 MIDDLEWARE = [

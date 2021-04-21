@@ -5,11 +5,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Linhas <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'linhas:list' %}">Linhas <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Paradas</a>
+        <a class="nav-link" href="{% url 'parada:list' %}">Paradas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Veículos</a>
