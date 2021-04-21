@@ -5,7 +5,8 @@ from .views import (ParadaListView,
                     ParadaDetailView,
                     ParadaCreateView,
                     ParadaUpdateView,
-                    ParadaDeleteView)
+                    ParadaDeleteView,
+                    ParadaSearchListView)
 
 app_name = 'parada'
 
@@ -14,6 +15,7 @@ urlpatterns = [
     path('<int:pk>/', ParadaDetailView.as_view(),name='detail'),
     path('update/<int:pk>/', ParadaUpdateView.as_view(),name='update'),
     path('delete/<int:pk>/', ParadaDeleteView.as_view(),name='delete'),
+    path('search/', ParadaSearchListView.as_view(),name='search'),
     path('create/', ParadaCreateView.as_view(),name='create'),
 
 
