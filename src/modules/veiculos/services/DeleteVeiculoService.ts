@@ -1,4 +1,4 @@
-import { VeiculoRepository } from '@modules/typeorm/repositories/VeiculoRepository';
+import { VeiculoRepository } from '@modules/veiculos/typeorm/repositories/VeiculoRepository';
 import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 
