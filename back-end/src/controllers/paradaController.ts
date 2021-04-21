@@ -3,11 +3,10 @@ import pool from '../db/db';
 
 
 const getAll = (request: Request, response: Response) => {
-  const {id} = request.params;
-
   const query = `
-    SELECT * FROM parada WHERE id=${id};
+    SELECT * FROM parada
   `;
+
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
@@ -20,16 +19,19 @@ const getAll = (request: Request, response: Response) => {
 };
 
 const getById = (request: Request, response: Response) => {
+  const {id} = request.params;
+
   const query = `
-    SELECT * FROM parada;
+    SELECT * FROM parada WHERE id=${id};
   `;
+
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
         error: 'Access unsucessful',
       });
     } else {
-      response.send(res.rows);
+      response.send(res.rows[0]);
     }
   });
 };
