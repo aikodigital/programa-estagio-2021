@@ -227,6 +227,28 @@ const update = (request: Request, response: Response) => {
   });
 };
 
+const linhaPorParada = (request: Request, response: Response) => {
+  const {paradaId} = request.params;
+
+  const query = `
+    SELECT Linha.Id,
+      Linha.Name
+    FROM RelacaoLinhaParada
+    JOIN Linha
+    ON Linha.Id = RelacaoLinhaParada.LinhaId
+    WHERE RelacaoLinhaParada.ParadaId = ${paradaId};
+  `;
+
+  pool.query(query, (err, res) => {
+    if (err) {
+      response.status(400).send(err.stack);
+    } else {
+      response.send(res.rows);
+    }
+  });
+};
+
+// Funçao que gera a query para inserir a relação LINHA - PARADA
 const insertRelacao = (id: number, paradas: Number[], response: Response) => {
   let secondQuery = ``;
 
@@ -246,4 +268,5 @@ export default {
   post,
   deleteById,
   update,
+  linhaPorParada,
 };

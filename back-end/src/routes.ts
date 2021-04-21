@@ -34,6 +34,8 @@ routes.delete('/linhas', linhaController.deleteById);
 
 routes.put('/linhas', linhaController.update);
 
+routes.get('/linhas_parada/:paradaId', linhaController.linhaPorParada);
+
 // Rotas relacionadas aos veiculos
 routes.get('/veiculos', veiculoController.getAll);
 
@@ -44,6 +46,8 @@ routes.post('/veiculos', veiculoController.post);
 routes.delete('/veiculos', veiculoController.deleteById);
 
 routes.put('/veiculos', veiculoController.update);
+
+routes.get('/veiculos_linha/:linhaId', veiculoController.veiculoPorLinha);
 
 // Rotas relacionadas as posições dos veículos
 routes.get('/posicao_veiculos', posicaoVeiculoController.getAll);

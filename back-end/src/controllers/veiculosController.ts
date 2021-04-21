@@ -110,10 +110,25 @@ const post = (request: Request, response: Response) => {
   });
 };
 
+const veiculoPorLinha = (request: Request, response: Response) => {
+  const {linhaId} = request.params;
+
+  const query = `SELECT * FROM Veiculo WHERE LinhaId = ${linhaId}`;
+
+  pool.query(query, (err, res) => {
+    if (err) {
+      response.status(400).send(err.stack);
+    } else {
+      response.send(res.rows);
+    }
+  });
+};
+
 export default {
   post,
   getAll,
   getById,
   deleteById,
   update,
+  veiculoPorLinha,
 };
