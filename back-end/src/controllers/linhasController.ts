@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import pool from '../db/db';
 
 interface ILinhaBody {
+  id: number
   name: string,
   paradas: Number[]
 }
@@ -18,8 +19,9 @@ const getAll = async (request: Request, response: Response) => {
       return;
     } else {
       const linhas = res.rows;
+      // Pega as paradas relacionadas a linha
       const secondQuery = `
-        SELECT RelacaoLinhaParada.ParadaId
+        SELECT RelacaoLinhaParada.ParadaId as Id
           , RelacaoLinhaParada.LinhaId
           , Parada.Name
           , Parada.Latitude
@@ -35,15 +37,14 @@ const getAll = async (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.send({
-            error: err,
-          });
+          response.status(400).send(err.stack);
           return;
-        } else {
+        } else { // Organiza a resposta do servidor
           res.rows.forEach((relacao) => {
             const i = linhas.findIndex((linha) => linha.id === relacao.linhaid);
+
             linhas[i].paradas.push({
-              paradaid: relacao.paradaid,
+              id: relacao.id,
               name: relacao.name,
               latitude: relacao.latitude,
               longitude: relacao.longitude,
@@ -69,7 +70,8 @@ const getById = (request: Request, response: Response) => {
         error: 'Access unsucessful',
       });
     } else {
-      const linha = ({...res.rows[0], parada: []});
+      const linha = ({...res.rows[0], paradas: []});
+      // Pega as paradas relacionadas a linha
       const secondQuery = `
         SELECT RelacaoLinhaParada.ParadaId as Id
           , Parada.Name
@@ -83,11 +85,9 @@ const getById = (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.send({
-            error: err,
-          });
+          response.status(400).send(err.stack);
         } else {
-          linha.parada = res.rows;
+          linha.paradas = res.rows;
           response.send(linha);
         }
       });
@@ -105,7 +105,6 @@ const post = (request: Request, response: Response) => {
     ;
   `;
 
-
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
@@ -113,7 +112,16 @@ const post = (request: Request, response: Response) => {
       });
     } else {
       id = res.rows[0].id;
-      insertRelacao(id, paradas, response);
+
+      const secondQuery = insertRelacao(id, paradas, response);
+
+      pool.query(secondQuery, (err, res) => {
+        if (err) {
+          response.status(400).send(err.stack);
+        } else {
+          response.send({id});
+        }
+      });
     }
   });
 };
@@ -122,21 +130,101 @@ const deleteById = (request: Request, response: Response) => {
   const {id} = request.body;
 
   const query = `
-    DELETE FROM Parada WHERE id = ${id} RETURNING *
-    ;
+    DELETE FROM RelacaoLinhaParada WHERE LinhaId = ${id};
   `;
+
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
         error: err,
       });
     } else {
-      response.send(res.rows[0]);
+      const secondQuery = `
+        DELETE FROM Linha WHERE id = ${id} RETURNING *;
+      `;
+
+      pool.query(secondQuery, (err, res) => {
+        if (err) {
+          response.status(400).send(err.stack);
+        } else {
+          response.send(res.rows[0]);
+        }
+      });
     }
   });
 };
 
-const insertRelacao = (id: Number, paradas: Number[], response: Response) => {
+const update = (request: Request, response: Response) => {
+  const {id, name, paradas} = <ILinhaBody>request.body;
+
+  if (!id) {
+    response.status(400).send({
+      error: 'Id not provided',
+    });
+  }
+
+  const updateName = `
+    UPDATE Linha SET
+    NAME = '${name}'
+    WHERE ID = ${id}
+    RETURNING *;
+  `;
+
+  const updateParadas = `
+    DELETE FROM RelacaoLinhaParada WHERE LinhaId = ${id};
+    ${insertRelacao(id, paradas || [], response)}
+  `;
+
+  let query = ``;
+
+  if (name) {
+    query += updateName;
+  }
+
+  if (paradas) {
+    query += updateParadas;
+  }
+
+  pool.query(query, (err, res) => {
+    if (err) {
+      response.status(400).send(err.stack);
+    } else {
+      const secondQuery = `
+        SELECT * FROM Linha WHERE id=${id};
+      `;
+
+      pool.query(secondQuery, (err, res) => {
+        if (err) {
+          response.status(400).send(err.stack);
+        } else {
+          const linha = ({...res.rows[0], paradas: []});
+          // Pega as paradas relacionadas a linha
+          const thirdQuery = ` 
+            SELECT RelacaoLinhaParada.ParadaId as Id
+              , Parada.Name
+              , Parada.Latitude
+              , Parada.Longitude
+            FROM RelacaoLinhaParada
+            JOIN Parada
+            ON RelacaoLinhaParada.ParadaId = Parada.Id
+            WHERE RelacaoLinhaParada.LinhaId = ${linha.id}
+          `;
+
+          pool.query(thirdQuery, (err, res) => {
+            if (err) {
+              response.status(400).send(err.stack);
+            } else {
+              linha.paradas = res.rows;
+              response.send(linha);
+            }
+          });
+        }
+      });
+    }
+  });
+};
+
+const insertRelacao = (id: number, paradas: Number[], response: Response) => {
   let secondQuery = ``;
 
   paradas.forEach((paradaId) => {
@@ -146,17 +234,7 @@ const insertRelacao = (id: Number, paradas: Number[], response: Response) => {
     `;
   });
 
-  pool.query(secondQuery, (err, res) => {
-    if (err) {
-      response.send({
-        error: err,
-      });
-    }
-  });
-
-  if (id != 0) {
-    response.send({id});
-  }
+  return secondQuery;
 };
 
 export default {
@@ -164,4 +242,5 @@ export default {
   getById,
   post,
   deleteById,
+  update,
 };
