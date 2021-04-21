@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="padding: 1%; text-align:center"> Detalhes da Parada</h1>
+<ul class="list-group list-group-flush" style = "width:80%;margin:auto">
+  <li class="list-group-item"><strong>Nome:</strong> {{ parada.name }}</li>
+  <li class="list-group-item"><strong>Longitude:</strong> {{parada.longitude}}</li>
+  <li class="list-group-item"><strong>Latitude:</strong> {{parada.latitude}}</li>
+  <li class="list-group-item"><strong>ID:</strong> {{parada.id}}</li>
+  <li class="list-group-item"><strong></strong> <button type="button" class="btn btn-secondary" ><a href="{% url 'parada:paradas'%}" style="color:white">Voltar</a></button></li>
+</ul>
+
+{% endblock %}

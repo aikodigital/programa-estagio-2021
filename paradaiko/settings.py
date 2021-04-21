@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
     'parada',
 ]
 
@@ -121,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    join(BASE_DIR,'templates/assets')
+    join(BASE_DIR,'templates/static')
 ]
 
 MEDIA_ROOT = join(BASE_DIR,'media')

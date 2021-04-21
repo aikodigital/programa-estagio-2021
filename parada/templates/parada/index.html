@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="text-align:center;padding: 1%">Paradas</h1>
+<table class="table" style="width: 80%; margin:auto;">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for parada in paradas %}
+    <tr>
+      <td>{{ parada.id}}</td>
+      <td><a href="{{ parada.get_absolute_url}} ">{{ parada.name}}</a></td>
+      <td>{{ parada.latitude}}</td>
+      <td>{{ parada.longitude }}</td>
+      <td><button type="button" class="btn btn-primary"><a href = "{% url 'parada:update' parada.pk %}" style="color:white">Editar</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a href = "{% url 'parada:delete' parada.pk %}" style="color:white">Deletar</a></button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
