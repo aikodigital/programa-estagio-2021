@@ -23,7 +23,8 @@ CREATE TABLE Veiculo(
 CREATE TABLE PosicaoVeiculo(
   Latitude DOUBLE PRECISION,
   Longitude DOUBLE PRECISION,
-  VeiculoId INTEGER NOT NULL REFERENCES Veiculo (Id)
+  VeiculoId INTEGER NOT NULL REFERENCES Veiculo (Id),
+  UNIQUE(VeiculoId)
 );
 
 CREATE TABLE RelacaoLinhaParada(
