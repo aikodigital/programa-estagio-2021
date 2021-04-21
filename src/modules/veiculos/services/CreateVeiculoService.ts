@@ -1,5 +1,5 @@
-import Veiculo from '@modules/typeorm/entities/Veiculo';
-import { VeiculoRepository } from '@modules/typeorm/repositories/VeiculoRepository';
+import Veiculo from '@modules/veiculos/typeorm/entities/Veiculo';
+import { VeiculoRepository } from '@modules/veiculos/typeorm/repositories/VeiculoRepository';
 import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 
