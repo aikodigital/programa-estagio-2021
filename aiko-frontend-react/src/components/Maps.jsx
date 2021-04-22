@@ -7,6 +7,8 @@ import locbus from '../img/locBusBlue.png';
 import stopbus from '../img/StopBus.png';
 import { getPrediction } from '../apis/SPTrans';
 
+const GOOGLEMAP_KEY = process.env.REACT_APP_GOOGLE_MAP_KEY;
+
 export default (props) => {
   const prop = props;
   const vehicles = [];
@@ -55,7 +57,7 @@ export default (props) => {
   return (
     <Grid item xs={8} style={{ height: '80vh' }}>
       <WrapperdMap
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places${GOOGLEMAP_KEY}`}
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div style={{ height: '100%' }} />}
         mapElement={<div style={{ height: '100%' }} />}

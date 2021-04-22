@@ -33,7 +33,8 @@ export default (props) => {
   const prop = props;
 
   const [lines, setLines] = useState();
-  const [filterLine, setfilterLine] = useState([{ c: 'CCCC-10' }, { c: 'DDDD-10' }, { c: 'BBBB-10' }]);
+  const [filterLine, setfilterLine] = useState([]);
+
   useEffect(() => {
     const execut = async () => {
       const reqLines = await getAllLine();
@@ -41,6 +42,14 @@ export default (props) => {
         await authentication();
         execut();
       } else {
+        reqLines.l.sort((value, next) => {
+          if (value.c < next.c) {
+            return -1;
+          } if (value.c > next.c) {
+            return 1;
+          }
+          return 0;
+        });
         setLines(reqLines.l);
         setfilterLine(reqLines.l);
       }

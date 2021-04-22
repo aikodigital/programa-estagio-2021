@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const clickLine = (value, index) => () => {
-  if (value.selectLine.filter((val) => val.c === value.lines[index].c).length === 0) {
+  if (value.selectLine.filter((val) => val.cl === value.lines[index].cl).length === 0) {
     const sincroStop = async () => {
       const req = await getStop(value.lines[index].cl);
       const merge = { ...value.lines[index], stops: req };
