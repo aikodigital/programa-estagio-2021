@@ -1,3 +1,11 @@
+Vídeo:(https://youtu.be/QIvpMy9qkX4)
+
+# Instalação
+
+yarn install
+# Execução
+
+yarn start
 # Programa de estágio - 2021
 
 ![Aiko](imagens/aiko.png)
