@@ -1,0 +1,9 @@
+.popupBusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popupBusContainer p {
+    margin-bottom: .2rem;
+}

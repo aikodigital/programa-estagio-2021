@@ -1,0 +1,49 @@
+.popupContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.busList {
+    height: 200px;
+    width: 100%;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.btnPrevisao {
+    border: none;
+    background: #542CCC; 
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    transition: filter .2s;
+    cursor: pointer;
+}
+
+.btnPrevisao:hover {
+    filter: brightness(.85);
+}
+
+.busItem {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.busItem p {
+    margin-bottom: .2rem;
+}
+
+.busItem li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    align-items: center;
+}
+
+.busItem:last-child {
+    border: none;
+}
