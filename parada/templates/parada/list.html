@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Paradas{% endblock %}
 {% block content %}
 
 <h1 id="title">Paradas</h1>
@@ -26,7 +27,7 @@
   {% for parada in paradas %}
     <tr>
       <td>{{ parada.id}}</td>
-      <td><a href="{{ parada.get_absolute_url}} ">{{ parada.name}}</a></td>
+      <td><a href="{{ parada.get_absolute_url }} ">{{ parada.name}}</a></td>
       <td>{{ parada.latitude}}</td>
       <td>{{ parada.longitude }}</td>
       <td><button type="button" class="btn btn-primary"><a id ="edit-link" href = "{% url 'parada:update' parada.pk %}" >Editar</a></button></td>

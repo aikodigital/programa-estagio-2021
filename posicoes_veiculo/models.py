@@ -6,6 +6,7 @@ class PosicaoVeiculo(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     veiculo = models.ForeignKey(Veiculo,on_delete=models.CASCADE)
+
     def __str__(self):
         return self.name
     def get_absolute_url(self):

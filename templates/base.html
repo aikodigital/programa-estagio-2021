@@ -3,7 +3,7 @@
 <head>
     {% include 'partial/_head.html'%}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 {% include 'partial/_nav.html'%}

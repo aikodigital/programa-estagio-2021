@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from .models import PosicaoVeiculo
 from .forms import PosicaoVeiculoForm
+
 class PosicaoVeiculoListView(ListView):
     model = PosicaoVeiculo
     template_name = 'posicoes_veiculo/list.html'

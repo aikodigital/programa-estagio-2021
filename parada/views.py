@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from .models import Parada
 from .forms import ParadaForm
+
 class ParadaListView(ListView):
     model = Parada
     template_name = 'parada/list.html'
@@ -16,7 +17,6 @@ class ParadaSearchListView(ParadaListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         search_value = self.request.GET.get("search-value")
-        print(queryset)
         if search_value:
             queryset = queryset.filter(
                 Q(id__iexact=search_value) |
@@ -42,6 +42,5 @@ class ParadaUpdateView(UpdateView):
 
 class ParadaDeleteView(DeleteView):
     model = Parada
-    form_class = ParadaForm
     template_name = 'parada/delete.html'
     success_url = reverse_lazy('parada:list')
