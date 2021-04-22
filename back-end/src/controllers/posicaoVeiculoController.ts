@@ -12,7 +12,7 @@ const post = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -24,7 +24,7 @@ const getAll = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows);
     }
@@ -32,7 +32,13 @@ const getAll = (request: Request, response: Response) => {
 };
 
 const getById = (request: Request, response: Response) => {
-  const {veiculoId} = request.params;
+  const {veiculoId} = request.query;
+
+  if (!veiculoId) {
+    response.status(400).send({
+      error: 'ID not provided',
+    });
+  }
 
   const query = `
     SELECT * FROM PosicaoVeiculo WHERE VeiculoId=${veiculoId};
@@ -40,7 +46,7 @@ const getById = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -52,31 +58,36 @@ const update = (request: Request, response: Response) => {
   if (!veiculoId) {
     response.status(400).send({error: 'ID not provided'});
   }
+
   let query = `UPDATE PosicaoVeiculo SET`;
 
-  if (latitude) {
-    query += `
+  if (!latitude && !longitude) {
+    query = `SELECT * FROM PosicaoVeiculo WHERE VeiculoId = ${veiculoId};`;
+  } else {
+    if (latitude) {
+      query += `
       latitude = ${latitude}
     `;
-  }
-  if (longitude) {
-    if (latitude) {
-      query += ', ';
+    }
+    if (longitude) {
+      if (latitude) {
+        query += ', ';
+      }
+
+      query += `
+      longitude = '${longitude}'
+    `;
     }
 
     query += `
-      longitude = '${longitude}'
-    `;
-  }
-
-  query += `
     WHERE VeiculoId = ${veiculoId}
     RETURNING * ;
   `;
+  }
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }

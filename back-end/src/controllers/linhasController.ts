@@ -37,7 +37,7 @@ const getAll = async (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.status(400).send(err.stack);
+          response.status(400).send({error: err.message});
           return;
         } else { // Organiza a resposta do servidor
           res.rows.forEach((relacao) => {
@@ -58,21 +58,28 @@ const getAll = async (request: Request, response: Response) => {
 };
 
 const getById = (request: Request, response: Response) => {
-  const {id} = request.params;
+  const {id} = request.query;
+
+  if (!id) {
+    response.status(400).send({
+      error: 'ID not provided',
+    });
+  }
 
   const query = `
-    SELECT * FROM Linha WHERE id=${id};
+    SELECT * FROM Linha WHERE Id=${id};
   `;
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.send({
-        error: 'Access unsucessful',
-      });
+      response.status(400).send({error: err.message});
     } else {
       const linha = ({...res.rows[0], paradas: []});
+      if (!linha.id) {
+        response.send();
+      } else {
       // Pega as paradas relacionadas a linha
-      const secondQuery = `
+        const secondQuery = `
         SELECT RelacaoLinhaParada.ParadaId as Id
           , Parada.Name
           , Parada.Latitude
@@ -83,14 +90,15 @@ const getById = (request: Request, response: Response) => {
         WHERE RelacaoLinhaParada.LinhaId = ${linha.id}
       `;
 
-      pool.query(secondQuery, (err, res) => {
-        if (err) {
-          response.status(400).send(err.stack);
-        } else {
-          linha.paradas = res.rows;
-          response.send(linha);
-        }
-      });
+        pool.query(secondQuery, (err, res) => {
+          if (err) {
+            response.status(400).send({error: err.message});
+          } else {
+            linha.paradas = res.rows;
+            response.send(linha);
+          }
+        });
+      }
     }
   });
 };
@@ -117,7 +125,7 @@ const post = (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.status(400).send(err.stack);
+          response.status(400).send({error: err.message});
         } else {
           response.send({id});
         }
@@ -139,7 +147,7 @@ const deleteById = (request: Request, response: Response) => {
   pool.query(query, (err, res) => {
     if (err) {
       response.send({
-        error: err.stack,
+        error: {error: err.message},
       });
     } else {
       const secondQuery = `
@@ -148,7 +156,7 @@ const deleteById = (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.status(400).send(err.stack);
+          response.status(400).send({error: err.message});
         } else {
           response.send(res.rows[0]);
         }
@@ -190,7 +198,7 @@ const update = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       const secondQuery = `
         SELECT * FROM Linha WHERE id=${id};
@@ -198,7 +206,7 @@ const update = (request: Request, response: Response) => {
 
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.status(400).send(err.stack);
+          response.status(400).send({error: err.message});
         } else {
           const linha = ({...res.rows[0], paradas: []});
           // Pega as paradas relacionadas a linha
@@ -215,7 +223,7 @@ const update = (request: Request, response: Response) => {
 
           pool.query(thirdQuery, (err, res) => {
             if (err) {
-              response.status(400).send(err.stack);
+              response.status(400).send({error: err.message});
             } else {
               linha.paradas = res.rows;
               response.send(linha);
@@ -228,7 +236,7 @@ const update = (request: Request, response: Response) => {
 };
 
 const linhaPorParada = (request: Request, response: Response) => {
-  const {paradaId} = request.params;
+  const {paradaId} = request.query;
 
   const query = `
     SELECT Linha.Id,
@@ -241,7 +249,7 @@ const linhaPorParada = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows);
     }

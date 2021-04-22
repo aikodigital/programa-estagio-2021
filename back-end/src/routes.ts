@@ -15,7 +15,7 @@ routes.get('/', (request: Request, response: Response) => {
 // Rotas relacionadas as Paradas
 routes.get('/paradas', paradaController.getAll);
 
-routes.get('/paradas/:id', paradaController.getById);
+routes.get('/parada', paradaController.getById);
 
 routes.post('/paradas', paradaController.post);
 
@@ -24,7 +24,7 @@ routes.delete('/paradas', paradaController.deleteById);
 routes.put('/paradas', paradaController.update);
 
 // Rotas relacionadas as Linhas
-routes.get('/linhas/:id', linhaController.getById);
+routes.get('/linha', linhaController.getById);
 
 routes.get('/linhas', linhaController.getAll);
 
@@ -34,12 +34,12 @@ routes.delete('/linhas', linhaController.deleteById);
 
 routes.put('/linhas', linhaController.update);
 
-routes.get('/linhas_parada/:paradaId', linhaController.linhaPorParada);
+routes.get('/linhas_parada', linhaController.linhaPorParada);
 
 // Rotas relacionadas aos veiculos
 routes.get('/veiculos', veiculoController.getAll);
 
-routes.get('/veiculos/:id', veiculoController.getById);
+routes.get('/veiculo', veiculoController.getById);
 
 routes.post('/veiculos', veiculoController.post);
 
@@ -47,12 +47,12 @@ routes.delete('/veiculos', veiculoController.deleteById);
 
 routes.put('/veiculos', veiculoController.update);
 
-routes.get('/veiculos_linha/:linhaId', veiculoController.veiculoPorLinha);
+routes.get('/veiculos_linha', veiculoController.veiculoPorLinha);
 
 // Rotas relacionadas as posições dos veículos
 routes.get('/posicao_veiculos', posicaoVeiculoController.getAll);
 
-routes.get('/posicao_veiculos/:veiculoId', posicaoVeiculoController.getById);
+routes.get('/posicao_veiculo', posicaoVeiculoController.getById);
 
 routes.post('/posicao_veiculos', posicaoVeiculoController.post);
 

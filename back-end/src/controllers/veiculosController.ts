@@ -6,7 +6,7 @@ const getAll = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows);
     }
@@ -14,13 +14,19 @@ const getAll = (request: Request, response: Response) => {
 };
 
 const getById = (request: Request, response: Response) => {
-  const {id} = request.params;
+  const {id} = request.query;
+
+  if (!id) {
+    response.status(400).send({
+      error: 'ID not provided',
+    });
+  }
 
   const query = `SELECT * FROM Veiculo WHERE Id = ${id}`;
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -35,12 +41,12 @@ const deleteById = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       const secondQuery = `DELETE FROM Veiculo WHERE Id = ${id} RETURNING *`;
       pool.query(secondQuery, (err, res) => {
         if (err) {
-          response.status(400).send(err.stack);
+          response.status(400).send({error: err.message});
         } else {
           response.send(res.rows[0]);
         }
@@ -54,40 +60,45 @@ const update = (request: Request, response: Response) => {
   if (!id) {
     response.status(400).send({error: 'ID not provided'});
   }
-  let query = `UPDATE Veiculos SET`;
 
-  if (name) {
-    query += `
+  let query = `UPDATE Veiculo SET`;
+
+  if (!name && !modelo && !linhaId) {
+    query = `SELECT * FROM Veiculo WHERE Id = ${id};`;
+  } else {
+    if (name) {
+      query += `
       name = '${name}'
     `;
-  }
-  if (modelo) {
-    if (name) {
-      query += ', ';
     }
+    if (modelo) {
+      if (name) {
+        query += ', ';
+      }
 
-    query += `
+      query += `
       modelo = '${modelo}'
     `;
-  }
-  if (linhaId) {
-    if (modelo || name) {
-      query += ', ';
+    }
+    if (linhaId) {
+      if (modelo || name) {
+        query += ', ';
+      }
+
+      query += `
+      linhaId = ${linhaId}
+    `;
     }
 
     query += `
-      linhaId = ${linhaId}
-    `;
-  }
-
-  query += `
     WHERE Id = ${id}
     RETURNING * ;
   `;
+  }
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -103,7 +114,7 @@ const post = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -111,13 +122,13 @@ const post = (request: Request, response: Response) => {
 };
 
 const veiculoPorLinha = (request: Request, response: Response) => {
-  const {linhaId} = request.params;
+  const {linhaId} = request.query;
 
   const query = `SELECT * FROM Veiculo WHERE LinhaId = ${linhaId}`;
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows);
     }

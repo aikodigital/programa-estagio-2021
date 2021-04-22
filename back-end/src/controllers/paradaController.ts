@@ -9,7 +9,7 @@ const getAll = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows);
     }
@@ -17,7 +17,13 @@ const getAll = (request: Request, response: Response) => {
 };
 
 const getById = (request: Request, response: Response) => {
-  const {id} = request.params;
+  const {id} = request.query;
+
+  if (!id) {
+    response.status(400).send({
+      error: 'ID not provided',
+    });
+  }
 
   const query = `
     SELECT * FROM parada WHERE id=${id};
@@ -25,7 +31,7 @@ const getById = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -43,7 +49,7 @@ const post = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
@@ -59,7 +65,7 @@ const deleteById = (request: Request, response: Response) => {
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       const secondQuery = `
         DELETE FROM Parada WHERE id = ${id} RETURNING *;
@@ -86,40 +92,48 @@ const update = (request: Request, response: Response) => {
     });
   }
 
-  let query = `UPDATE Parada SET`;
+  let query = '';
 
-  if (name) {
-    query += `
+  if (!name && !latitude && !longitude) {
+    query = `
+    SELECT * FROM parada WHERE id=${id};
+  `;
+  } else {
+    query = `UPDATE Parada SET`;
+
+    if (name) {
+      query += `
       name = '${name}'
     `;
-  }
-  if (latitude) {
-    if (name) {
-      query += ', ';
     }
+    if (latitude) {
+      if (name) {
+        query += ', ';
+      }
 
-    query += `
+      query += `
       latitude = ${latitude}
     `;
-  }
-  if (longitude) {
-    if (latitude || name) {
-      query += ', ';
+    }
+    if (longitude) {
+      if (latitude || name) {
+        query += ', ';
+      }
+
+      query += `
+      longitude = ${longitude}
+    `;
     }
 
     query += `
-      longitude = ${longitude}
-    `;
-  }
-
-  query += `
     WHERE Id = ${id}
     RETURNING * ;
   `;
+  }
 
   pool.query(query, (err, res) => {
     if (err) {
-      response.status(400).send(err.stack);
+      response.status(400).send({error: err.message});
     } else {
       response.send(res.rows[0]);
     }
