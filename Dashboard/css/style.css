@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+.sidebar,.sidebar-mobile{
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-color: #2d3035;
+    position: fixed;
+}
+
+
+
+.topo{
+    background-color: #26282d;
+    text-align: center;
+    padding: 18px 0;
+    color: #fff;
+}
+
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.menu{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.close-menu{
+    padding: 15px;
+    text-align: right;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #fff;
+    display: none;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu li{
+    transition: 1s;
+    margin-top: 23px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li i{
+    color: #717171;
+    position: fixed;
+    left: 55px;
+
+    
+}
+
+.menu li a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #717171;
+    position: fixed;
+    left: 90px;
+}
+
+.menu li:hover i{
+    transition: 0.5s;
+    color:#6d3bb8 ;
+}
+
+.menu li:hover a{
+    transition: 0.5s;
+    color: #fff;
+}
+
+.loggout{
+    background-color: #23262b;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.loggout i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30px;
+    margin-right: 7px;
+    font-size: 40px;
+    color: #717171;
+    cursor: pointer;
+
+}
+
+.loggout i:hover{
+    transition: 0.5s;
+    color: #6d3bb8;
+}
+
+/*
+    FIM DA SIDEBAR
+*/
+
+
+
+ /* CONTEUDO PRINCIPAL */ 
+.content{
+    width: 80%;
+    float: left;
+    height: 100%;
+    margin-left:20%
+}
+
+.content header .logo-menu i{
+    cursor: pointer;
+    font-size: 25px;
+    display: none;
+}
+
+.content header{
+    padding: 20px;
+    box-shadow: 0px 0px 5px #212121;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.content header .name-painel{
+    color: #717171;
+    font-weight: bolder;
+}
+
+.content .main{
+    float: left;
+    width: 75%;
+    padding: 35px;
+   
+}
+
+.panel{
+    padding: 30px;
+    color: #717171;
+    text-align: center;
+}
+
+.insert{
+    padding: 10px 60px;
+}
+
+#formulario p{
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 2px solid #f00;
+    padding: 20px 0;
+    margin: 20px 0;
+    display: none;
+    color: #f00;
+}
+
+
+.insert form .form-group{
+    margin-bottom: 15px;
+}
+
+.insert form .form-group label{
+    display: block;
+    margin-bottom: 5px;
+    color: #717171;
+
+}
+
+.insert form .form-group input{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #a7a6a6;
+    padding: 5px;
+    outline: 0;
+    margin-top: 5px;
+}
+
+.insert form .form-group input[type=submit]{
+    width: 30%;
+    height: 50px;
+    padding: 5px;
+    background-color: #6d3bb8;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.insert form .form-group input[type=submit]:hover{
+    transition: 0.5s;
+    background-color: #5b2f9e;
+}
+
+
+/* RESPONSIVO PARA TABLETS */ 
+
+@media screen and (max-width:1200px){
+
+    .sidebar{
+        display:none ;
+        width: 100%;
+        float: left;
+       
+    }
+
+    .sidebar-mobile{
+        width: 100%;
+        float: left;
+       
+    }
+
+    .close-menu{
+        display: block;
+        padding: 0;
+        margin: 5px 15px;
+    }
+
+    .content{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .content header .logo-menu i{
+        display: block;
+    }
+
+    .menu{
+        text-align: center;
+    }
+
+    .content .main{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .panel{
+        margin-top: 20px;
+    }
+
+    .insert{
+        padding: 0px 30px;
+        margin-top: 30%;
+    }
+
+    #formulario{
+        width: 100%;
+    }
+
+    .insert form .form-group input[type=submit]{
+        width: 100%;
+
+    }
+
+}
+
+/* RESPONSIVO PARA CELULARES */
+
+@media screen and (max-width:510px){
+
+    .sidebar{
+        display:none ;
+        width: 100%;
+        float: left;
+        z-index: 99;
+       
+    }
+
+    .sidebar-mobile{
+        width: 100%;
+        float: left;
+       
+    }
+
+    .close-menu{
+        display: block;
+        padding: 0;
+        margin: 5px 15px;
+    }
+
+    .content{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .content header .logo-menu i{
+        display: block;
+    }
+
+    .menu{
+        text-align: center;
+    }
+
+    .content .main{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .insert{
+        padding: 0px 15px;
+        margin-top: 30%;
+    }
+
+    #formulario{
+        width: 100%;
+    }
+
+    .insert form .form-group input[type=submit]{
+        width: 100%;
+
+    }
+
+    
+
+}
