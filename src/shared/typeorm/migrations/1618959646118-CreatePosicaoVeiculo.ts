@@ -22,6 +22,11 @@ export class CreatePosicaoVeiculo1618959646118 implements MigrationInterface {
             type: 'decimal',
           },
           {
+            name: 'veiculoId',
+            type: 'uuid',
+            isNullable: false,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -34,7 +39,7 @@ export class CreatePosicaoVeiculo1618959646118 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: 'veiculoId',
+            name: 'posicaoVeiculo',
             referencedTableName: 'veiculos',
             referencedColumnNames: ['id'],
             columnNames: ['id'],

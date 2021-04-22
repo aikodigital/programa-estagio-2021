@@ -13,12 +13,12 @@ class CreatePosicaoVeiculoService {
   public async execute({
     latitude,
     longitude,
-    veiculoId,
+    veiculo,
   }: IRequest): Promise<PosicaoVeiculo> {
     const posicaoVeiculosRepository = getCustomRepository(
       PosicaoVeiculoRepository,
     );
-    const veiculoIdExists = await posicaoVeiculosRepository.findByPk(veiculoId);
+    const veiculoIdExists = await posicaoVeiculosRepository.findByPk(veiculo);
 
     if (!veiculoIdExists) {
       throw new AppError('Veiculo não encontrado');

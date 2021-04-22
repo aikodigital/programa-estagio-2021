@@ -1,7 +1,10 @@
+import Linha from '../../../linhas/typeorm/entities/Linha';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -9,6 +12,10 @@ import {
 class Parada {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @ManyToOne(() => Linha)
+  @JoinColumn({ name: 'linhaId' })
+  linha: Linha;
 
   @Column()
   name: string;

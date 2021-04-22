@@ -23,6 +23,7 @@ veiculosRouter.post(
     [Segments.BODY]: {
       name: Joi.string().required(),
       modelo: Joi.string().required(),
+      linhaId: Joi.string().uuid().required(),
     },
   }),
   veiculosController.create,

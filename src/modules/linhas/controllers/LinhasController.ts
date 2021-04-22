@@ -25,6 +25,7 @@ export default class LinhasController {
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
+    const getLinha = new ShowLinhaService();
 
     const createLinha = new CreateLinhaService();
 

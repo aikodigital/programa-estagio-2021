@@ -4,6 +4,8 @@ import ListParadaService from '../services/ListParadaService';
 import ShowParadaService from '../services/ShowParadaService';
 import UpdateParadaService from '../services/UpdateParadaService';
 import DeleteParadaService from '../services/DeleteParadaService';
+import ShowLinhaService from '@modules/linhas/services/ShowLinhaService';
+import Linha from '@modules/linhas/typeorm/entities/Linha';
 
 export default class ParadasController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -24,7 +26,10 @@ export default class ParadasController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, latitude, longitude } = request.body;
+    const { name, latitude, longitude, linhaId } = request.body;
+
+    const getLinha = new ShowLinhaService();
+    const linha: Linha = await getLinha.execute(linhaId);
 
     const createParada = new CreateParadaService();
 
@@ -32,6 +37,7 @@ export default class ParadasController {
       name,
       latitude,
       longitude,
+      linha,
     });
 
     return response.json(parada);

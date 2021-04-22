@@ -1,3 +1,4 @@
+import Linha from '@modules/linhas/typeorm/entities/Linha';
 import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import Parada from '../typeorm/entities/Parada';
@@ -7,6 +8,7 @@ interface IRequest {
   name: string;
   latitude: number;
   longitude: number;
+  linha: Linha;
 }
 
 class CreateParadaService {
@@ -14,6 +16,7 @@ class CreateParadaService {
     name,
     latitude,
     longitude,
+    linha,
   }: IRequest): Promise<Parada> {
     const paradasRepository = getCustomRepository(ParadaRepository);
     const paradaExists = await paradasRepository.findyByName(name);
@@ -25,6 +28,7 @@ class CreateParadaService {
       name,
       latitude,
       longitude,
+      linha,
     });
 
     await paradasRepository.save(parada);

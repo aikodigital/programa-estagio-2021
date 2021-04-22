@@ -1,7 +1,10 @@
+import Linha from '../../../linhas/typeorm/entities/Linha';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -15,6 +18,10 @@ class Veiculo {
 
   @Column()
   modelo: string;
+
+  @ManyToOne(() => Linha)
+  @JoinColumn({ name: 'linhaId' })
+  linha: Linha;
 
   @CreateDateColumn()
   created_at: Date;

@@ -1,7 +1,10 @@
+import Veiculo from '@modules/veiculos/typeorm/entities/Veiculo';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -9,6 +12,10 @@ import {
 class PosicaoVeiculo {
   @PrimaryGeneratedColumn('uuid')
   id: string;
+
+  @ManyToOne(() => Veiculo)
+  @JoinColumn({ name: 'veiculoId' })
+  veiculos: Veiculo[];
 
   @Column()
   latitude: number;

@@ -26,6 +26,11 @@ export class CreateParada1618931313636 implements MigrationInterface {
             type: 'decimal',
           },
           {
+            name: 'linhaId',
+            type: 'uuid',
+            isNullable: false,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -38,7 +43,7 @@ export class CreateParada1618931313636 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: 'linhaId',
+            name: 'paradaLinha',
             referencedTableName: 'linhas',
             referencedColumnNames: ['id'],
             columnNames: ['id'],

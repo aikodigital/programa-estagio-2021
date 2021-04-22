@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class Createveiculos1618839514607 implements MigrationInterface {
+export class CreateLinhas1618839514607 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'veiculos',
+        name: 'linhas',
         columns: [
           {
             name: 'id',
@@ -18,10 +18,6 @@ export class Createveiculos1618839514607 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'modelo',
-            type: 'varchar',
-          },
-          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -32,20 +28,11 @@ export class Createveiculos1618839514607 implements MigrationInterface {
             default: 'now()',
           },
         ],
-        foreignKeys: [
-          {
-            name: 'linhaId',
-            referencedTableName: 'linhas',
-            referencedColumnNames: ['id'],
-            columnNames: ['id'],
-            onUpdate: 'CASCADE',
-          },
-        ],
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('veiculos');
+    await queryRunner.dropTable('linhas');
   }
 }

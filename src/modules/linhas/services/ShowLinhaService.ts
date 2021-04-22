@@ -8,7 +8,7 @@ interface IRequest {
 }
 
 class ShowLinhaService {
-  public async execute({ id }: IRequest): Promise<Linha | undefined> {
+  public async execute({ id }: IRequest): Promise<Linha> {
     const linhaRepository = getCustomRepository(LinhaRepository);
 
     const linha = await linhaRepository.findOne(id);
