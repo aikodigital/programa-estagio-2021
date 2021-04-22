@@ -1,0 +1,2 @@
+let main = new Main();
+
