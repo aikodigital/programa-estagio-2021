@@ -1,0 +1,22 @@
+.responseContainer {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.response {
+    background: linear-gradient(125deg, rgba(255,255,255,1) 70%, rgba(204,204,204,1) 100%);
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    line-height: 2;
+    text-align: center;
+}
+
+.response p {
+    color: rgba(0, 0, 0, .8);
+}
+
+.response span {
+    color: red;
+}
