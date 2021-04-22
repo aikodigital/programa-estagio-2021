@@ -11,14 +11,18 @@ class ParadaListView(ListView):
     paginate_by = 10
     queryset = Parada.objects.all()
 
+
 class ParadaSearchListView(ParadaListView):
     def get_queryset(self):
         queryset = super().get_queryset()
-        search_id = self.request.GET.get("search-id")
-        if search_id:
+        search_value = self.request.GET.get("search-value")
+        print(queryset)
+        if search_value:
             queryset = queryset.filter(
-                Q(id__iexact=search_id)
+                Q(id__iexact=search_value) |
+                Q(name__icontains=search_value)
             )
+
         return queryset
 
 class ParadaDetailView(DetailView):
@@ -40,4 +44,4 @@ class ParadaDeleteView(DeleteView):
     model = Parada
     form_class = ParadaForm
     template_name = 'parada/delete.html'
-    success_url = reverse_lazy('parada:paradas')
+    success_url = reverse_lazy('parada:list')

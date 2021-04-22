@@ -15,13 +15,17 @@ class LinhaSearchListView(LinhaListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         search_mode = self.request.GET.get("search-mode")
-        search_id = self.request.GET.get("search-id")
-        if search_id:
-            if search_mode == "LinhasPorID":
-                queryset = queryset.filter(id__iexact=search_id)
+        search_value = self.request.GET.get("search-value")
+        if search_value:
+            if search_mode == "LinhasPorNomeOuID":
+                queryset = queryset.filter(
+                    Q(id__iexact=search_value) |
+                    Q(name__icontains=search_value)
+                )
 
             elif search_mode == "LinhasPorIDdeParada":
-                queryset = queryset.filter(paradas__id__in=search_id)
+
+                queryset = queryset.filter(paradas__id__in=[search_value])
 
         return queryset
 
@@ -44,5 +48,5 @@ class LinhaDeleteView(DeleteView):
     model = Linha
     form_class = LinhaForm
     template_name = 'linhas/delete.html'
-    success_url = reverse_lazy('linhas:linhas')
+    success_url = reverse_lazy('linhas:list')
 

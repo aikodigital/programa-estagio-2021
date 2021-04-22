@@ -1,4 +1,4 @@
-#list-table {
+#list-table,#search-div {
     width: 80%;
      margin:auto;
 }
@@ -17,4 +17,8 @@
 #create-div a {
     color:black;
     text-decoration: underline;
+}
+#title {
+    text-align:center;
+    padding: 1%;
 }

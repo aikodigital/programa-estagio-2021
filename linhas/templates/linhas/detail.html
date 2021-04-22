@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 style="padding: 1%; text-align:center"> Detalhes da Linha</h1>
-<ul class="list-group list-group-flush" style = "width:80%;margin:auto">
+<h1 id='detail-title' > Detalhes da Linha</h1>
+<ul id="detail-li" class="list-group list-group-flush" style = "width:80%;margin:auto">
   <li class="list-group-item"><strong>Nome:</strong> {{ linha.name }}</li>
+  <li class="list-group-item"><strong>ID:</strong> {{ linha.id }}</li>
   <li class="list-group-item"><strong>Paradas:</strong> </li>
   {% for parada in linha.paradas.all %}
     <li class="list-group-item"><a href="{{ parada.get_absolute_url}} " >{{ parada.name}}</a></li>

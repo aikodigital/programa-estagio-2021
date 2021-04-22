@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>parada package &#8212; documentação paradaiko 1.0</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="parada-package">
+<h1>parada package<a class="headerlink" href="#parada-package" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link permanente para este título">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="parada.migrations.html">parada.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parada.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parada.migrations.html#module-parada.migrations.0001_initial">parada.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parada.migrations.html#module-parada.migrations.0002_alter_parada_id">parada.migrations.0002_alter_parada_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parada.migrations.html#module-parada.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-parada.admin">
+<span id="parada-admin-module"></span><h2>parada.admin module<a class="headerlink" href="#module-parada.admin" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-parada.apps">
+<span id="parada-apps-module"></span><h2>parada.apps module<a class="headerlink" href="#module-parada.apps" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="parada.apps.ParadaConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.apps.</span></code><code class="sig-name descname"><span class="pre">ParadaConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.apps.ParadaConfig" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="parada.apps.ParadaConfig.default_auto_field">
+<code class="sig-name descname"><span class="pre">default_auto_field</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#parada.apps.ParadaConfig.default_auto_field" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.apps.ParadaConfig.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada'</span></em><a class="headerlink" href="#parada.apps.ParadaConfig.name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-parada.forms">
+<span id="parada-forms-module"></span><h2>parada.forms module<a class="headerlink" href="#module-parada.forms" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="parada.forms.ParadaForm">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.forms.</span></code><code class="sig-name descname"><span class="pre">ParadaForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data=None</span></em>, <em class="sig-param"><span class="pre">files=None</span></em>, <em class="sig-param"><span class="pre">auto_id='id_%s'</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em>, <em class="sig-param"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></em>, <em class="sig-param"><span class="pre">label_suffix=None</span></em>, <em class="sig-param"><span class="pre">empty_permitted=False</span></em>, <em class="sig-param"><span class="pre">instance=None</span></em>, <em class="sig-param"><span class="pre">use_required_attribute=None</span></em>, <em class="sig-param"><span class="pre">renderer=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.forms.ParadaForm" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="parada.forms.ParadaForm.Meta">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Meta</span></code><a class="headerlink" href="#parada.forms.ParadaForm.Meta" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="parada.forms.ParadaForm.Meta.fields">
+<code class="sig-name descname"><span class="pre">fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['name',</span> <span class="pre">'latitude',</span> <span class="pre">'longitude']</span></em><a class="headerlink" href="#parada.forms.ParadaForm.Meta.fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.forms.ParadaForm.Meta.labels">
+<code class="sig-name descname"><span class="pre">labels</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'name':</span> <span class="pre">'Nome'}</span></em><a class="headerlink" href="#parada.forms.ParadaForm.Meta.labels" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.forms.ParadaForm.Meta.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.forms.ParadaForm.Meta.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.forms.ParadaForm.base_fields">
+<code class="sig-name descname"><span class="pre">base_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'latitude':</span> <span class="pre">&lt;django.forms.fields.FloatField</span> <span class="pre">object&gt;,</span> <span class="pre">'longitude':</span> <span class="pre">&lt;django.forms.fields.FloatField</span> <span class="pre">object&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#parada.forms.ParadaForm.base_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.forms.ParadaForm.declared_fields">
+<code class="sig-name descname"><span class="pre">declared_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#parada.forms.ParadaForm.declared_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="parada.forms.ParadaForm.media">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">media</span></code><a class="headerlink" href="#parada.forms.ParadaForm.media" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-parada.models">
+<span id="parada-models-module"></span><h2>parada.models module<a class="headerlink" href="#module-parada.models" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="parada.models.Parada">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.models.</span></code><code class="sig-name descname"><span class="pre">Parada</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.models.Parada" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="parada.models.Parada.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#parada.models.Parada.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="parada.models.Parada.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#parada.models.Parada.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="parada.models.Parada.get_absolute_url">
+<code class="sig-name descname"><span class="pre">get_absolute_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#parada.models.Parada.get_absolute_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#parada.models.Parada.id" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.latitude">
+<code class="sig-name descname"><span class="pre">latitude</span></code><a class="headerlink" href="#parada.models.Parada.latitude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.linha_set">
+<code class="sig-name descname"><span class="pre">linha_set</span></code><a class="headerlink" href="#parada.models.Parada.linha_set" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.longitude">
+<code class="sig-name descname"><span class="pre">longitude</span></code><a class="headerlink" href="#parada.models.Parada.longitude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#parada.models.Parada.name" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.models.Parada.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#parada.models.Parada.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-parada.tests">
+<span id="parada-tests-module"></span><h2>parada.tests module<a class="headerlink" href="#module-parada.tests" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-parada.urls">
+<span id="parada-urls-module"></span><h2>parada.urls module<a class="headerlink" href="#module-parada.urls" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-parada.views">
+<span id="parada-views-module"></span><h2>parada.views module<a class="headerlink" href="#module-parada.views" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="parada.views.ParadaCreateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaCreateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaCreateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.CreateView</span></code></p>
+<dl class="py attribute">
+<dt id="parada.views.ParadaCreateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#parada.views.ParadaCreateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.forms.ParadaForm" title="parada.forms.ParadaForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.forms.ParadaForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaCreateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.views.ParadaCreateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaCreateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada/create.html'</span></em><a class="headerlink" href="#parada.views.ParadaCreateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="parada.views.ParadaDeleteView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaDeleteView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaDeleteView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.DeleteView</span></code></p>
+<dl class="py attribute">
+<dt id="parada.views.ParadaDeleteView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#parada.views.ParadaDeleteView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.forms.ParadaForm" title="parada.forms.ParadaForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.forms.ParadaForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaDeleteView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.views.ParadaDeleteView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaDeleteView.success_url">
+<code class="sig-name descname"><span class="pre">success_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'/parada/'</span></em><a class="headerlink" href="#parada.views.ParadaDeleteView.success_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaDeleteView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada/delete.html'</span></em><a class="headerlink" href="#parada.views.ParadaDeleteView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="parada.views.ParadaDetailView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaDetailView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaDetailView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.DetailView</span></code></p>
+<dl class="py attribute">
+<dt id="parada.views.ParadaDetailView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada'</span></em><a class="headerlink" href="#parada.views.ParadaDetailView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaDetailView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.views.ParadaDetailView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaDetailView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada/detail.html'</span></em><a class="headerlink" href="#parada.views.ParadaDetailView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="parada.views.ParadaListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<dl class="py attribute">
+<dt id="parada.views.ParadaListView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'paradas'</span></em><a class="headerlink" href="#parada.views.ParadaListView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaListView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.views.ParadaListView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaListView.paginate_by">
+<code class="sig-name descname"><span class="pre">paginate_by</span></code><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#parada.views.ParadaListView.paginate_by" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaListView.queryset">
+<code class="sig-name descname"><span class="pre">queryset</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;Parada:</span> <span class="pre">Salve&gt;,</span> <span class="pre">&lt;Parada:</span> <span class="pre">Tessss&gt;,</span> <span class="pre">&lt;Parada:</span> <span class="pre">Teste</span> <span class="pre">1&gt;]&gt;</span></em><a class="headerlink" href="#parada.views.ParadaListView.queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaListView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada/list.html'</span></em><a class="headerlink" href="#parada.views.ParadaListView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="parada.views.ParadaSearchListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaSearchListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaSearchListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <a class="reference internal" href="#parada.views.ParadaListView" title="parada.views.ParadaListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.views.ParadaListView</span></code></a></p>
+<dl class="py method">
+<dt id="parada.views.ParadaSearchListView.get_queryset">
+<code class="sig-name descname"><span class="pre">get_queryset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaSearchListView.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return the list of items for this view.</p>
+<p>The return value must be an iterable and may be an instance of
+<cite>QuerySet</cite> in which case <cite>QuerySet</cite> specific behavior will be enabled.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="parada.views.ParadaUpdateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">parada.views.</span></code><code class="sig-name descname"><span class="pre">ParadaUpdateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#parada.views.ParadaUpdateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.UpdateView</span></code></p>
+<dl class="py attribute">
+<dt id="parada.views.ParadaUpdateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#parada.views.ParadaUpdateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.forms.ParadaForm" title="parada.forms.ParadaForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.forms.ParadaForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaUpdateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#parada.views.ParadaUpdateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#parada.models.Parada" title="parada.models.Parada"><code class="xref py py-class docutils literal notranslate"><span class="pre">parada.models.Parada</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="parada.views.ParadaUpdateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'parada/edit.html'</span></em><a class="headerlink" href="#parada.views.ParadaUpdateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-parada">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-parada" title="Link permanente para este título">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">paradaiko</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegação</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joao Pedro de Oliveira Ferreira.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/parada.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

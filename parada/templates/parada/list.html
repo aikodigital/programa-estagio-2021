@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 style="text-align:center;padding: 1%">Paradas</h1>
+<h1 id="title">Paradas</h1>
 <form method="get" action="{% url 'parada:search' %}">
   {% csrf_token %}
-  <div class="input-group mb-3" style="width: 80%; margin:auto;">
-    <input type="text" name="search-id"class="form-control" placeholder="ID da Parada" aria-label="Search" >
+  <div id="search-div" class="input-group mb-3">
+    <input type="text" name="search-value"class="form-control" placeholder="ID ou Nome da Parada" aria-label="Search" >
 
       <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
 
   </div>
 </form>
-<table class="table" style="width: 80%; margin:auto;">
+<table id="list-table" class="table" >
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -29,8 +29,8 @@
       <td><a href="{{ parada.get_absolute_url}} ">{{ parada.name}}</a></td>
       <td>{{ parada.latitude}}</td>
       <td>{{ parada.longitude }}</td>
-      <td><button type="button" class="btn btn-primary"><a href = "{% url 'parada:update' parada.pk %}" style="color:white">Editar</a></button></td>
-      <td><button type="button" class="btn btn-danger"><a href = "{% url 'parada:delete' parada.pk %}" style="color:white">Deletar</a></button></td>
+      <td><button type="button" class="btn btn-primary"><a id ="edit-link" href = "{% url 'parada:update' parada.pk %}" >Editar</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a id ="delete-link" href = "{% url 'parada:delete' parada.pk %}" >Deletar</a></button></td>
     </tr>
   {% endfor %}
   </tbody>

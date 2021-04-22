@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 id="title">Posições de Veículos</h1>
+<form method="get" action="{% url 'posicoes_veiculo:search' %}">
+  {% csrf_token %}
+  <div id="search-div" class="input-group mb-3" >
+    <input type="text" name="search-id"class="form-control" placeholder="ID da Posição de Veículo" aria-label="Search" >
+
+      <button class="btn btn-outline-secondary" type="submit">Pesquisar</button>
+
+  </div>
+</form>
+<table id="list-table" class="table" >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Veiculo</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for posicao_veiculo in posicoes_veiculo %}
+    <tr>
+        <td><a href="{{ posicao_veiculo.get_absolute_url}} ">{{ posicao_veiculo.id }}</a></td>
+        <td><a href="{{ posicao_veiculo.veiculo.get_absolute_url}} ">{{ posicao_veiculo.veiculo }}</a></td>
+      <td>{{ posicao_veiculo.latitude}}</td>
+      <td>{{ posicao_veiculo.longitude }}</td>
+      <td><button type="button" class="btn btn-primary"><a id="edit-link" href="{% url 'posicoes_veiculo:update' posicao_veiculo.pk %}" >Editar</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a id="delete-link" href="{% url 'posicoes_veiculo:delete' posicao_veiculo.pk %}">Deletar</a></button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div id="create-div">
+    <a href="{% url 'posicoes_veiculo:create'%}">Criar Nova Posição de Veículo</a>
+</div>
+<div id="pagination-div" class="pagination col-12" >
+
+    <span id="pagination-span" class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Primeira</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+        {% endif %}
+
+    </span>
+
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 id='detail-title' > Detalhes da Posição de Veículo </h1>
+<ul id="detail-list" class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Veículo:</strong> {{ posicao_veiculo.veiculo }}</li>
+  <li class="list-group-item"><strong>Latitude:</strong> {{ posicao_veiculo.latitude }}</li>
+  <li class="list-group-item"><strong>Longitude:</strong> {{ posicao_veiculo.longitude }}</li>
+  <li class="list-group-item"><strong>ID:</strong> {{ posicao_veiculo.id }}</li>
+  <li class="list-group-item"><strong></strong> <button type="button" class="btn btn-secondary" ><a href="{% url 'posicoes_veiculo:list'%}" style="color:white">Voltar</a></button></li>
+</ul>
+
+{% endblock %}

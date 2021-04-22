@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>posicoes_veiculo package &#8212; documentação paradaiko 1.0</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="posicoes-veiculo-package">
+<h1>posicoes_veiculo package<a class="headerlink" href="#posicoes-veiculo-package" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link permanente para este título">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="posicoes_veiculo.migrations.html">posicoes_veiculo.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="posicoes_veiculo.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="posicoes_veiculo.migrations.html#module-posicoes_veiculo.migrations.0001_initial">posicoes_veiculo.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="posicoes_veiculo.migrations.html#module-posicoes_veiculo.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-posicoes_veiculo.admin">
+<span id="posicoes-veiculo-admin-module"></span><h2>posicoes_veiculo.admin module<a class="headerlink" href="#module-posicoes_veiculo.admin" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-posicoes_veiculo.apps">
+<span id="posicoes-veiculo-apps-module"></span><h2>posicoes_veiculo.apps module<a class="headerlink" href="#module-posicoes_veiculo.apps" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="posicoes_veiculo.apps.PosicoesVeiculoConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.apps.</span></code><code class="sig-name descname"><span class="pre">PosicoesVeiculoConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.apps.PosicoesVeiculoConfig" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.apps.PosicoesVeiculoConfig.default_auto_field">
+<code class="sig-name descname"><span class="pre">default_auto_field</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#posicoes_veiculo.apps.PosicoesVeiculoConfig.default_auto_field" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.apps.PosicoesVeiculoConfig.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo'</span></em><a class="headerlink" href="#posicoes_veiculo.apps.PosicoesVeiculoConfig.name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-posicoes_veiculo.forms">
+<span id="posicoes-veiculo-forms-module"></span><h2>posicoes_veiculo.forms module<a class="headerlink" href="#module-posicoes_veiculo.forms" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.forms.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data=None</span></em>, <em class="sig-param"><span class="pre">files=None</span></em>, <em class="sig-param"><span class="pre">auto_id='id_%s'</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em>, <em class="sig-param"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></em>, <em class="sig-param"><span class="pre">label_suffix=None</span></em>, <em class="sig-param"><span class="pre">empty_permitted=False</span></em>, <em class="sig-param"><span class="pre">instance=None</span></em>, <em class="sig-param"><span class="pre">use_required_attribute=None</span></em>, <em class="sig-param"><span class="pre">renderer=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.Meta">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Meta</span></code><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.Meta" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.fields">
+<code class="sig-name descname"><span class="pre">fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['latitude',</span> <span class="pre">'longitude',</span> <span class="pre">'veiculo']</span></em><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.labels">
+<code class="sig-name descname"><span class="pre">labels</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'name':</span> <span class="pre">'Nome'}</span></em><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.labels" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.Meta.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.base_fields">
+<code class="sig-name descname"><span class="pre">base_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'latitude':</span> <span class="pre">&lt;django.forms.fields.FloatField</span> <span class="pre">object&gt;,</span> <span class="pre">'longitude':</span> <span class="pre">&lt;django.forms.fields.FloatField</span> <span class="pre">object&gt;,</span> <span class="pre">'veiculo':</span> <span class="pre">&lt;django.forms.models.ModelChoiceField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.base_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.declared_fields">
+<code class="sig-name descname"><span class="pre">declared_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.declared_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="posicoes_veiculo.forms.PosicaoVeiculoForm.media">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">media</span></code><a class="headerlink" href="#posicoes_veiculo.forms.PosicaoVeiculoForm.media" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-posicoes_veiculo.models">
+<span id="posicoes-veiculo-models-module"></span><h2>posicoes_veiculo.models module<a class="headerlink" href="#module-posicoes_veiculo.models" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.models.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">veiculo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.get_absolute_url">
+<code class="sig-name descname"><span class="pre">get_absolute_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.get_absolute_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.id" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.latitude">
+<code class="sig-name descname"><span class="pre">latitude</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.latitude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.longitude">
+<code class="sig-name descname"><span class="pre">longitude</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.longitude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.veiculo">
+<code class="sig-name descname"><span class="pre">veiculo</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.veiculo" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.models.PosicaoVeiculo.veiculo_id">
+<code class="sig-name descname"><span class="pre">veiculo_id</span></code><a class="headerlink" href="#posicoes_veiculo.models.PosicaoVeiculo.veiculo_id" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-posicoes_veiculo.tests">
+<span id="posicoes-veiculo-tests-module"></span><h2>posicoes_veiculo.tests module<a class="headerlink" href="#module-posicoes_veiculo.tests" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-posicoes_veiculo.urls">
+<span id="posicoes-veiculo-urls-module"></span><h2>posicoes_veiculo.urls module<a class="headerlink" href="#module-posicoes_veiculo.urls" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-posicoes_veiculo.views">
+<span id="posicoes-veiculo-views-module"></span><h2>posicoes_veiculo.views module<a class="headerlink" href="#module-posicoes_veiculo.views" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoCreateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoCreateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoCreateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.CreateView</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoCreateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoCreateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.forms.PosicaoVeiculoForm" title="posicoes_veiculo.forms.PosicaoVeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.forms.PosicaoVeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoCreateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoCreateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoCreateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo/create.html'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoCreateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDeleteView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoDeleteView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDeleteView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.DeleteView</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDeleteView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDeleteView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.forms.PosicaoVeiculoForm" title="posicoes_veiculo.forms.PosicaoVeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.forms.PosicaoVeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDeleteView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDeleteView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDeleteView.success_url">
+<code class="sig-name descname"><span class="pre">success_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'/posicoesveiculo/'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDeleteView.success_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDeleteView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo/delete.html'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDeleteView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDetailView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoDetailView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDetailView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.DetailView</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDetailView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicao_veiculo'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDetailView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDetailView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDetailView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoDetailView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo/detail.html'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoDetailView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView.paginate_by">
+<code class="sig-name descname"><span class="pre">paginate_by</span></code><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView.paginate_by" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView.queryset">
+<code class="sig-name descname"><span class="pre">queryset</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView.queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoListView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo/list.html'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoListView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoSearchListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoSearchListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoSearchListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <a class="reference internal" href="#posicoes_veiculo.views.PosicaoVeiculoListView" title="posicoes_veiculo.views.PosicaoVeiculoListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.views.PosicaoVeiculoListView</span></code></a></p>
+<dl class="py method">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoSearchListView.get_queryset">
+<code class="sig-name descname"><span class="pre">get_queryset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoSearchListView.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return the list of items for this view.</p>
+<p>The return value must be an iterable and may be an instance of
+<cite>QuerySet</cite> in which case <cite>QuerySet</cite> specific behavior will be enabled.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoUpdateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">posicoes_veiculo.views.</span></code><code class="sig-name descname"><span class="pre">PosicaoVeiculoUpdateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoUpdateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.UpdateView</span></code></p>
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoUpdateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoUpdateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.forms.PosicaoVeiculoForm" title="posicoes_veiculo.forms.PosicaoVeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.forms.PosicaoVeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoUpdateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoUpdateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#posicoes_veiculo.models.PosicaoVeiculo" title="posicoes_veiculo.models.PosicaoVeiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">posicoes_veiculo.models.PosicaoVeiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="posicoes_veiculo.views.PosicaoVeiculoUpdateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'posicoes_veiculo/edit.html'</span></em><a class="headerlink" href="#posicoes_veiculo.views.PosicaoVeiculoUpdateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-posicoes_veiculo">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-posicoes_veiculo" title="Link permanente para este título">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">paradaiko</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegação</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joao Pedro de Oliveira Ferreira.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/posicoes_veiculo.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

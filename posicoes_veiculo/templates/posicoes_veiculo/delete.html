@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container pt-5">
+    <form method="post" >
+        {% csrf_token %}
+        <p>Tem certeza que deseja deletar a posição com ID <strong>{{ object.id}}?</strong></p>
+        <input type="submit" value="Confirmar">
+    </form>
+</div>
+{% endblock %}

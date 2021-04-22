@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     'parada',
     'linhas',
+    'veiculos',
+    'posicoes_veiculo',
 ]
 
 MIDDLEWARE = [

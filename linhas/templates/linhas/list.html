@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 style="text-align:center;padding: 1%">Linhas</h1>
+<h1 id="title">Linhas</h1>
 <form method="get" action="{% url 'linhas:search' %}">
   {% csrf_token %}
-  <div class="input-group mb-3" style="width: 80%; margin:auto;">
-    <input type="text" name="search-id" class="form-control"  aria-label="Search" >
+  <div id="search-div" class="input-group mb-3" >
+    <input type="text" name="search-value" class="form-control"  aria-label="Search" >
 
     <div class="input-group-append">
     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipos de Pesquisa</button>
     <div class="dropdown-menu">
-      <input class="btn btn-light" type='submit' name = 'search-mode'    value = 'LinhasPorID' style="width:100%"><br>
+      <input class="btn btn-light" type='submit' name = 'search-mode'    value = 'LinhasPorNomeOuID' style="width:100%"><br>
       <input class="btn btn-light" type='submit' name = 'search-mode'    value = 'LinhasPorIDdeParada'>
     </div>
   </div>
@@ -40,7 +40,7 @@
             </button>
             <div class="dropdown-menu">
               {% for parada in linha.paradas.all %}
-              <a href="{{ parada.get_absolute_url}} " class="dropdown-item">{{ parada.name}}</a>
+              <a href="{{ parada.get_absolute_url}} " class="dropdown-item">{{ parada.name }}</a>
               {% endfor %}
             </div>
         </div>
