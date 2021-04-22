@@ -5,7 +5,7 @@
   "username": "postgres",
   "password":"docker",
   "database":"db_transporte",
-  "entities":["./src/modules/**/typeorm/entities/*.ts"],
+  "entities":["./src/modules/**/typeorm/entities/*.ts, js"],
   "migrations": [
     "./src/shared/typeorm/migrations/*.ts"
   ],
