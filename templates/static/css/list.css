@@ -1,0 +1,24 @@
+#list-table,#search-div {
+    width: 80%;
+     margin:auto;
+}
+#edit-link,#delete-link {
+    color: white;
+}
+#pagination-span {
+    margin:auto;
+    text-align:center;
+}
+#create-div  {
+    width: 100%;
+    margin: auto;
+    text-align:center;
+}
+#create-div a {
+    color:black;
+    text-decoration: underline;
+}
+#title {
+    text-align:center;
+    padding: 1%;
+}

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Linhas{% endblock %}
+{% block content %}
+
+<h1 id="title">Linhas</h1>
+<form method="get" action="{% url 'linhas:search' %}">
+  {% csrf_token %}
+  <div id="search-div" class="input-group mb-3" >
+    <input type="text" name="search-value" class="form-control"  aria-label="Search" >
+
+    <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipos de Pesquisa</button>
+    <div class="dropdown-menu">
+      <input class="btn btn-light" type='submit' name = 'search-mode'    value = 'LinhasPorNomeOuID' style="width:100%"><br>
+      <input class="btn btn-light" type='submit' name = 'search-mode'    value = 'LinhasPorIDdeParada'>
+    </div>
+  </div>
+
+  </div>
+</form>
+
+<table id="list-table" class="table" >
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Paradas</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for linha in linhas %}
+    <tr>
+      <td>{{ linha.id}}</td>
+      <td><a href="{{ linha.get_absolute_url}} ">{{ linha.name}}</a></td>
+      <td>
+        <div class="btn-group">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Ver Paradas
+            </button>
+            <div class="dropdown-menu">
+              {% for parada in linha.paradas.all %}
+              <a href="{{ parada.get_absolute_url}} " class="dropdown-item">{{ parada.name }}</a>
+              {% endfor %}
+            </div>
+        </div>
+      </td>
+      <td><button type="button" class="btn btn-primary"><a id="edit-link" href = "{% url 'linhas:update' linha.pk %}">Editar</a></button></td>
+      <td><button type="button" class="btn btn-danger"><a id="delete-link" href = "{% url 'linhas:delete' linha.pk %}">Deletar</a></button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div id="create-div">
+    <a href="{% url 'linhas:create'%}">Criar Nova Linha</a>
+</div>
+<div id="pagination-div" class="pagination col-12" >
+
+    <span id="pagination-span" class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Primeira</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+        {% endif %}
+
+    </span>
+
+</div>
+
+{% endblock %}

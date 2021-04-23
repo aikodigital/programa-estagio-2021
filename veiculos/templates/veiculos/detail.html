@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 id='detail-title' > Detalhes do Veículo</h1>
+<ul id="detail-list" class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Nome:</strong> {{ veiculo.name }}</li>
+  <li class="list-group-item"><strong>Modelo:</strong> {{ veiculo.modelo }}</li>
+  <li class="list-group-item"><strong>Linha:</strong> {{ veiculo.linha }}</li>
+  <li class="list-group-item"><strong></strong> <button type="button" class="btn btn-secondary" ><a href="{% url 'veiculos:list'%}" style="color:white">Voltar</a></button></li>
+</ul>
+
+{% endblock %}

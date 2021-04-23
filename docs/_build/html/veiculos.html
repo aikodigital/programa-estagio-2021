@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>veiculos package &#8212; documentação paradaiko 1.0</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="veiculos-package">
+<h1>veiculos package<a class="headerlink" href="#veiculos-package" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link permanente para este título">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="veiculos.migrations.html">veiculos.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="veiculos.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="veiculos.migrations.html#module-veiculos.migrations.0001_initial">veiculos.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="veiculos.migrations.html#module-veiculos.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-veiculos.admin">
+<span id="veiculos-admin-module"></span><h2>veiculos.admin module<a class="headerlink" href="#module-veiculos.admin" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-veiculos.apps">
+<span id="veiculos-apps-module"></span><h2>veiculos.apps module<a class="headerlink" href="#module-veiculos.apps" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="veiculos.apps.VeiculosConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.apps.</span></code><code class="sig-name descname"><span class="pre">VeiculosConfig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.apps.VeiculosConfig" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.apps.VeiculosConfig.default_auto_field">
+<code class="sig-name descname"><span class="pre">default_auto_field</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#veiculos.apps.VeiculosConfig.default_auto_field" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.apps.VeiculosConfig.name">
+<code class="sig-name descname"><span class="pre">name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos'</span></em><a class="headerlink" href="#veiculos.apps.VeiculosConfig.name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-veiculos.forms">
+<span id="veiculos-forms-module"></span><h2>veiculos.forms module<a class="headerlink" href="#module-veiculos.forms" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="veiculos.forms.VeiculoForm">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.forms.</span></code><code class="sig-name descname"><span class="pre">VeiculoForm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">data=None</span></em>, <em class="sig-param"><span class="pre">files=None</span></em>, <em class="sig-param"><span class="pre">auto_id='id_%s'</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">initial=None</span></em>, <em class="sig-param"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></em>, <em class="sig-param"><span class="pre">label_suffix=None</span></em>, <em class="sig-param"><span class="pre">empty_permitted=False</span></em>, <em class="sig-param"><span class="pre">instance=None</span></em>, <em class="sig-param"><span class="pre">use_required_attribute=None</span></em>, <em class="sig-param"><span class="pre">renderer=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.forms.VeiculoForm" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="veiculos.forms.VeiculoForm.Meta">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Meta</span></code><a class="headerlink" href="#veiculos.forms.VeiculoForm.Meta" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.forms.VeiculoForm.Meta.fields">
+<code class="sig-name descname"><span class="pre">fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['name',</span> <span class="pre">'modelo',</span> <span class="pre">'linha']</span></em><a class="headerlink" href="#veiculos.forms.VeiculoForm.Meta.fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.forms.VeiculoForm.Meta.labels">
+<code class="sig-name descname"><span class="pre">labels</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'name':</span> <span class="pre">'Nome'}</span></em><a class="headerlink" href="#veiculos.forms.VeiculoForm.Meta.labels" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.forms.VeiculoForm.Meta.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.forms.VeiculoForm.Meta.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.forms.VeiculoForm.base_fields">
+<code class="sig-name descname"><span class="pre">base_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'linha':</span> <span class="pre">&lt;django.forms.models.ModelChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'modelo':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#veiculos.forms.VeiculoForm.base_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.forms.VeiculoForm.declared_fields">
+<code class="sig-name descname"><span class="pre">declared_fields</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#veiculos.forms.VeiculoForm.declared_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="veiculos.forms.VeiculoForm.media">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">media</span></code><a class="headerlink" href="#veiculos.forms.VeiculoForm.media" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-veiculos.models">
+<span id="veiculos-models-module"></span><h2>veiculos.models module<a class="headerlink" href="#module-veiculos.models" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="veiculos.models.Veiculo">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.models.</span></code><code class="sig-name descname"><span class="pre">Veiculo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modelo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linha</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.models.Veiculo" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="veiculos.models.Veiculo.DoesNotExist">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">DoesNotExist</span></code><a class="headerlink" href="#veiculos.models.Veiculo.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="veiculos.models.Veiculo.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></code><a class="headerlink" href="#veiculos.models.Veiculo.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="veiculos.models.Veiculo.get_absolute_url">
+<code class="sig-name descname"><span class="pre">get_absolute_url</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.models.Veiculo.get_absolute_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.id">
+<code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#veiculos.models.Veiculo.id" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.linha">
+<code class="sig-name descname"><span class="pre">linha</span></code><a class="headerlink" href="#veiculos.models.Veiculo.linha" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.linha_id">
+<code class="sig-name descname"><span class="pre">linha_id</span></code><a class="headerlink" href="#veiculos.models.Veiculo.linha_id" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.modelo">
+<code class="sig-name descname"><span class="pre">modelo</span></code><a class="headerlink" href="#veiculos.models.Veiculo.modelo" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.name">
+<code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#veiculos.models.Veiculo.name" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.objects">
+<code class="sig-name descname"><span class="pre">objects</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#veiculos.models.Veiculo.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.models.Veiculo.posicaoveiculo_set">
+<code class="sig-name descname"><span class="pre">posicaoveiculo_set</span></code><a class="headerlink" href="#veiculos.models.Veiculo.posicaoveiculo_set" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-veiculos.tests">
+<span id="veiculos-tests-module"></span><h2>veiculos.tests module<a class="headerlink" href="#module-veiculos.tests" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-veiculos.urls">
+<span id="veiculos-urls-module"></span><h2>veiculos.urls module<a class="headerlink" href="#module-veiculos.urls" title="Link permanente para este título">¶</a></h2>
+</div>
+<div class="section" id="module-veiculos.views">
+<span id="veiculos-views-module"></span><h2>veiculos.views module<a class="headerlink" href="#module-veiculos.views" title="Link permanente para este título">¶</a></h2>
+<dl class="py class">
+<dt id="veiculos.views.VeiculoCreateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoCreateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoCreateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.CreateView</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoCreateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#veiculos.views.VeiculoCreateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.forms.VeiculoForm" title="veiculos.forms.VeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.forms.VeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoCreateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.views.VeiculoCreateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoCreateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos/create.html'</span></em><a class="headerlink" href="#veiculos.views.VeiculoCreateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="veiculos.views.VeiculoDeleteView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoDeleteView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoDeleteView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.DeleteView</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDeleteView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#veiculos.views.VeiculoDeleteView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.forms.VeiculoForm" title="veiculos.forms.VeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.forms.VeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDeleteView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.views.VeiculoDeleteView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDeleteView.success_url">
+<code class="sig-name descname"><span class="pre">success_url</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'/veiculos/'</span></em><a class="headerlink" href="#veiculos.views.VeiculoDeleteView.success_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDeleteView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos/delete.html'</span></em><a class="headerlink" href="#veiculos.views.VeiculoDeleteView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="veiculos.views.VeiculoDetailView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoDetailView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoDetailView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.detail.DetailView</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDetailView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculo'</span></em><a class="headerlink" href="#veiculos.views.VeiculoDetailView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDetailView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.views.VeiculoDetailView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoDetailView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos/detail.html'</span></em><a class="headerlink" href="#veiculos.views.VeiculoDetailView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="veiculos.views.VeiculoListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.list.ListView</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoListView.context_object_name">
+<code class="sig-name descname"><span class="pre">context_object_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos'</span></em><a class="headerlink" href="#veiculos.views.VeiculoListView.context_object_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoListView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.views.VeiculoListView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoListView.paginate_by">
+<code class="sig-name descname"><span class="pre">paginate_by</span></code><em class="property"> <span class="pre">=</span> <span class="pre">10</span></em><a class="headerlink" href="#veiculos.views.VeiculoListView.paginate_by" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoListView.queryset">
+<code class="sig-name descname"><span class="pre">queryset</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;QuerySet</span> <span class="pre">[&lt;Veiculo:</span> <span class="pre">Onibus</span> <span class="pre">2&gt;,</span> <span class="pre">&lt;Veiculo:</span> <span class="pre">Onibus</span> <span class="pre">3&gt;]&gt;</span></em><a class="headerlink" href="#veiculos.views.VeiculoListView.queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoListView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos/list.html'</span></em><a class="headerlink" href="#veiculos.views.VeiculoListView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="veiculos.views.VeiculoSearchListView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoSearchListView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoSearchListView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <a class="reference internal" href="#veiculos.views.VeiculoListView" title="veiculos.views.VeiculoListView"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.views.VeiculoListView</span></code></a></p>
+<dl class="py method">
+<dt id="veiculos.views.VeiculoSearchListView.get_queryset">
+<code class="sig-name descname"><span class="pre">get_queryset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoSearchListView.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return the list of items for this view.</p>
+<p>The return value must be an iterable and may be an instance of
+<cite>QuerySet</cite> in which case <cite>QuerySet</cite> specific behavior will be enabled.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="veiculos.views.VeiculoUpdateView">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">veiculos.views.</span></code><code class="sig-name descname"><span class="pre">VeiculoUpdateView</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#veiculos.views.VeiculoUpdateView" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.views.generic.edit.UpdateView</span></code></p>
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoUpdateView.form_class">
+<code class="sig-name descname"><span class="pre">form_class</span></code><a class="headerlink" href="#veiculos.views.VeiculoUpdateView.form_class" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.forms.VeiculoForm" title="veiculos.forms.VeiculoForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.forms.VeiculoForm</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoUpdateView.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#veiculos.views.VeiculoUpdateView.model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#veiculos.models.Veiculo" title="veiculos.models.Veiculo"><code class="xref py py-class docutils literal notranslate"><span class="pre">veiculos.models.Veiculo</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="veiculos.views.VeiculoUpdateView.template_name">
+<code class="sig-name descname"><span class="pre">template_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'veiculos/edit.html'</span></em><a class="headerlink" href="#veiculos.views.VeiculoUpdateView.template_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-veiculos">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-veiculos" title="Link permanente para este título">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">paradaiko</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegação</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Busca rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Joao Pedro de Oliveira Ferreira.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/veiculos.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<div class="container pt-5">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:'form-control'}}
+            {% for error in field.errors %}
+            <span class="help-block">{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-sucess">
+                <span class="glyphicon glyphicon-ok"></span>Criar
+            </button>
+            <a href="{% url 'veiculos:list' %}" class="btn btn-default">Voltar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
