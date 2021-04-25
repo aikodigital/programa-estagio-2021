@@ -27,9 +27,9 @@ export default class ParadasController {
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, latitude, longitude, linhaId } = request.body;
-
     const getLinha = new ShowLinhaService();
-    const linha: Linha = await getLinha.execute(linhaId);
+    const id = linhaId;
+    const linha: Linha = await getLinha.execute({ id });
 
     const createParada = new CreateParadaService();
 
@@ -67,5 +67,16 @@ export default class ParadasController {
     await deleteParada.execute({ id });
 
     return response.json([]);
+  }
+  public async linhasPorParadas(
+    request: Request,
+    response: Response,
+  ): Promise<Response> {
+    const { id } = request.params;
+    const getPararada = new ShowParadaService();
+    const parada = await getPararada.buscaLinhas({ id });
+    console.log(parada.linha);
+
+    return response.json(parada);
   }
 }
