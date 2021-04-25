@@ -13,10 +13,6 @@ class Parada {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Linha)
-  @JoinColumn({ name: 'linhaId' })
-  linha: Linha;
-
   @Column()
   name: string;
 
@@ -25,6 +21,10 @@ class Parada {
 
   @Column()
   longitude: number;
+
+  @ManyToOne(() => Linha)
+  @JoinColumn({ name: 'linhaId' })
+  linha: Linha;
 
   @CreateDateColumn()
   created_at: Date;
