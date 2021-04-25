@@ -7,13 +7,26 @@ interface IRequest {
 }
 
 class ShowParadaService {
-  public async execute({ id }: IRequest): Promise<Parada | undefined> {
+  public async execute({ id }: IRequest): Promise<Parada> {
     const paradasRepository = getCustomRepository(ParadaRepository);
 
     const parada = await paradasRepository.findOne(id);
 
     if (!parada) {
       throw new AppError('Parada não encontrado');
+    }
+
+    return parada;
+  }
+  public async buscaLinhas({ id }: IRequest): Promise<Parada> {
+    const paradasRepository = getCustomRepository(ParadaRepository);
+
+    const parada = await paradasRepository.findOne(id, {
+      relations: ['linha'],
+    });
+
+    if (!parada) {
+      throw new AppError('Parada não encontrada');
     }
 
     return parada;
