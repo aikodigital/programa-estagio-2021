@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
-import CreatePosicaoVeiculoService from '../services/CreatePosicaoVeiculoService';
 import ListPosicaoVeiculoService from '../services/ListPosicaoVeiculo';
 import ShowPosicaoVeiculoService from '../services/ShowPosicaoVeiculoService';
 import UpdatePosicaoVeiculoService from '../services/UpdatePosicaoVeiculoService';
+import CreatePosicaoVeiculoService from '../services/CreatePosicaoVeiculoService';
 import DeletePosicaoVeiculoService from '../services/DeletePosicaoVeiculoService';
+import ShowVeiculoService from '@modules/veiculos/services/ShowVeiculoService';
+import Veiculo from '@modules/veiculos/typeorm/entities/Veiculo';
 
 export default class PosicaoVeiculosController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -24,15 +26,17 @@ export default class PosicaoVeiculosController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const { latitude, longitude } = request.body;
-    const { veiculoId } = request.params;
+    const { latitude, longitude, veiculoId } = request.body;
+    const getVeiculo = new ShowVeiculoService();
+    const id = veiculoId;
+    const veiculo: Veiculo = await getVeiculo.execute({ id });
 
     const createPosicaoVeiculo = new CreatePosicaoVeiculoService();
 
     const posicaoVeiculo = await createPosicaoVeiculo.execute({
-      veiculoId,
       latitude,
       longitude,
+      veiculo,
     });
 
     return response.json(posicaoVeiculo);
