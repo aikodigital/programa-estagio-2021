@@ -23,9 +23,7 @@ posicaoVeiculosRouter.post(
     [Segments.BODY]: {
       latitude: Joi.number().required(),
       longitude: Joi.number().required(),
-    },
-    [Segments.PARAMS]: {
-      veiculoId: Joi.string().uuid().required(),
+      veiculoId: Joi.string().required(),
     },
   }),
   posicaoVeiculosController.create,
@@ -37,6 +35,7 @@ posicaoVeiculosRouter.put(
     [Segments.BODY]: {
       latitude: Joi.number().required(),
       longitude: Joi.number().required(),
+      veiculoId: Joi.string().required(),
     },
     [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
