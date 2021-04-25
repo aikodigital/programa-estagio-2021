@@ -24,6 +24,7 @@ ParadasRouter.post(
       name: Joi.string().required(),
       latitude: Joi.number().required(),
       longitude: Joi.number().required(),
+      linhaId: Joi.string().uuid().required(),
     },
   }),
   paradasController.create,
@@ -53,5 +54,13 @@ ParadasRouter.delete(
   }),
   paradasController.delete,
 );
-
+ParadasRouter.get(
+  '/:id/linhas',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  paradasController.linhasPorParadas,
+);
 export default ParadasRouter;
