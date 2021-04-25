@@ -52,5 +52,4 @@ veiculosRouter.delete(
   }),
   veiculosController.delete,
 );
-
 export default veiculosRouter;
