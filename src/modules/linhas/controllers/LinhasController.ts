@@ -25,7 +25,6 @@ export default class LinhasController {
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
-    const getLinha = new ShowLinhaService();
 
     const createLinha = new CreateLinhaService();
 
@@ -58,5 +57,16 @@ export default class LinhasController {
     await deleteLinha.execute({ id });
 
     return response.json([]);
+  }
+  public async veiculosPorLinhas(
+    request: Request,
+    response: Response,
+  ): Promise<Response> {
+    const { id } = request.params;
+    const getLinha = new ShowLinhaService();
+    const linha = await getLinha.buscaVeiculos({ id });
+    console.log(linha.veiculo);
+
+    return response.json(linha);
   }
 }
