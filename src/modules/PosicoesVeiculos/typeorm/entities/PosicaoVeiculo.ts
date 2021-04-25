@@ -4,7 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  ManyToOne,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -13,15 +13,15 @@ class PosicaoVeiculo {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => Veiculo)
-  @JoinColumn({ name: 'veiculoId' })
-  veiculos: Veiculo[];
-
   @Column()
   latitude: number;
 
   @Column()
   longitude: number;
+
+  @OneToOne(() => Veiculo)
+  @JoinColumn({ name: 'veiculoId' })
+  veiculo: Veiculo;
 
   @CreateDateColumn()
   created_at: Date;
