@@ -42,7 +42,7 @@ export class CreatePosicaoVeiculo1618959646118 implements MigrationInterface {
             name: 'posicaoVeiculo',
             referencedTableName: 'veiculos',
             referencedColumnNames: ['id'],
-            columnNames: ['id'],
+            columnNames: ['veiculoId'],
             onUpdate: 'CASCADE',
           },
         ],
