@@ -19,6 +19,19 @@ class ShowLinhaService {
 
     return linha;
   }
+  public async buscaVeiculos({ id }: IRequest): Promise<Linha> {
+    const linhasRepository = getCustomRepository(LinhaRepository);
+
+    const linha = await linhasRepository.findOne(id, {
+      relations: ['veiculo'],
+    });
+
+    if (!linha) {
+      throw new AppError('Linha não encontrada');
+    }
+
+    return linha;
+  }
 }
 
 export default ShowLinhaService;
