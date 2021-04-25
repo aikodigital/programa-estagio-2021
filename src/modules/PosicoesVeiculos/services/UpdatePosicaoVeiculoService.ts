@@ -1,3 +1,4 @@
+import Veiculo from '@modules/veiculos/typeorm/entities/Veiculo';
 import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import PosicaoVeiculo from '../typeorm/entities/PosicaoVeiculo';
@@ -7,7 +8,6 @@ interface IRequest {
   id: string;
   latitude: number;
   longitude: number;
-  veiculoId: string;
 }
 
 class UpdatePosicaoVeiculoService {
@@ -15,7 +15,6 @@ class UpdatePosicaoVeiculoService {
     id,
     latitude,
     longitude,
-    veiculoId,
   }: IRequest): Promise<PosicaoVeiculo> {
     const posicaoVeiculoRepository = getCustomRepository(
       PosicaoVeiculoRepository,
@@ -37,7 +36,6 @@ class UpdatePosicaoVeiculoService {
 
     posicaoVeiculo.latitude = latitude;
     posicaoVeiculo.longitude = longitude;
-    posicaoVeiculo.veiculoId = veiculoId;
 
     await posicaoVeiculoRepository.save(posicaoVeiculo);
 
