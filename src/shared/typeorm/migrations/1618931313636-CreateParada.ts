@@ -46,7 +46,7 @@ export class CreateParada1618931313636 implements MigrationInterface {
             name: 'paradaLinha',
             referencedTableName: 'linhas',
             referencedColumnNames: ['id'],
-            columnNames: ['id'],
+            columnNames: ['linhaId'],
             onUpdate: 'CASCADE',
           },
         ],
