@@ -8,7 +8,7 @@ interface IRequest {
 }
 
 class ShowPosicaoVeiculoService {
-  public async execute({ id }: IRequest): Promise<PosicaoVeiculo | undefined> {
+  public async execute({ id }: IRequest): Promise<PosicaoVeiculo> {
     const posicaoVeiculoRepository = getCustomRepository(
       PosicaoVeiculoRepository,
     );
