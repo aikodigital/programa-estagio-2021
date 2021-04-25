@@ -28,7 +28,8 @@ export default class VeiculosController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, modelo, linhaId } = request.body;
     const getLinha = new ShowLinhaService();
-    const linha: Linha = await getLinha.execute(linhaId);
+    const id = linhaId;
+    const linha: Linha = await getLinha.execute({ id });
 
     const createVeiculo = new CreateVeiculoService();
 
