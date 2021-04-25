@@ -1,3 +1,4 @@
+import Veiculo from '@modules/veiculos/typeorm/entities/Veiculo';
 import AppError from '@shared/http/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import PosicaoVeiculo from '../typeorm/entities/PosicaoVeiculo';
@@ -6,7 +7,7 @@ import PosicaoVeiculoRepository from '../typeorm/repositories/PosicaoVeiculoRepo
 interface IRequest {
   latitude: number;
   longitude: number;
-  veiculoId: string;
+  veiculo: Veiculo;
 }
 
 class CreatePosicaoVeiculoService {
@@ -18,11 +19,6 @@ class CreatePosicaoVeiculoService {
     const posicaoVeiculosRepository = getCustomRepository(
       PosicaoVeiculoRepository,
     );
-    const veiculoIdExists = await posicaoVeiculosRepository.findByPk(veiculo);
-
-    if (!veiculoIdExists) {
-      throw new AppError('Veiculo não encontrado');
-    }
     const posicaoVeiculoExists = await posicaoVeiculosRepository.findOne({
       latitude,
       longitude,
@@ -34,6 +30,7 @@ class CreatePosicaoVeiculoService {
     const posicaoVeiculo = posicaoVeiculosRepository.create({
       latitude,
       longitude,
+      veiculo,
     });
 
     await posicaoVeiculosRepository.save(posicaoVeiculo);
