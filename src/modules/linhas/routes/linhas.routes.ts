@@ -50,5 +50,14 @@ linhasRouter.delete(
   }),
   linhasController.delete,
 );
+linhasRouter.get(
+  '/:id/veiculos',
+  celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
+    },
+  }),
+  linhasController.veiculosPorLinhas,
+);
 
 export default linhasRouter;
