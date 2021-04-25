@@ -8,7 +8,7 @@ interface IRequest {
 }
 
 class ShowVeiculoService {
-  public async execute({ id }: IRequest): Promise<Veiculo | undefined> {
+  public async execute({ id }: IRequest): Promise<Veiculo> {
     const veiculosRepository = getCustomRepository(VeiculoRepository);
 
     const veiculo = await veiculosRepository.findOne(id);
