@@ -42,7 +42,7 @@ export class Createveiculos1618946682728 implements MigrationInterface {
             name: 'veiculoLinha',
             referencedTableName: 'linhas',
             referencedColumnNames: ['id'],
-            columnNames: ['id'],
+            columnNames: ['linhaId'],
             onUpdate: 'CASCADE',
           },
         ],
