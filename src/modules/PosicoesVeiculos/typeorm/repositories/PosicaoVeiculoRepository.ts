@@ -3,7 +3,7 @@ import PosicaoVeiculo from '../entities/PosicaoVeiculo';
 
 @EntityRepository(PosicaoVeiculo)
 class PosicaoVeiculoRepository extends Repository<PosicaoVeiculo> {
-  public async findyById(id: string): Promise<PosicaoVeiculo | undefined> {
+  public async findById(id: string): Promise<PosicaoVeiculo | undefined> {
     const posicaoVeiculoId = await this.findOne({
       where: {
         id,
