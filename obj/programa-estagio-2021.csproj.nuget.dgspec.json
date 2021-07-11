@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021\\programa-estagio-2021.csproj": {}
+    "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021\\programa-estagio-2021.csproj": {
+    "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021\\programa-estagio-2021.csproj",
+        "projectUniqueName": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021.csproj",
         "projectName": "programa-estagio-2021",
-        "projectPath": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021\\programa-estagio-2021.csproj",
+        "projectPath": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021.csproj",
         "packagesPath": "C:\\Users\\CARLOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\programa-estagio-2021\\obj\\",
+        "outputPath": "C:\\Users\\CARLOS\\Desktop\\ProjetoEstagio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CARLOS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
