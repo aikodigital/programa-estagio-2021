@@ -3,6 +3,7 @@ import * as cors from 'cors';
 
 import connectToDB from './config/db';
 import paradaRouter from './routes/paradaRouter';
+import linhaRouter from './routes/linhaRouter';
 
 // Cria app express
 const app = express();
@@ -16,5 +17,7 @@ app.use(express.json());
 connectToDB();
 
 app.use('/parada', paradaRouter);
+
+app.use('/linha', linhaRouter);
 
 export default app;

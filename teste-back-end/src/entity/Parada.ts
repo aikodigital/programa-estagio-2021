@@ -1,4 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity, PrimaryGeneratedColumn, Column, ManyToMany,
+} from 'typeorm';
+import Linha from './Linha';
 
 @Entity()
 export default class Parada {
@@ -19,4 +22,7 @@ export default class Parada {
 
   @Column({ type: 'double precision' })
   longitude: number;
+
+  @ManyToMany(() => Linha, (linha) => linha.paradas)
+  linhas: Linha[];
 }
