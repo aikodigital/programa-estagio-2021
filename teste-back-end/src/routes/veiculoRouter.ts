@@ -33,7 +33,12 @@ veiculoRouter.post('/', async (req: Request, res: Response) => {
   const linha = await linhaController.getById(linhaId);
   const veiculo = new Veiculo(name, modelo, linha);
   const veiculoSalvo = await veiculoController.create(veiculo);
-  return res.send(veiculoSalvo);
+  return res.send({
+    id: veiculoSalvo.id,
+    name: veiculoSalvo.name,
+    modelo: veiculoSalvo.modelo,
+    linhaId: veiculoSalvo.linha.id,
+  });
 });
 
 // UPDATE

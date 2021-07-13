@@ -3,12 +3,7 @@ import Veiculo from '../entity/Veiculo';
 
 const create = async (veiculo: Veiculo) => {
   const veiculoSalvo = await getManager().save(veiculo);
-  return {
-    id: veiculoSalvo.id,
-    name: veiculoSalvo.name,
-    modelo: veiculoSalvo.modelo,
-    linhaId: veiculoSalvo.linha.id,
-  };
+  return veiculoSalvo;
 };
 
 const getAll = async () => {
