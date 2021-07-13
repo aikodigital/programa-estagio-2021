@@ -16,7 +16,7 @@ export default class Linha {
   @Column()
   name: string;
 
-  @ManyToMany(() => Parada)
+  @ManyToMany(() => Parada, (parada) => parada.linhas)
   @JoinTable()
   paradas: Parada[];
 

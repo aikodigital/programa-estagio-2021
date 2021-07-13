@@ -16,6 +16,14 @@ paradaRouter.get('/', async (req: Request, res: Response) => {
   }
 });
 
+// GET LINHAS POR PARADA
+paradaRouter.get('/linhas', async (req: Request, res: Response) => {
+  const { paradaId } = req.query;
+  if (!paradaId) { return res.status(400).send({ error: 'ID da Parada não informada na query' }); }
+  const linhas = await paradaController.getLinhas(Number(paradaId));
+  return res.send(linhas);
+});
+
 // CREATE
 paradaRouter.post('/', async (req: Request, res: Response) => {
   const { name, latitude, longitude } = req.body;

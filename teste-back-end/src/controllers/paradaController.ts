@@ -1,4 +1,4 @@
-import { getManager } from 'typeorm';
+import { getManager, getRepository } from 'typeorm';
 import Parada from '../entity/Parada';
 
 const create = async (parada: Parada) => {
@@ -9,6 +9,15 @@ const create = async (parada: Parada) => {
 const getAll = async () => {
   const paradas = await getManager().find(Parada);
   return paradas;
+};
+
+const getLinhas = async (paradaId: number) => {
+  const parada = await getRepository(Parada)
+    .createQueryBuilder('parada')
+    .leftJoinAndSelect('parada.linhas', 'linhas')
+    .where(`parada.id = ${paradaId}`)
+    .getOne();
+  return parada.linhas;
 };
 
 const getById = async (id: number) => {
@@ -32,4 +41,5 @@ export default {
   getById,
   update,
   destroy,
+  getLinhas,
 };
