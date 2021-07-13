@@ -20,6 +20,13 @@ const getById = async (id: number) => {
   return linha;
 };
 
+const getVeiculos = async (id: number) => {
+  const linha = await getManager().findOne(Linha, id, {
+    relations: ['veiculos'],
+  });
+  return linha.veiculos;
+};
+
 const update = async (linha: Linha) => {
   const linhaAtualizada = await getManager().save(linha);
   return linhaAtualizada;
@@ -36,4 +43,5 @@ export default {
   getById,
   update,
   destroy,
+  getVeiculos,
 };

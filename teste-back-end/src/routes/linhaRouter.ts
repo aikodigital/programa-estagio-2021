@@ -17,12 +17,20 @@ linhaRouter.get('/', async (req: Request, res: Response) => {
   }
 });
 
+// GET VEICULOS POR LINHA
+linhaRouter.get('/veiculos', async (req: Request, res: Response) => {
+  const { linhaId } = req.query;
+  if (!linhaId) { return res.status(400).send({ error: 'ID da Linha não informada na query' }); }
+  const veiculos = await linhaController.getVeiculos(Number(linhaId));
+  return res.send(veiculos);
+});
+
 // CREATE
 linhaRouter.post('/', async (req: Request, res: Response) => {
   const { name } = req.body;
   const linha = new Linha(name);
   const linhaSalva = await linhaController.create(linha);
-  res.send(linhaSalva);
+  return res.send(linhaSalva);
 });
 
 // ADD PARADA TO LINHA
