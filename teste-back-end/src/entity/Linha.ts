@@ -1,7 +1,8 @@
 import {
-  Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable,
+  Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable, OneToMany,
 } from 'typeorm';
 import Parada from './Parada';
+import Veiculo from './Veiculo';
 
 @Entity()
 export default class Linha {
@@ -18,4 +19,7 @@ export default class Linha {
   @ManyToMany(() => Parada)
   @JoinTable()
   paradas: Parada[];
+
+  @OneToMany(() => Veiculo, (veiculo) => veiculo.linha)
+  veiculos: Veiculo[]
 }
