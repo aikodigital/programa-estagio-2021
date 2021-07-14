@@ -4,9 +4,7 @@ const veiculoDB = require('../models/Veiculo')
 //Rotas
     //Enviar todos os veiculos registrados
     routes.get('/',(req,res)=>{
-        veiculoDB.findAll({
-            attributes:['nome','modelo','id']
-        }).then((veiculos)=>{
+        veiculoDB.findAll().then((veiculos)=>{
             res.send({veiculo:veiculos})
         })
     })
