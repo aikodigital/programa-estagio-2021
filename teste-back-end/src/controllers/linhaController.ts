@@ -14,14 +14,14 @@ const getAll = async () => {
 };
 
 const getById = async (id: number) => {
-  const linha = await getManager().findOne(Linha, id, {
+  const linha = await getManager().findOneOrFail(Linha, id, {
     relations: ['paradas'],
   });
   return linha;
 };
 
 const getVeiculos = async (id: number) => {
-  const linha = await getManager().findOne(Linha, id, {
+  const linha = await getManager().findOneOrFail(Linha, id, {
     relations: ['veiculos'],
   });
   return linha.veiculos;

@@ -14,7 +14,7 @@ const getAll = async () => {
 };
 
 const getById = async (id: number) => {
-  const veiculo = await getManager().findOne(Veiculo, id, {
+  const veiculo = await getManager().findOneOrFail(Veiculo, id, {
     relations: ['linha'],
   });
   return veiculo;

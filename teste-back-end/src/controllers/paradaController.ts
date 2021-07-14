@@ -21,7 +21,7 @@ const getLinhas = async (paradaId: number) => {
 };
 
 const getById = async (id: number) => {
-  const parada = await getManager().findOne(Parada, id);
+  const parada = await getManager().findOneOrFail(Parada, id);
   return parada;
 };
 
