@@ -24,9 +24,9 @@ const veiculoDB = require('../models/Veiculo')
             nome: req.body.nome,
             modelo: req.body.modelo,
         }).then(()=>{
-            res.send('Cadastrado com sucesso')
+            res.send({message:'success'})
         }).catch((err)=>{
-            res.send('Erro ao cadastrar '+err)
+            res.send({message:'error'})
         })
     })
 

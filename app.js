@@ -4,6 +4,7 @@ const app = express()
 const PORT = 3000
 const posicoesVeiculos = require('./rotas/PosicaoVeiculo')
 const veiculos = require('./rotas/Veiculo')
+const paradas = require('./rotas/Parada')
 
 //Configurações
     //bodyParser
@@ -13,6 +14,7 @@ const veiculos = require('./rotas/Veiculo')
 //Listando rotas
 app.use('/vehicle-position',posicoesVeiculos)
 app.use('/veiculos',veiculos)
+app.use('/parada',paradas)
 
 //Colocando server no ar
 app.listen(PORT,()=>{
