@@ -1,0 +1,62 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Linha</th>
+                <th scope="col">Modelo</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+    <tbody>
+    {% for veiculo in veiculos %}
+        <tr>
+        <th scope="row">{{ veiculo.id }}</th>
+        <td>{{ veiculo.name }}</td>
+        <td>{{ veiculo.linha_id }}</td>
+        <td>{{ veiculo.modelo }}</td>
+        <td>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Utils
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="{% url 'editando_veiculo' veiculo.id %}">Editar</a></li>
+                <li><a class="dropdown-item" href="{% url 'deleta_veiculo' veiculo.id %}">Excluir</a></li>
+                </ul>
+                </div>
+            </div>
+        </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <div class="row row justify-content-md-center">
+        <div class="col-md-auto mb-3 d-flex justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if veiculos.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ veiculos.previous_page_number }}" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item"><a class="page-link" href="#" disabled="">{{ veiculos.number }} de {{ veiculos.paginator.num_pages }}</a></li>
+                    {% if veiculos.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ veiculos.next_page_number }}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

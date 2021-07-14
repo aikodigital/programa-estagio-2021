@@ -1,0 +1,27 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    <form action="{% url 'criar_linhaparada' id %}" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label for="latitude" class="form-label">Parada</label>
+                <input type="text" name="latitude" class="form-control" value="{{ id }}" disabled>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Linha</label>
+                <select name="linha" class="form-control">
+                    {% for linha in linhas %}
+                    <option value="{{ linha.linha }}">{{ linha.linha }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary mb-3 mt-3">Inserir</button>
+    </form>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_parada' %}'">Voltar</button>
+</div>
+{% endblock %}

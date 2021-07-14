@@ -1,0 +1,34 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    {% for item in parada %}
+    <form action="{% url 'editar_parada' %}" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-2">
+                <label for="id" class="form-label">ID</label>
+                <input type="text" class="form-control" value="{{ item.id }}" disabled>
+                <input type="hidden" name="id" value="{{ item.id }}">
+            </div>
+            <div class="col-md-10">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" value="{{ item.name }}">
+            </div>
+            <div class="col-md-6">
+                <label for="latitude" class="form-label">Latitude</label>
+                <input type="text" name="latitude" class="form-control" value="{{ item.latitude }}">
+            </div>
+            <div class="col-md-6 mb-4">
+                <label for="longitude" class="form-label">Longitude</label>
+                <input type="text" name="longitude" class="form-control" value="{{ item.longitude }}" >
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary" onclick="window.location.href = '{% url 'editar_parada'%}'">Alterar</button>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_parada' %}'">Voltar</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

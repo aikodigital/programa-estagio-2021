@@ -1,0 +1,69 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="bg-light bg-gradient">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 pt-4 pb-4 d-flex justify-content-center">
+                <form action="{% url 'veiculosporlinha' %}" method="GET">
+                    <input type="text" name="busca" class="form-control" placeholder="Insira uma linha para pesquisar, por exemplo 1">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/_alertas.html' %}
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Linha</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+    <tbody>
+    {% for linha in linhas %}
+        <tr>
+        <th scope="row">{{ linha.id }}</th>
+        <td>{{ linha.name }}</td>
+        <td>{{ linha.linha }}</td>
+        <td>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Utils
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="{% url 'editando_linha' linha.id %}">Editar</a></li>
+                <li><a class="dropdown-item" href="{% url 'deleta_linha' linha.id %}">Excluir</a></li>
+                </ul>
+                </div>
+            </div>
+        </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <div class="row row justify-content-md-center">
+        <div class="col-md-auto mb-3 d-flex justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if linhas.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ linhas.previous_page_number }}" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item"><a class="page-link" href="#" disabled="">{{ linhas.number }} de {{ linhas.paginator.num_pages }}</a></li>
+                    {% if linhas.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ linhas.next_page_number }}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

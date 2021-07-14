@@ -1,0 +1,72 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="bg-light bg-gradient">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 pt-4 pb-4 d-flex justify-content-center">
+                <form action="{% url 'veiculosporparada' %}" method="GET">
+                    <input type="text" name="busca" class="form-control" placeholder="Insira o nome da parada ou parte dele">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/_alertas.html' %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Longitude</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+    <tbody>
+    {% for parada in paradas %}
+        <tr>
+            <th scope="row"><a href="{% url 'buscaveiculoparada' parada.id %}">{{ parada.id }}</a></th>
+        <td>{{ parada.name }}</td>
+        <td>{{ parada.latitude }}</td>
+        <td>{{ parada.longitude }}</td>
+        <td>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Utils
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <li><a class="dropdown-item" href="{% url 'criar_linhaparada' parada.id %}">Inserir Linha</a></li>
+                <li><a class="dropdown-item" href="{% url 'editando_parada' parada.id %}">Editar</a></li>
+                <li><a class="dropdown-item" href="{% url 'deleta_paradas' parada.id %}">Excluir</a></li>
+                </ul>
+                </div>
+            </div>
+        </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+    <div class="row row justify-content-md-center">
+        <div class="col-md-auto mb-3 d-flex justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if paradas.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ paradas.previous_page_number }}" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                    {% endif %}
+                    <li class="page-item"><a class="page-link" href="#" disabled="">{{ paradas.number }} de {{ paradas.paginator.num_pages }}</a></li>
+                    {% if paradas.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ paradas.next_page_number }}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

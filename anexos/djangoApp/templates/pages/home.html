@@ -1,0 +1,114 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    {% include "partials/_alertas.html" %}
+    <div class="container mt-5 p-4">
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <div class="row">
+                    <div class="col-md-auto p-2">
+                        <div class="col-md-auto mb-3 d-flex justify-content-center">
+                            <h4>Prova API SPTrans</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Linhas
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-light">
+                                <p>Populando a tabela <code>Linhas</code>.</p>
+                                <p>Essa função trata todas as linhas da função <code>Parada</code> da API OlhoVivo. Caso não exista uma linha com o mesmo Nome ela é inserida.</p>
+                                <p/>
+                                <p>Esta ação pode demorar de acordo com o retorno da <code>API</code>.</p>
+                            <hr>
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.location.href = '{% url 'popula_linhas' %}'">Popular Linhas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Paradas
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-light">
+                                <p>Populando a tabela <code>Paradas</code>.</p>
+                                <p>Essa função trata todas as paradas da função <code>Parada</code> da API OlhoVivo. Caso não exista uma parada com o mesmo ID, ela é inserida no banco de dados, caso exista, ela é atualizada.</p>
+                                <p/>
+                                <p>Esta ação pode demorar de acordo com o retorno da <code>API</code>.</p>
+                            <hr>
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.location.href = '{% url 'popula_paradas' %}'">Popular Paradas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Linhas por Parada
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-light">
+                                <p>Populando a tabela <code>ParadasPorLinha</code>.</p>
+                                <p>Essa função trata todas as paradas e linhas da função <code>busca_parada</code> da API OlhoVivo. Como é um campo de ligação, e utiliza <code>foreign keys</code> para se popular, uma nova linha é adicionada caso ela nao exista ou caso a Linha ou Parada já estejam cadastradas.</p>
+                                <p/>
+                                <p>Esta ação pode demorar de acordo com o retorno da <code>API</code>.</p>
+                            <hr>
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.location.href = '{% url 'popula_ppl' %}'">Ligar linhas e paradas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed border" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Veículos
+                        </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body bg-light">
+                                <p>Populando a tabela <code>Veiculo</code>.</p>
+                                <p>Essa função trata todas as paradas e linhas da função <code>posicao</code> da API OlhoVivo. É inserido um novo veículo sempre que um prefixo novo é encontrado, caso já exista, ele é atualizado.</p>
+                                <p/>
+                                <p>Esta ação pode demorar de acordo com o retorno da <code>API</code>.</p>
+                            <hr>
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.location.href = '{% url 'popula_veiculos' %}'">Popular Veículos</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

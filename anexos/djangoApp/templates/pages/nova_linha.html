@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    <form action="{% url 'criar_linha' %}" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" placeholder="Qual o nome do Onibus?">
+            </div>
+            <div class="col-md-6">
+                <label for="linha" class="form-label">Linha</label>
+                <input type="text" name="linha" class="form-control" placeholder="Qual o código da linha?">
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary mb-3 mt-3">Inserir</button>
+    </form>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_linha' %}'">Voltar</button>
+</div>
+{% endblock %}
