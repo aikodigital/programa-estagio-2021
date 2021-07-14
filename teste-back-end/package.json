@@ -1,0 +1,29 @@
+{
+   "name": "teste-back-end",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/cors": "^2.8.12",
+      "@types/express": "^4.17.13",
+      "@types/node": "^8.0.29",
+      "@typescript-eslint/eslint-plugin": "^4.28.2",
+      "@typescript-eslint/parser": "^4.28.2",
+      "eslint": "^7.30.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.23.4",
+      "nodemon": "^2.0.12",
+      "ts-node": "3.3.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "pg": "^8.4.0",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.34"
+   },
+   "scripts": {
+      "start": "ts-node src/server.ts",
+      "dev": "nodemon --exec ts-node src/server.ts"
+   }
+}
