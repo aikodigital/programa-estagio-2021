@@ -48,7 +48,7 @@ const veiculoDB = require('../models/Veiculo')
         }else{
             if(req.body.nome){
                 console.log('entrou')
-                PosicaoVeiculoDB.update({
+                veiculoDB.update({
                     nome: req.body.nome
                 },{where:{
                     id: req.params.id
