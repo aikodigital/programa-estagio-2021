@@ -61,11 +61,11 @@ veiculoRouter.put('/', async (req: Request, res: Response) => {
     if (!veiculo) {
       return res.status(400).send({ error: 'Não existe veiculo com o ID informado' });
     }
-    const { name = '', modelo = '', linhaId = 0 } = {
+    const { name = '', modelo = '' } = {
       ...veiculo,
       ...data,
     };
-    const linha = await linhaController.getById(linhaId);
+    const linha = await linhaController.getById(data.linhaId || veiculo.linha.id);
     const veiculoObject = new Veiculo(name, modelo, linha);
     veiculoObject.id = Number(id);
     const veiculoAtualizada = await veiculoController.update(veiculoObject);

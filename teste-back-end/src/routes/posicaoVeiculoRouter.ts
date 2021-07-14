@@ -85,7 +85,7 @@ posicaoVeiculoRouter.delete('/', async (req: Request, res: Response) => {
       return res.status(400).send({ error: 'Não existe posição do veículo com o ID informado cadastrada' });
     }
     await posicaoVeiculoController.destroy(posicaoVeiculo);
-    return res.send({ success: 'Veículo deletado com sucesso' });
+    return res.send({ success: 'Posição do Veículo deletada com sucesso' });
   } catch (err) {
     return res.status(400).send(err.message);
   }

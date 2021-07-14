@@ -3,7 +3,7 @@
 Para rodar esse projeto, com o Docker e o docker-compose instalado em sua máquina, execute
 
 ```
-$ sudo docker-compose up -d 
+$ sudo docker-compose up -d --build
 ```
 
 ## Documentação
