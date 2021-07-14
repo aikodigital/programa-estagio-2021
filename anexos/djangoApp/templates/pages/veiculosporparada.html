@@ -1,0 +1,53 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="bg-light bg-gradient">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 pt-4 pb-4 d-flex justify-content-center">
+                <form action="{% url 'veiculosporparada' %}" method="GET">
+                    <input type="text" name="busca" class="form-control" placeholder="Digite o ID da parada">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bg-light bg-gradient">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 pt-4 pb-4 d-flex justify-content-center">
+                <h4>{% for item in nome %}{{ item.name }}{% endfor %}</h4>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/_alertas.html' %}
+    {% if parada %}
+    {% else %}
+    <div class="container">
+        <div class="alert alert-danger mt-3 mb-3" role="alert">
+            Não possui nenhuma linha cadastrada para essa parada ainda.
+        </div>
+    </div>
+    {% endif %}
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ID da Parada</th>
+                <th scope="col">Linha que atende</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in parada %}<tr>
+                <th scope="row">{{ item.id }}</th>
+                <td>{{ item.parada_id }}</td>
+                <td>{{ item.linha_id }}</td>
+                <td><button type="submit" class="btn btn-danger" onclick="window.location.href = '{% url 'excluir_linhaparada' item.id %}'">Excluir</button></td>
+            </tr>{% endfor %}
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_parada' %}'">Voltar</button>
+</div>
+{% endblock %}
+

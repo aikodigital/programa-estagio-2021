@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="bg-light bg-gradient">
+        <div class="row justify-content-md-center">
+            <div class="col-md-5 pt-4 pb-4 d-flex justify-content-center">
+                <form action="{% url 'veiculosporlinha' %}" method="GET">
+                    <input type="text" name="busca" class="form-control" placeholder="Insira uma linha para pesquisar, por exemplo 1">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/_alertas.html' %}
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Linha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in veiculos %}
+                <tr>
+                    <th scope="row">{{ item.id }}</th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.modelo }}</td>
+                    <td>{{ item.linha }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_linha' %}'">Voltar</button>
+</div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    {% for item in linha %}
+    <form action="{% url 'editar_linha' %}" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" value="{{ item.name }}">
+                <input type="hidden" name="id" class="form-control" value="{{ item.id }}">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Linha</label>
+                <input type="text" name="linha" class="form-control" value="{{ item.linha }}">
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary" onclick="window.location.href = '{% url 'editar_linha'%}'">Alterar</button>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_linha' %}'">Voltar</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

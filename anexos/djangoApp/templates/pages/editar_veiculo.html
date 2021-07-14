@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    {% for item in veiculo %}
+    <form action="{% url 'editar_veiculo' %}" method="POST">
+    {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">ID</label>
+                <input type="number" class="form-control" value="{{ item.id }}" disabled>
+                <input type="hidden" name="id" value="{{ item.id }}">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" value="{{ item.name }}">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Linha</label>
+                <select name="linha" class="form-control">
+                    <option value="{{ item.linha_id }}">{{ item.linha_id }}</option>
+                    {% for linha in linhas %}
+                    <option value="{{ linha.linha }}">{{ linha.linha }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Modelo</label>
+                <input type="text" name="modelo" class="form-control" value="{{ item.modelo }}">
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary">Alterar</button>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_veiculo' %}'">Voltar</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

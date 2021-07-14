@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    {% include 'partials/_alertas.html' %}
+    <form action="{% url 'criar_veiculo' %}" method="POST">
+    {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Id</label>
+                <input type="number" name="id" class="form-control" placeholder="Informe um ID para o veículo">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Nome</label>
+                <input type="text" name="name" class="form-control" placeholder="Informe o nome do veículo">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Linha</label>
+                <select name="linha" class="form-control">
+                    <option>Selecione</option>
+                    {% for linha in linhas %}
+                    <option value="{{ linha.linha }}">{{ linha.linha }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Modelo</label>
+                <input type="text" name="modelo" class="form-control" placeholder="Informe o modelo do veículo">
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary mb-3 mt-3">Inserir</button>
+    </form>
+            <button type="submit" class="btn btn-warning" onclick="window.location.href = '{% url 'busca_veiculo' %}'">Voltar</button>
+</div>
+{% endblock %}
