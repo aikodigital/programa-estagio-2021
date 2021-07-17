@@ -1,3 +1,8 @@
+## Apresentação da solução
+
+* [youtube](https://youtu.be/NUe_K_awyMY)
+
+
 # Programa de estágio - 2021
 
 ![Aiko](imagens/aiko.png)

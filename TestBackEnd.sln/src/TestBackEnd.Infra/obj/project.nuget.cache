@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "+giifir/aAmCxBEmpcGot5bpSYMrgQVnz6I+ZXlT/ogV5rwqG4ERzSmPJ1ste7WHWbBbu5xIaebCi/W+U9F25g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\torga\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.abstractions.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.analyzers.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.design.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.relational.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.0-preview.5.21301.9\\microsoft.entityframeworkcore.tools.6.0.0-preview.5.21301.9.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.caching.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0-preview.5.21301.5\\microsoft.extensions.caching.memory.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.configuration.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0-preview.5.21301.5\\microsoft.extensions.dependencyinjection.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.dependencyinjection.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0-preview.5.21301.5\\microsoft.extensions.logging.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0-preview.5.21301.5\\microsoft.extensions.logging.abstractions.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.options\\6.0.0-preview.5.21301.5\\microsoft.extensions.options.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0-preview.5.21301.5\\microsoft.extensions.primitives.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\npgsql\\6.0.0-preview5\\npgsql.6.0.0-preview5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.0-preview5\\npgsql.entityframeworkcore.postgresql.6.0.0-preview5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\system.collections.immutable\\6.0.0-preview.5.21301.5\\system.collections.immutable.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0-preview.5.21301.5\\system.diagnostics.diagnosticsource.6.0.0-preview.5.21301.5.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\torga\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0-preview.5.21301.5\\system.runtime.compilerservices.unsafe.6.0.0-preview.5.21301.5.nupkg.sha512"
+  ],
+  "logs": []
+}

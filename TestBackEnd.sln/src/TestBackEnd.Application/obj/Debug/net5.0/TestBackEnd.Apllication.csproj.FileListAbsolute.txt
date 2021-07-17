@@ -1,0 +1,15 @@
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\TestBackEnd.Apllication.deps.json
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\TestBackEnd.Apllication.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\ref\TestBackEnd.Apllication.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\TestBackEnd.Apllication.pdb
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\TestBackEnd.Domain.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\bin\Debug\net5.0\TestBackEnd.Domain.pdb
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.csproj.AssemblyReference.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.AssemblyInfoInputs.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.AssemblyInfo.cs
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.csproj.CoreCompileInputs.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.csproj.CopyComplete
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\ref\TestBackEnd.Apllication.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Apllication\obj\Debug\net5.0\TestBackEnd.Apllication.pdb
