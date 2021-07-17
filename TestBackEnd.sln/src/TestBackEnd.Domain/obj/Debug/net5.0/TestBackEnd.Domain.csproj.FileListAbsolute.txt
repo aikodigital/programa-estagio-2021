@@ -1,0 +1,12 @@
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\bin\Debug\net5.0\TestBackEnd.Domain.deps.json
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\bin\Debug\net5.0\TestBackEnd.Domain.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\bin\Debug\net5.0\ref\TestBackEnd.Domain.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\bin\Debug\net5.0\TestBackEnd.Domain.pdb
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.csproj.AssemblyReference.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.AssemblyInfoInputs.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.AssemblyInfo.cs
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.csproj.CoreCompileInputs.cache
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\ref\TestBackEnd.Domain.dll
+C:\Users\torga\Desktop\Arquivos-C\Projetos\Projects\programa-estagio-2021\TestBackEnd.sln\src\TestBackEnd.Domain\obj\Debug\net5.0\TestBackEnd.Domain.pdb

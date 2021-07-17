@@ -1,0 +1,280 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.API\\TestBackEnd.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.API\\TestBackEnd.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.API\\TestBackEnd.API.csproj",
+        "projectName": "TestBackEnd.API",
+        "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.API\\TestBackEnd.API.csproj",
+        "packagesPath": "C:\\Users\\torga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\torga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\TestBackEnd.Application.csproj": {
+                "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\TestBackEnd.Application.csproj"
+              },
+              "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj": {
+                "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\TestBackEnd.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\TestBackEnd.Application.csproj",
+        "projectName": "TestBackEnd.Application",
+        "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\TestBackEnd.Application.csproj",
+        "packagesPath": "C:\\Users\\torga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\torga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj": {
+                "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj",
+        "projectName": "TestBackEnd.Domain",
+        "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj",
+        "packagesPath": "C:\\Users\\torga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\torga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj",
+        "projectName": "TestBackEnd.Infra",
+        "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\TestBackEnd.Infra.csproj",
+        "packagesPath": "C:\\Users\\torga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\torga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj": {
+                "projectPath": "C:\\Users\\torga\\Desktop\\Arquivos-C\\Projetos\\Projects\\programa-estagio-2021\\TestBackEnd.sln\\src\\TestBackEnd.Domain\\TestBackEnd.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0-preview.5.21301.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0-preview.5.21301.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0-preview.5.21301.9, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.0-preview5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
