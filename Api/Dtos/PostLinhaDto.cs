@@ -6,6 +6,5 @@ namespace Api.Dtos
     {
         public string Name { get; set; }
         public List<long> Paradas { get; set; }
-        
     }
 }
