@@ -1,0 +1,9 @@
+.vscode/*
+! .vscode/configurações.json
+! .vscode/tasks.json
+! .vscode/launch.json
+! .vscode/extensões.json
+*.code-workspace
+
+# História local para código de estúdio visual
+.história/
