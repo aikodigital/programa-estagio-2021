@@ -1,13 +1,11 @@
 package br.com.teste.java.testebackend.service;
 
 
-import br.com.teste.java.testebackend.domain.Linha;
 import br.com.teste.java.testebackend.domain.Veiculo;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.VeiculoRepository;
-import br.com.teste.java.testebackend.requests.LinhaPostRequestBody;
-import br.com.teste.java.testebackend.requests.VeiculoPostRequestBody;
-import br.com.teste.java.testebackend.requests.VeiculoPutRequestBody;
+import br.com.teste.java.testebackend.request.post.VeiculoPostRequestBody;
+import br.com.teste.java.testebackend.request.put.VeiculoPutRequestBody;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

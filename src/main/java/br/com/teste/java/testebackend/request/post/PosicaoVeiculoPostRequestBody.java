@@ -1,4 +1,4 @@
-package br.com.teste.java.testebackend.requests;
+package br.com.teste.java.testebackend.request.post;
 
 import lombok.Data;
 

@@ -1,9 +1,9 @@
-package br.com.teste.java.testebackend.requests;
+package br.com.teste.java.testebackend.request.put;
 
 import lombok.Data;
 
 @Data
-public class ParadaPutRequestBody {
+public class LinhaPutRequestBody {
     private Long id;
     private String name;
     private double latitude;

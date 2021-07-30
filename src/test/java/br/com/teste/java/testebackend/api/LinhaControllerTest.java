@@ -1,7 +1,8 @@
-package br.com.teste.java.testebackend.controller;
+package br.com.teste.java.testebackend.api;
 
 
-import br.com.teste.java.testebackend.domain.Linha;
+import br.com.teste.java.testebackend.api.resource.read.LinhaResourceRead;
+import br.com.teste.java.testebackend.api.resource.write.LinhaResourceWrite;
 import br.com.teste.java.testebackend.service.LinhaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 class LinhaControllerTest {
 
     @InjectMocks
-    private LinhaController linhaController;
+    private LinhaResourceRead linhaResourceRead;
+
+    @InjectMocks
+    private LinhaResourceWrite linhaResourceWrite;
+
     @Mock
     private LinhaService linhaMock;
 

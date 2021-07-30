@@ -1,20 +1,17 @@
 package br.com.teste.java.testebackend.service;
 
 import br.com.teste.java.testebackend.domain.Linha;
-import br.com.teste.java.testebackend.domain.Veiculo;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.LinhaRepository;
-import br.com.teste.java.testebackend.requests.LinhaPostRequestBody;
-import br.com.teste.java.testebackend.requests.LinhaPutRequestBody;
+import br.com.teste.java.testebackend.request.post.LinhaPostRequestBody;
+import br.com.teste.java.testebackend.request.put.LinhaPutRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -34,12 +31,12 @@ public class LinhaService {
         return linha.orElseThrow();
     }
 
-    public List<Linha> findByParada(long id) {
+    public List<Linha> findByParada(Long id) {
         List<Long> linhasId = linhaRepository.findByParadas_Id(id);
 
         List<Linha> linhas = new ArrayList();
 
-        for (long ids: linhasId) {
+        for (Long ids: linhasId) {
             linhas.add(findByIdOrThrowBadRequestException(ids));
         }
 

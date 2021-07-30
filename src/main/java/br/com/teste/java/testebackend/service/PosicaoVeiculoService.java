@@ -4,7 +4,7 @@ package br.com.teste.java.testebackend.service;
 import br.com.teste.java.testebackend.domain.PosicaoVeiculo;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.PosicaoVeiculoRepository;
-import br.com.teste.java.testebackend.requests.PosicaoVeiculoPutRequestBody;
+import br.com.teste.java.testebackend.request.put.PosicaoVeiculoPutRequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
