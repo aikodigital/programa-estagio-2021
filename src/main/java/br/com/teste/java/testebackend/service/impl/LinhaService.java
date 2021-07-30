@@ -5,6 +5,7 @@ import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.LinhaRepository;
 import br.com.teste.java.testebackend.request.post.LinhaPostRequestBody;
 import br.com.teste.java.testebackend.request.put.LinhaPutRequestBody;
+import br.com.teste.java.testebackend.service.impl.LinhaServiceCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,14 +16,16 @@ import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class LinhaService {
+public class LinhaService implements LinhaServiceCustom {
 
     private final LinhaRepository linhaRepository;
 
+    @Override
     public Page<Linha> listAll(Pageable pageable) {
         return linhaRepository.findAll(pageable);
     }
 
+    @Override
     public Linha findByIdOrThrowBadRequestException(Long id) {
         Optional<Linha> linha = linhaRepository.findById(id);
 
@@ -31,6 +34,7 @@ public class LinhaService {
         return linha.orElseThrow();
     }
 
+    @Override
     public List<Linha> findByParada(Long id) {
         List<Long> linhasId = linhaRepository.findByParadas_Id(id);
 
@@ -44,6 +48,7 @@ public class LinhaService {
     }
 
 
+    @Override
     @Transactional
     public Linha save(LinhaPostRequestBody linhaPostRequestBody) {
         return linhaRepository.save(Linha.builder()
@@ -52,10 +57,12 @@ public class LinhaService {
                 .name(linhaPostRequestBody.getName()).build());
     }
 
+    @Override
     public void delete(Long id) {
         linhaRepository.delete(findByIdOrThrowBadRequestException(id));
     }
 
+    @Override
     public void replace(LinhaPutRequestBody linhaPutRequestBody){
         Linha linhaSave = findByIdOrThrowBadRequestException(linhaPutRequestBody.getId());
 

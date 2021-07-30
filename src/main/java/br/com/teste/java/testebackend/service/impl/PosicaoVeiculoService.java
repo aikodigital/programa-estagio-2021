@@ -15,28 +15,33 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class PosicaoVeiculoService {
+public class PosicaoVeiculoService implements PosicaoVeiculoService {
 
     private final PosicaoVeiculoRepository posicaoVeiculoRepository;
 
+    @Override
     public Page<PosicaoVeiculo> listAll(Pageable pageable) {
         return posicaoVeiculoRepository.findAll(pageable);
     }
 
+    @Override
     public PosicaoVeiculo findByIdOrThrowBadRequestException(Long id) {
         return posicaoVeiculoRepository.findById(id)
                 .orElseThrow(()-> new BadRequestException("PosicaoVeiculo not found"));
     }
 
+    @Override
     @Transactional
     public PosicaoVeiculo save(PosicaoVeiculo posicaoVeiculo) {
         return posicaoVeiculoRepository.save(posicaoVeiculo);
     }
 
+    @Override
     public void delete(Long id) {
         posicaoVeiculoRepository.delete(findByIdOrThrowBadRequestException(id));
     }
 
+    @Override
     public void replace(PosicaoVeiculoPutRequestBody posicaoVeiculoPutRequestBody){
         PosicaoVeiculo posicaoVeiculoSave = findByIdOrThrowBadRequestException(posicaoVeiculoPutRequestBody.getId());
 
