@@ -1,10 +1,11 @@
-package br.com.teste.java.testebackend.service;
+package br.com.teste.java.testebackend.service.impl;
 
 
 import br.com.teste.java.testebackend.domain.PosicaoVeiculo;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.PosicaoVeiculoRepository;
 import br.com.teste.java.testebackend.request.put.PosicaoVeiculoPutRequestBody;
+import br.com.teste.java.testebackend.service.PosicaoVeiculoServiceCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,7 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class PosicaoVeiculoService implements PosicaoVeiculoService {
+public class PosicaoVeiculoService implements PosicaoVeiculoServiceCustom {
 
     private final PosicaoVeiculoRepository posicaoVeiculoRepository;
 

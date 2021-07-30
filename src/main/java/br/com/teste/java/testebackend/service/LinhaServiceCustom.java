@@ -1,4 +1,4 @@
-package br.com.teste.java.testebackend.service.impl;
+package br.com.teste.java.testebackend.service;
 
 import br.com.teste.java.testebackend.domain.Linha;
 import br.com.teste.java.testebackend.request.post.LinhaPostRequestBody;

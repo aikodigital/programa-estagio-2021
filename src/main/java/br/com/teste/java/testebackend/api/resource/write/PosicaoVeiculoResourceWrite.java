@@ -3,7 +3,7 @@ package br.com.teste.java.testebackend.api.resource.write;
 import br.com.teste.java.testebackend.domain.PosicaoVeiculo;
 import br.com.teste.java.testebackend.request.post.PosicaoVeiculoPostRequestBody;
 import br.com.teste.java.testebackend.request.put.PosicaoVeiculoPutRequestBody;
-import br.com.teste.java.testebackend.service.PosicaoVeiculoService;
+import br.com.teste.java.testebackend.service.impl.PosicaoVeiculoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;

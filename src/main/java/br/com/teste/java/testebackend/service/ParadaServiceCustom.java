@@ -1,4 +1,4 @@
-package br.com.teste.java.testebackend.service.impl;
+package br.com.teste.java.testebackend.service;
 
 import br.com.teste.java.testebackend.domain.Parada;
 import br.com.teste.java.testebackend.request.post.ParadaPostRequestBody;

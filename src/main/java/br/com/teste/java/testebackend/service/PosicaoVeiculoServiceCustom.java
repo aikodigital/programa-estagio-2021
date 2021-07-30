@@ -1,4 +1,4 @@
-package br.com.teste.java.testebackend.service.impl;
+package br.com.teste.java.testebackend.service;
 
 import br.com.teste.java.testebackend.domain.PosicaoVeiculo;
 import br.com.teste.java.testebackend.request.put.PosicaoVeiculoPutRequestBody;

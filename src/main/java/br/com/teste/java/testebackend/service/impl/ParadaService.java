@@ -1,4 +1,4 @@
-package br.com.teste.java.testebackend.service;
+package br.com.teste.java.testebackend.service.impl;
 
 
 import br.com.teste.java.testebackend.domain.Parada;
@@ -7,7 +7,7 @@ import br.com.teste.java.testebackend.exceptions.NotFoundException;
 import br.com.teste.java.testebackend.repository.ParadaRepository;
 import br.com.teste.java.testebackend.request.post.ParadaPostRequestBody;
 import br.com.teste.java.testebackend.request.put.ParadaPutRequestBody;
-import br.com.teste.java.testebackend.service.impl.ParadaServiceCustom;
+import br.com.teste.java.testebackend.service.ParadaServiceCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

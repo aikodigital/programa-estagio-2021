@@ -3,7 +3,7 @@ package br.com.teste.java.testebackend.api.resource.write;
 import br.com.teste.java.testebackend.domain.Veiculo;
 import br.com.teste.java.testebackend.request.post.VeiculoPostRequestBody;
 import br.com.teste.java.testebackend.request.put.VeiculoPutRequestBody;
-import br.com.teste.java.testebackend.service.VeiculoService;
+import br.com.teste.java.testebackend.service.impl.VeiculoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 

@@ -1,11 +1,11 @@
-package br.com.teste.java.testebackend.service;
+package br.com.teste.java.testebackend.service.impl;
 
 import br.com.teste.java.testebackend.domain.Linha;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.repository.LinhaRepository;
 import br.com.teste.java.testebackend.request.post.LinhaPostRequestBody;
 import br.com.teste.java.testebackend.request.put.LinhaPutRequestBody;
-import br.com.teste.java.testebackend.service.impl.LinhaServiceCustom;
+import br.com.teste.java.testebackend.service.LinhaServiceCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
