@@ -29,8 +29,7 @@ public class LinhaService implements LinhaServiceCustom {
     public Linha findByIdOrThrowBadRequestException(Long id) {
         Optional<Linha> linha = linhaRepository.findById(id);
 
-        linhaRepository.findById(id)
-                .orElseThrow(()-> new BadRequestException("Linha not found"));
+        linhaRepository.findById(id).orElseThrow(()-> new BadRequestException("Linha not found"));
         return linha.orElseThrow();
     }
 
