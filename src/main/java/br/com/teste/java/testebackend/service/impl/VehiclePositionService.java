@@ -3,7 +3,9 @@ package br.com.teste.java.testebackend.service.impl;
 
 import br.com.teste.java.testebackend.domain.VehiclePosition;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
+import br.com.teste.java.testebackend.mapper.VehiclePositionMapper;
 import br.com.teste.java.testebackend.repository.VehiclePositionRepository;
+import br.com.teste.java.testebackend.request.post.VehiclePositionPostRequestBody;
 import br.com.teste.java.testebackend.request.put.VehiclePositionPutRequestBody;
 import br.com.teste.java.testebackend.service.VehiclePositionServiceCustom;
 import lombok.RequiredArgsConstructor;
@@ -33,8 +35,9 @@ public class VehiclePositionService implements VehiclePositionServiceCustom {
 
     @Override
     @Transactional
-    public VehiclePosition save(VehiclePosition vehiclePosition) {
-        return vehiclePositionRepository.save(vehiclePosition);
+    public VehiclePosition save(VehiclePositionPostRequestBody vehiclePositionPostRequestBody) {
+        VehiclePositionMapper.INSTANCE.toVehiclePosition(vehiclePositionPostRequestBody);
+        return vehiclePositionRepository.save(VehiclePositionMapper.INSTANCE.toVehiclePosition(vehiclePositionPostRequestBody));
     }
 
     @Override
@@ -44,8 +47,9 @@ public class VehiclePositionService implements VehiclePositionServiceCustom {
 
     @Override
     public void replace(VehiclePositionPutRequestBody vehiclePositionPutRequestBody){
-        VehiclePosition vehiclePositionSave = findByIdOrThrowBadRequestException(vehiclePositionPutRequestBody.getId());
-
+        var vehiclePositionSave = findByIdOrThrowBadRequestException(vehiclePositionPutRequestBody.getId());
+        VehiclePositionMapper.INSTANCE.toVehiclePosition(vehiclePositionPutRequestBody);
+        vehiclePositionSave.setVehicleId(vehiclePositionSave.getId());
         vehiclePositionRepository.save(vehiclePositionSave);
     }
 

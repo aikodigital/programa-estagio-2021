@@ -1,6 +1,7 @@
 package br.com.teste.java.testebackend.service;
 
 import br.com.teste.java.testebackend.domain.VehiclePosition;
+import br.com.teste.java.testebackend.request.post.VehiclePositionPostRequestBody;
 import br.com.teste.java.testebackend.request.put.VehiclePositionPutRequestBody;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +14,7 @@ public interface VehiclePositionServiceCustom {
     VehiclePosition findByIdOrThrowBadRequestException(Long id);
 
     @Transactional
-    VehiclePosition save(VehiclePosition vehiclePosition);
+    VehiclePosition save(VehiclePositionPostRequestBody vehiclePositionPostRequestBody);
 
     void delete(Long id);
 

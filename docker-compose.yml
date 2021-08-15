@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    container_name: testApplication_postgres
+    environment:
+      POSTGRES_PASSWORD: admin123
+    ports:
+    - "5432:5432"
+    volumes:
+    - test_data:/var/lib/postgres
+
+volumes:
+  test_data:

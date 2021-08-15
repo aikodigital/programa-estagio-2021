@@ -1,0 +1,12 @@
+#server:
+#  error:
+#    include-stacktrace: on_param
+#
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/db_teste?useSSL=false&createDataBaseIfNotExists=true&allowPublicKeyRetrieval=true
+#    username: postgres
+#    password: admin123
+#  jpa:
+#    hibernate:
+#      ddl-auto: update

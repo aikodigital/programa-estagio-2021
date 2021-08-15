@@ -2,6 +2,7 @@ package br.com.teste.java.testebackend.service.impl;
 
 import br.com.teste.java.testebackend.domain.Line;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
+import br.com.teste.java.testebackend.mapper.LineMapper;
 import br.com.teste.java.testebackend.repository.LineRepository;
 import br.com.teste.java.testebackend.request.post.LinePostRequestBody;
 import br.com.teste.java.testebackend.request.put.LinePutRequestBody;
@@ -47,10 +48,8 @@ public class LineService implements LineServiceCustom {
     @Override
     @Transactional
     public Line save(LinePostRequestBody linePostRequestBody) {
-        return lineRepository.save(Line.builder()
-                .longitude(linePostRequestBody.getLongitude())
-                .latitude(linePostRequestBody.getLatitude())
-                .name(linePostRequestBody.getName()).build());
+        LineMapper.INSTANCE.toLine(linePostRequestBody);
+        return lineRepository.save(LineMapper.INSTANCE.toLine(linePostRequestBody));
     }
 
     @Override
@@ -60,13 +59,9 @@ public class LineService implements LineServiceCustom {
 
     @Override
     public void replace(LinePutRequestBody linePutRequestBody){
-        Line lineSave = findByIdOrThrowBadRequestException(linePutRequestBody.getId());
-
-        Line line = Line.builder()
-                .id(lineSave.getId())
-                .name(linePutRequestBody.getName())
-                .build();
-
+        var lineSave = findByIdOrThrowBadRequestException(linePutRequestBody.getId());
+        Line line = LineMapper.INSTANCE.toLine(linePutRequestBody);
+        line.setId(lineSave.getId());
         lineRepository.save(line);
     }
 }

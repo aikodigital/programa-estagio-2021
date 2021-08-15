@@ -4,6 +4,8 @@ package br.com.teste.java.testebackend.service.impl;
 import br.com.teste.java.testebackend.domain.Stop;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
 import br.com.teste.java.testebackend.exceptions.NotFoundException;
+import br.com.teste.java.testebackend.mapper.LineMapper;
+import br.com.teste.java.testebackend.mapper.StopMapper;
 import br.com.teste.java.testebackend.repository.StopRepository;
 import br.com.teste.java.testebackend.request.post.StopPostRequestBody;
 import br.com.teste.java.testebackend.request.put.StopPutRequestBody;
@@ -45,11 +47,8 @@ public class StopService implements StopServiceCustom {
     @Override
     @Transactional
     public Stop save(StopPostRequestBody stopPostRequestBody) {
-        return stopRepository.save(Stop.builder()
-                .name(stopPostRequestBody.getName())
-                .latitude(stopPostRequestBody.getLatitude())
-                .longitude(stopPostRequestBody.getLongitude())
-                .build());
+        StopMapper.INSTANCE.toStop(stopPostRequestBody);
+        return stopRepository.save(StopMapper.INSTANCE.toStop(stopPostRequestBody));
     }
 
     @Override
@@ -59,14 +58,10 @@ public class StopService implements StopServiceCustom {
 
     @Override
     public void replace(StopPutRequestBody stopPutRequestBody){
-        Stop stopSave = findByIdOrThrowBadRequestException(stopPutRequestBody.getId());
-
-        Stop stop = Stop.builder()
-                .id(stopSave.getId())
-                .name(stopPutRequestBody.getName())
-                .build();
-
-        stopRepository.save(stop);
+        var stopSave = findByIdOrThrowBadRequestException(stopPutRequestBody.getId());
+        Stop stop = StopMapper.INSTANCE.toStop(stopPutRequestBody);
+        stop.setId(stopSave.getId());
+        stopRepository.save(stopSave);
     }
 
 }

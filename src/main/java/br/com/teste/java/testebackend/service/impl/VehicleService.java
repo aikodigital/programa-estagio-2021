@@ -3,6 +3,7 @@ package br.com.teste.java.testebackend.service.impl;
 
 import br.com.teste.java.testebackend.domain.Vehicle;
 import br.com.teste.java.testebackend.exceptions.BadRequestException;
+import br.com.teste.java.testebackend.mapper.VehicleMapper;
 import br.com.teste.java.testebackend.repository.VehicleRepository;
 import br.com.teste.java.testebackend.request.post.VehiclePostRequestBody;
 import br.com.teste.java.testebackend.request.put.VehiclePutRequestBody;
@@ -56,21 +57,15 @@ public class VehicleService implements VehicleServiceCustom {
     @Override
     @Transactional
     public Vehicle save(VehiclePostRequestBody vehiclePostRequestBody) {
-        return vehicleRepository.save(Vehicle.builder()
-                .name(vehiclePostRequestBody.getName())
-                .name(vehiclePostRequestBody.getName()).build());
-
+        VehicleMapper.INSTANCE.toVehicle(vehiclePostRequestBody);
+        return vehicleRepository.save( VehicleMapper.INSTANCE.toVehicle(vehiclePostRequestBody));
     }
     @Override
     public void replace(VehiclePutRequestBody vehiclePutRequestBody) {
-        Vehicle vehicleSave = findByIdOrThrowBadRequestException(vehiclePutRequestBody.getId());
-
-        Vehicle vehicleSaved = Vehicle.builder()
-                .id(vehicleSave.getId())
-                .name(vehiclePutRequestBody.getName())
-                .build();
-
-        vehicleRepository.save(vehicleSaved);
+        var vehicleSave = findByIdOrThrowBadRequestException(vehiclePutRequestBody.getId());
+        VehicleMapper.INSTANCE.toVehicle(vehiclePutRequestBody);
+        vehicleSave.setId(vehicleSave.getId());
+        vehicleRepository.save(vehicleSave);
     }
 
 
